@@ -38,12 +38,17 @@ https://www.tensorflow.org/versions/r0.12/get_started/os_setup#virtualenv_instal
 Explanation running python in virtualenv :
 https://virtualenv.pypa.io/en/stable/userguide/#using-virtualenv-without-bin-python
 
-
+Tutorial for Windows
 Run your first example
 1. Preprocessing Data
     - prepare your raw data (this refer to dataset directory on this project)
     - raw data consist of two files : .wav and .txt (audio source and target source)
     - charset for target source : { a : 1, b : 2, ... z : 26, SPACE : 27 }
     - run python preprocessing.py RAW_DIR FEATURE_DIR NUM_CONTEXT
-      example : python preprocessing.py "D:\Skripsi Dewe\be-my-ear-master\datasets\raw extended" "D:\Skripsi Dewe\feature" 3
+      example : python preprocessing.py "D:\be-my-ear-master\datasets\raw extended" "D:\feature" 3
     - this script will create dataset files of MFCC features with 3 context (past, now and future)
+2. Build and run Model
+    - prepare directory for your model
+      example : D:\fodel\first gen\checkpoints
+    - run python model.py TRAINING_DIR CHECKPOINTS_DIR REPORT_DIR
+      example : python model.py "D:\Skripsi Dewe\feature" "D:\fodel\first gen\checkpoints" "D:\fodel\first gen"
