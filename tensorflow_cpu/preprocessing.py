@@ -16,24 +16,27 @@ else:
     feature_dir = sys.argv[2]
     num_context = sys.argv[3]
     preprocess_type = "mfcc"
-
-    if preprocess_type == 'mfcc':
-        feature_dir = feature_dir + '/' + preprocess_type
-        if not os.path.exists(feature_dir):
-            os.makedirs(feature_dir)
-        for root, dirs, files in os.walk(raw_dir, topdown=False):
-            for file in files:
-                name, ext = file.split('.')
-                if ext == 'txt':
-                    with open(raw_dir + '/' + file) as filetarget:
-                        target = filetarget.read()
-                        target = target.replace("\n","")
-                        indices_target = data_rep.text_to_indices(target)
-                        np.save(feature_dir+'/*-'+name,indices_target)
-                        filetarget.close()
-                if ext == 'wav':
-                    filename = os.path.join(root, file)
-                    vector_feature = data_rep.audio_to_feature_representation(filename,num_context)
-                    np.save(feature_dir + '/' + name, vector_feature)
-                    print (name + " has been saved to " + feature_dir + '/' + name, vector_feature)
+    if not os.path.exists(raw_dir):
+        print ("RAW_DIR doesn't exist")
+    else:
+        if preprocess_type == 'mfcc':
+            feature_dir = os.path.join(feature_dir, preprocess_type)
+            if not os.path.exists(feature_dir):
+                os.makedirs(feature_dir)
+            for root, dirs, files in os.walk(raw_dir, topdown=False):
+                for file in files:
+                    name, ext = file.split('.')
+                    if ext == 'txt':
+                        with open(os.path.join(raw_dir,file)) as filetarget:
+                            target = filetarget.read()
+                            target = target.replace("\n","")
+                            indices_target = data_rep.text_to_indices(target)
+                            np.save(os.path.join(feature_dir,'*-' + name),indices_target)
+                            filetarget.close()
+                    if ext == 'wav':
+                        filename = os.path.join(root, file)
+                        vector_feature = data_rep.audio_to_feature_representation(filename,num_context)
+                        target_vector_dir = os.path.join(feature_dir, name)
+                        np.save(target_vector_dir, vector_feature)
+                        print (name + " has been saved to " + target_vector_dir)
 
