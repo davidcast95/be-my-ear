@@ -37,7 +37,7 @@ def SimpleSparseTensorFrom(x):
 
   return x_ix, x_val, x_shape
 
-def max(x):
+def maximum(x):
     max = len(x[0])
     for i in range(1,len(x)):
         if max < len(x[i]):
@@ -45,7 +45,7 @@ def max(x):
     return max
 
 def sparse_dataset(x):
-    max = max(x)
+    max = maximum(x)
     n = len(x)
     sparse_datasets = np.zeros((n,max,x[0].shape[1]))
     for i in range(0,n):
