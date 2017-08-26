@@ -5,7 +5,6 @@ Goal of this project :
 - a system that can create a Machine Learning Models which be able to configured and save every checkpoints (weight and biases)
 - a Machine Learning Model which be able to understands words of Indonesian Language with learn from variety human voices.
 
-
 Requirements for Windows :
 - Python 3.5
 - Anaconda 4.4.0
@@ -38,3 +37,13 @@ https://www.tensorflow.org/versions/r0.12/get_started/os_setup#virtualenv_instal
 
 Explanation running python in virtualenv :
 https://virtualenv.pypa.io/en/stable/userguide/#using-virtualenv-without-bin-python
+
+
+Run your first example
+1. Preprocessing Data
+    - prepare your raw data (this refer to dataset directory on this project)
+    - raw data consist of two files : .wav and .txt (audio source and target source)
+    - charset for target source : { a : 1, b : 2, ... z : 26, SPACE : 27 }
+    - run python preprocessing.py RAW_DIR FEATURE_DIR NUM_CONTEXT
+      example : python preprocessing.py "D:\Skripsi Dewe\be-my-ear-master\datasets\raw extended" "D:\Skripsi Dewe\feature" 3
+    - this script will create dataset files of MFCC features with 3 context (past, now and future)
