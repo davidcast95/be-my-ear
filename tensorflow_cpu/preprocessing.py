@@ -14,7 +14,7 @@ if len(sys.argv) < 4:
 else:
     raw_dir = sys.argv[1]
     feature_dir = sys.argv[2]
-    num_context = sys.argv[3]
+    num_context = int(sys.argv[3])
     preprocess_type = "mfcc"
     if not os.path.exists(raw_dir):
         print ("RAW_DIR doesn't exist")
