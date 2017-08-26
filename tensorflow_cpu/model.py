@@ -1,15 +1,16 @@
 import os
 import sys
+sys.path.append("../")
 from time import gmtime, strftime
 import modules.features.data_representation as data_rep
 import numpy as np
 import tensorflow as tf
 
 if len(sys.argv) < 4:
-    print 'this method needs 3 args TRAINING_DIR CHECKPOINT_DIR REPORT_DIR'
-    print 'TRAINING_DIR ~> directory of target preprocessing files will be created by preprocessing.py'
-    print "CHECKPOINT_DIR ~> directory of model's checkpoint will be stored"
-    print 'REPORT_DIR ~> dicretory of result per checkpoint'
+    print ('this method needs 3 args TRAINING_DIR CHECKPOINT_DIR REPORT_DIR')
+    print ('TRAINING_DIR ~> directory of target preprocessing files will be created by preprocessing.py')
+    print ("CHECKPOINT_DIR ~> directory of model's checkpoint will be stored")
+    print ('REPORT_DIR ~> dicretory of result per checkpoint')
 else:
     #init
     training_dir = sys.argv[1]
@@ -160,7 +161,7 @@ else:
         if len(valid_dirs) > 0:
             last_iteration = len(valid_dirs)
             last_checkpoint = valid_dirs[last_iteration-1]
-            print "Restoring"
+            print ("Restoring")
             # saving model state
             saver = tf.train.Saver()
             saver.restore(sess, checkpoint_dir + '/' + last_checkpoint + '/tensorflow_1.ckpt')
@@ -169,19 +170,17 @@ else:
 
         _, num_cep = training_dataset[0].shape
 
-        print w1.eval(sess)
-
         losses = []
         old_losses = []
         report = open(report_dir + '/report.txt',"a")
         for iter in range(iteration):
-            print "iteration #"+str(iter + last_iteration)
+            print ("iteration #"+str(iter + last_iteration))
             report.write("iteration #"+str(iter + last_iteration))
             if iter > 0:
                 old_losses = losses
                 losses = []
             for i in range(len(training_dataset) / batch):
-                print "batch #"+str(i)
+                print ("batch #"+str(i))
                 report.write("batch #"+str(i))
                 #get batch
                 batch_i = training_dataset[(i*batch):(i*batch)+batch]
@@ -195,14 +194,14 @@ else:
                 }
 
                 logg = sess.run(decode, feed)
-                print "Encoded CTC :"
+                print ("Encoded CTC :")
                 report.write("Encoded CTC :")
                 decode_text = data_rep.indices_to_text(logg[0][1])
-                print decode_text
+                print(decode_text)
                 report.write(decode_text)
 
                 loss = sess.run(avg_loss, feed)
-                print "negative log-probability :" + loss
+                print ("negative log-probability :" + loss)
                 report.write("negative log-probability :" + loss)
                 losses.append(loss)
 
@@ -211,24 +210,24 @@ else:
             if iter > 0:
                 diff = np.array(losses) - np.array(old_losses)
                 th = diff.mean()
-                print "Learning performance : " + str(th)
+                print ("Learning performance : " + str(th))
                 report.write("Learning performance : " + str(th))
 
                 if th < threshold:
-                    print "Saving ..."
+                    print ("Saving ...")
                     now = strftime("%a, %d %b %Y %H:%M:%S", gmtime())
                     saver = tf.train.Saver()
                     save_path = saver.save(sess, checkpoint_dir + '/DMC-' + now + '/tensorflow_1.ckpt')
-                    print "Checkpoint has been saved on path : " + str(save_path)
+                    print ("Checkpoint has been saved on path : " + str(save_path))
                     report.write("Checkpoint has been saved on path : " + str(save_path))
                 else:
-                    print "Overviting not saving"
+                    print ("Overviting not saving")
             else:
-                print "Saving ..."
+                print ("Saving ...")
                 now = strftime("%a, %d %b %Y %H:%M:%S", gmtime())
                 saver = tf.train.Saver()
                 save_path = saver.save(sess, checkpoint_dir + '/DMC-' + now + '/tensorflow_1.ckpt')
-                print "Checkpoint has been saved on path : " + str(save_path)
+                print ("Checkpoint has been saved on path : " + str(save_path))
                 report.write("Checkpoint has been saved on path : " + str(save_path))
 
 
