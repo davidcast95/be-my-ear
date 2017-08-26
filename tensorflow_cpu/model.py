@@ -48,7 +48,7 @@ else:
     # load training dataset
     for root, dirs, files in os.walk(training_dir, topdown=False):
         for file in files:
-            if file[0] == '*':
+            if file[0] == '_':
                 target_dataset.append(np.load(training_dir + '/' + file))
             else:
                 training_dataset.append(np.load(training_dir + '/' + file))

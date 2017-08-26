@@ -31,7 +31,7 @@ else:
                             target = filetarget.read()
                             target = target.replace("\n","")
                             indices_target = data_rep.text_to_indices(target)
-                            np.save(os.path.join(feature_dir,'*-' + name),indices_target)
+                            np.save(os.path.join(feature_dir,'_' + name),indices_target)
                             filetarget.close()
                     if ext == 'wav':
                         filename = os.path.join(root, file)
