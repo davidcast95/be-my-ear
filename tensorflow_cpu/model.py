@@ -236,7 +236,9 @@ else:
                     print ("Saving ...")
                     now = strftime("%a, %d %b %Y %H %M %S", gmtime())
                     saver = tf.train.Saver()
-                    save_path = saver.save(sess, os.path.join(os.path.join(os.path.join(checkpoint_dir, 'DMC-'),now),'tensorflow_1.ckpt'))
+                    target_checkpoint_dir = os.path.join(os.path.join(os.path.join(checkpoint_dir, 'DMC-'),now))
+                    os.makedirs(target_checkpoint_dir)
+                    save_path = saver.save(sess, os.path.join(target_checkpoint_dir,'tensorflow_1.ckpt'))
                     print ("Checkpoint has been saved on path : " + str(save_path))
                     report.write("Checkpoint has been saved on path : " + str(save_path))
                 else:
@@ -245,7 +247,14 @@ else:
                 print ("Saving ...")
                 now = strftime("%a, %d %b %Y %H %M %S", gmtime())
                 saver = tf.train.Saver()
-                save_path = saver.save(sess, os.path.join(os.path.join(os.path.join(checkpoint_dir, 'DMC-'), now),'tensorflow_1.ckpt'))
+                target_checkpoint_dir = os.path.join(os.path.join(os.path.join(checkpoint_dir, 'DMC-'),now))
+                os.makedirs(target_checkpoint_dir)
+                save_path = saver.save(sess, os.path.join(target_checkpoint_dir,'tensorflow_1.ckpt'))
                 print ("Checkpoint has been saved on path : " + str(save_path))
                 report.write("Checkpoint has been saved on path : " + str(save_path))
+
+
+
+
+
 
