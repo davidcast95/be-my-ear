@@ -234,7 +234,7 @@ else:
 
                 if th < threshold:
                     print ("Saving ...")
-                    now = strftime("%a, %d %b %Y %H:%M:%S", gmtime())
+                    now = strftime("%a, %d %b %Y %H %M %S", gmtime())
                     saver = tf.train.Saver()
                     save_path = saver.save(sess, os.path.join(os.path.join(os.path.join(checkpoint_dir, 'DMC-'),now),'tensorflow_1.ckpt'))
                     print ("Checkpoint has been saved on path : " + str(save_path))
@@ -243,8 +243,9 @@ else:
                     print ("Overviting not saving")
             else:
                 print ("Saving ...")
-                now = strftime("%a, %d %b %Y %H:%M:%S", gmtime())
+                now = strftime("%a, %d %b %Y %H %M %S", gmtime())
                 saver = tf.train.Saver()
                 save_path = saver.save(sess, os.path.join(os.path.join(os.path.join(checkpoint_dir, 'DMC-'), now),'tensorflow_1.ckpt'))
                 print ("Checkpoint has been saved on path : " + str(save_path))
                 report.write("Checkpoint has been saved on path : " + str(save_path))
+
