@@ -157,6 +157,7 @@ else:
         last_iteration = 0
 
         valid_dirs = []
+        print(checkpoint_dir)
         for root, dirs, files in os.walk(checkpoint_dir, topdown=True):
             for dir in dirs:
                 if dir[0] == 'D' and dir[1] == 'M' and dir[2] == 'C' and dir[3] == '-':
@@ -166,7 +167,7 @@ else:
         if len(valid_dirs) > 0:
             last_iteration = len(valid_dirs)
             last_checkpoint = valid_dirs[last_iteration-1]
-            print ("Restoring")
+            print ("Restoring : "+ last_checkpoint)
             # saving model state
             saver = tf.train.Saver()
             saver.restore(sess, os.path.join(os.path.join(checkpoint_dir,last_checkpoint),'tensorflow_1.ckpt'))
@@ -234,9 +235,9 @@ else:
 
                 if th < threshold:
                     print ("Saving ...")
-                    now = strftime("%a, %d %b %Y %H %M %S", gmtime())
+                    now = strftime("%d-%m-%Y-%H-%M-%S", gmtime())
                     saver = tf.train.Saver()
-                    target_checkpoint_dir = os.path.join(os.path.join(os.path.join(checkpoint_dir, 'DMC-'),now))
+                    target_checkpoint_dir = os.path.join(checkpoint_dir, 'DMC-'+now)
                     os.makedirs(target_checkpoint_dir)
                     save_path = saver.save(sess, os.path.join(target_checkpoint_dir,'tensorflow_1.ckpt'))
                     print ("Checkpoint has been saved on path : " + str(save_path))
@@ -245,9 +246,9 @@ else:
                     print ("Overviting not saving")
             else:
                 print ("Saving ...")
-                now = strftime("%a, %d %b %Y %H %M %S", gmtime())
+                now = strftime("%d-%m-%Y-%H-%M-%S", gmtime())
                 saver = tf.train.Saver()
-                target_checkpoint_dir = os.path.join(os.path.join(os.path.join(checkpoint_dir, 'DMC-'),now))
+                target_checkpoint_dir = os.path.join(checkpoint_dir, 'DMC-'+now)
                 os.makedirs(target_checkpoint_dir)
                 save_path = saver.save(sess, os.path.join(target_checkpoint_dir,'tensorflow_1.ckpt'))
                 print ("Checkpoint has been saved on path : " + str(save_path))
