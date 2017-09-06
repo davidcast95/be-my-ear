@@ -3,7 +3,6 @@ sys.path.append("../")
 import os
 import numpy as np
 import modules.features.data_representation as data_rep
-from matplotlib import pyplot as plt
 from scipy import signal
 from scipy.io import wavfile
 
