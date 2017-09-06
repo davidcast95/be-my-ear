@@ -23,7 +23,7 @@ else:
     iteration = 500
     num_context = 9
     batch = 1
-    num_cep = 26
+    num_cep = 129
 
     #property of weight
     mean = 0
