@@ -179,7 +179,9 @@ else:
         old_losses = []
         report = open(os.path.join(report_dir,'report.txt'),"a")
         reportcsv = open(os.path.join(report_dir,'result.csv'),"a")
+        losscsv = open(os.path.join(report_dir,'avg_loss.csv'),"a")
         csvwriter = csv.writer(reportcsv)
+        csvloss = csv.writer(losscsv)
         for iter in range(iteration):
             if iter+last_iteration == 0:
                 csvwriter.writerow(csv_fields)
@@ -216,6 +218,7 @@ else:
                 loss = sess.run(avg_loss, feed)
                 print ("negative log-probability :" + str(loss))
                 report.write("negative log-probability :" + str(loss))
+                csvloss.writerow([loss])
                 csv_values.append(loss)
                 csv_values.append(decode_text)
                 csvwriter.writerow(csv_values)
