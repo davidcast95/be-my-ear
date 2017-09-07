@@ -22,18 +22,18 @@ else:
     report_dir = sys.argv[3]
     iteration = 500
     num_context = 9
-    batch = 1
+    batch = 5
     num_cep = 129
 
     #property of weight
     mean = 0
     std = 0.3
     relu_clip = 20
-    n_hidden_1 = 128
-    n_hidden_2 = 128
-    n_hidden_3 = 2 * 128
-    n_hidden_4 = 128
-    n_hidden_5 = 128
+    n_hidden_1 = 192
+    n_hidden_2 = 192
+    n_hidden_3 = 2 * 192
+    n_hidden_4 = 192
+    n_hidden_5 = 192
     n_hidden_6 = 28
 
     dropout_rate_1 = 0.05
@@ -44,7 +44,7 @@ else:
     dropout_rate_6 = 0.05
 
     #property of BiRRN LSTM
-    n_hidden_unit = 8 * 128
+    n_hidden_unit = 8 * 192
     forget_bias = 0
 
     #property of AdamOptimizer (http://arxiv.org/abs/1412.6980) parameters
@@ -81,80 +81,52 @@ else:
             w1 = tf.Variable(tf.random_normal([num_cep, n_hidden_1], mean, std, tf.float64), name='fc1_w')
             b1 = tf.Variable(tf.random_normal([n_hidden_1], mean, std, tf.float64), name='fc1_b')
             h1 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(training_batch, w1), b1)), relu_clip)
-            h1 = tf.nn.dropout(h1, (1.0 - dropout_rate_1))
+            h1 = tf.nn.dropout(h1, (dropout_rate_1))
 
         with tf.name_scope('fc2'):
             w2 = tf.Variable(tf.random_normal([n_hidden_1, n_hidden_2],mean,std,tf.float64),name='fc2_w')
             b2 = tf.Variable(tf.random_normal([n_hidden_2],mean,std,tf.float64),name='fc2_b')
             h2 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(h1,w2), b2)),relu_clip)
-            h2 = tf.nn.dropout(h2, (1.0 - dropout_rate_2))
+            h2 = tf.nn.dropout(h2, (dropout_rate_2))
 
         with tf.name_scope('fc3'):
             w3 = tf.Variable(tf.random_normal([n_hidden_2, n_hidden_3],mean,std,tf.float64),name='fc3_w')
             b3 = tf.Variable(tf.random_normal([n_hidden_3],mean,std,tf.float64),name='fc3_b')
             h3 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(h2, w3), b3)), relu_clip)
-            h3 = tf.nn.dropout(h3, (1.0 - dropout_rate_3))
+            h3 = tf.nn.dropout(h3, (dropout_rate_3))
 
-        with tf.name_scope('biRNN1'):
+        with tf.name_scope('biRNN'):
             # reshape to [time x batchsize x 2*n_hidden_4]
             h3 = tf.reshape(h3, [-1, batch, n_hidden_3])
-            forward_cell1 = tf.contrib.rnn.BasicLSTMCell(n_hidden_4, forget_bias, True)
-            forward_cell1 = tf.contrib.rnn.DropoutWrapper(forward_cell,
-                                                         input_keep_prob=1.0 - dropout_rate_4,
-                                                         output_keep_prob=1.0 - dropout_rate_4)
+            forward_cell = tf.contrib.rnn.BasicLSTMCell(n_hidden_4, forget_bias, True)
 
-            backward_cell1 = tf.contrib.rnn.BasicLSTMCell(n_hidden_4, forget_bias, True)
-            backward_cell1 = tf.contrib.rnn.DropoutWrapper(backward_cell,
-                                                          input_keep_prob=1.0 - dropout_rate_5,
-                                                          output_keep_prob=1.0 - dropout_rate_5)
+            backward_cell = tf.contrib.rnn.BasicLSTMCell(n_hidden_4, forget_bias, True)
 
             # BiRNN
-            outputs1, output_states1 = tf.nn.bidirectional_dynamic_rnn(cell_fw=forward_cell,
+            outputs, output_states = tf.nn.bidirectional_dynamic_rnn(cell_fw=forward_cell,
                                                                      cell_bw=backward_cell,
                                                                      inputs=h3,
                                                                      dtype=tf.float64,
                                                                      time_major=True,
                                                                      sequence_length=seq_len)
-            h4 = tf.concat(outputs1, 2)
-		
-		with tf.name_scope('biRNN2'):
-            # reshape to [time x batchsize x 2*n_hidden_4]
-            h4 = tf.reshape(h4, [-1, batch, n_hidden_3])
-            forward_cell2 = tf.contrib.rnn.BasicLSTMCell(n_hidden_4, forget_bias, True)
-            forward_cell2 = tf.contrib.rnn.DropoutWrapper(forward_cell,
-                                                         input_keep_prob=1.0 - dropout_rate_4,
-                                                         output_keep_prob=1.0 - dropout_rate_4)
-
-            backward_cell2 = tf.contrib.rnn.BasicLSTMCell(n_hidden_4, forget_bias, True)
-            backward_cell2 = tf.contrib.rnn.DropoutWrapper(backward_cell,
-                                                          input_keep_prob=1.0 - dropout_rate_5,
-                                                          output_keep_prob=1.0 - dropout_rate_5)
-
-            # BiRNN
-            outputs2, output_states2 = tf.nn.bidirectional_dynamic_rnn(cell_fw=forward_cell,
-                                                                     cell_bw=backward_cell,
-                                                                     inputs=h4,
-                                                                     dtype=tf.float64,
-                                                                     time_major=True,
-                                                                     sequence_length=seq_len)
-            outputs2 = tf.concat(outputs2, 2)
+            outputs = tf.concat(outputs, 2)
             #reshape to [batchsize * timestep x num_cepstrum]
-            h5 = tf.reshape(outputs2,[-1,2 * n_hidden_4])
+            h4 = tf.reshape(outputs,[-1,2 * n_hidden_4])
 
         with tf.name_scope('fc5'):
             w5 = tf.Variable(tf.random_normal([n_hidden_3, n_hidden_5],mean,std,tf.float64),name='fc5_w')
             b5 = tf.Variable(tf.random_normal([n_hidden_5],mean,std,tf.float64),name='fc5_b')
-            h6 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(h5,w5), b5)),relu_clip)
+            h5 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(h4,w5), b5)),relu_clip)
 
 
         with tf.name_scope('fc6'):
             w6 = tf.Variable(tf.random_normal([n_hidden_5, n_hidden_6],mean,std,tf.float64),name='logits_w')
             b6 = tf.Variable(tf.random_normal([n_hidden_6],mean,std,tf.float64),name='logits_b')
-            h7 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(h6,w6), b6)),relu_clip)
+            h6 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(h5,w6), b6)),relu_clip)
 
         with tf.name_scope('logits'):
             # reshape to [time x batchsize x 2*n_hidden_4]
-            logits = tf.reshape(h7, [-1, batch, n_hidden_6])
+            logits = tf.reshape(h6, [-1, batch, n_hidden_6])
             logits = tf.cast(logits, tf.float32)
 
         with tf.name_scope('ctc'):
