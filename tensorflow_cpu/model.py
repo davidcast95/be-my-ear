@@ -7,7 +7,6 @@ import modules.features.data_representation as data_rep
 import numpy as np
 import tensorflow as tf
 
-
 csv_fields = ['iteration','batch','learning_rate','ctc_loss','decoded_text']
 
 if len(sys.argv) < 4:
@@ -16,14 +15,15 @@ if len(sys.argv) < 4:
     print ("CHECKPOINT_DIR ~> directory of model's checkpoint will be stored")
     print ('REPORT_DIR ~> dicretory of result per checkpoint')
 else:
+
+
     #init
     training_dir = sys.argv[1]
     checkpoint_dir = sys.argv[2]
     report_dir = sys.argv[3]
     iteration = 100
-    num_context = 9
     batch = 1
-    num_cep = 26
+    num_cep = 129
 
     #property of weight
     mean = 0
@@ -35,13 +35,6 @@ else:
     n_hidden_4 = 128
     n_hidden_5 = 128
     n_hidden_6 = 28
-
-    dropout_rate_1 = 0.05
-    dropout_rate_2 = 0.05
-    dropout_rate_3 = 0.05
-    dropout_rate_4 = 0.0
-    dropout_rate_5 = 0.0
-    dropout_rate_6 = 0.05
 
     #property of BiRRN LSTM
     n_hidden_unit = 8 * 128
@@ -67,6 +60,31 @@ else:
 
     training_dataset = data_rep.sparse_dataset(training_dataset)
 
+    #init weight
+    with tf.device('/cpu:0'):
+        with tf.name_scope('fc1'):
+            w1 = tf.Variable(tf.random_normal([num_cep, n_hidden_1], mean, std, tf.float64), name='fc1_w')
+            b1 = tf.Variable(tf.random_normal([n_hidden_1], mean, std, tf.float64), name='fc1_b')
+
+        with tf.name_scope('fc2'):
+            w2 = tf.Variable(tf.random_normal([n_hidden_1, n_hidden_2],mean,std,tf.float64),name='fc2_w')
+            b2 = tf.Variable(tf.random_normal([n_hidden_2],mean,std,tf.float64),name='fc2_b')
+
+        with tf.name_scope('fc3'):
+            w3 = tf.Variable(tf.random_normal([n_hidden_2, n_hidden_3],mean,std,tf.float64),name='fc3_w')
+            b3 = tf.Variable(tf.random_normal([n_hidden_3],mean,std,tf.float64),name='fc3_b')
+
+        with tf.name_scope('fc5'):
+            w5 = tf.Variable(tf.random_normal([n_hidden_3, n_hidden_5],mean,std,tf.float64),name='fc5_w')
+            b5 = tf.Variable(tf.random_normal([n_hidden_5],mean,std,tf.float64),name='fc5_b')
+
+        with tf.name_scope('logits'):
+            w6 = tf.Variable(tf.random_normal([n_hidden_5, n_hidden_6],mean,std,tf.float64),name='logits_w')
+            b6 = tf.Variable(tf.random_normal([n_hidden_6],mean,std,tf.float64),name='logits_b')
+
+
+
+
     #SETUP NETWORK
     input_training = tf.placeholder(tf.float64, [None, None, None], "input")
 
@@ -75,85 +93,63 @@ else:
     # reshape to [batchsize * timestep x num_cepstrum]
     training_batch = tf.reshape(input_training, [-1, num_cep])
 
-    #init weight
-    with tf.device('/cpu:0'):
-        with tf.name_scope('fc1'):
-            w1 = tf.Variable(tf.random_normal([num_cep, n_hidden_1], mean, std, tf.float64), name='fc1_w')
-            b1 = tf.Variable(tf.random_normal([n_hidden_1], mean, std, tf.float64), name='fc1_b')
-            h1 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(training_batch, w1), b1)), relu_clip)
-            h1 = tf.nn.dropout(h1, (1.0 - dropout_rate_1))
+    #feed forward
+    h1 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(training_batch,w1), b1)),relu_clip)
+    h2 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(h1,w2), b2)),relu_clip)
+    h3 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(h2,w3), b3)),relu_clip)
 
-        with tf.name_scope('fc2'):
-            w2 = tf.Variable(tf.random_normal([n_hidden_1, n_hidden_2],mean,std,tf.float64),name='fc2_w')
-            b2 = tf.Variable(tf.random_normal([n_hidden_2],mean,std,tf.float64),name='fc2_b')
-            h2 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(h1,w2), b2)),relu_clip)
-            h2 = tf.nn.dropout(h2, (1.0 - dropout_rate_2))
-
-        with tf.name_scope('fc3'):
-            w3 = tf.Variable(tf.random_normal([n_hidden_2, n_hidden_3],mean,std,tf.float64),name='fc3_w')
-            b3 = tf.Variable(tf.random_normal([n_hidden_3],mean,std,tf.float64),name='fc3_b')
-            h3 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(h2, w3), b3)), relu_clip)
-            h3 = tf.nn.dropout(h3, (1.0 - dropout_rate_3))
-
-        with tf.name_scope('biRNN'):
-            # reshape to [time x batchsize x 2*n_hidden_4]
-            h3 = tf.reshape(h3, [-1, batch, n_hidden_3])
-            forward_cell = tf.contrib.rnn.BasicLSTMCell(n_hidden_4, forget_bias, True)
-            forward_cell = tf.contrib.rnn.DropoutWrapper(forward_cell,
-                                                         input_keep_prob=1.0 - dropout_rate_4,
-                                                         output_keep_prob=1.0 - dropout_rate_4)
-
-            backward_cell = tf.contrib.rnn.BasicLSTMCell(n_hidden_4, forget_bias, True)
-            backward_cell = tf.contrib.rnn.DropoutWrapper(backward_cell,
-                                                          input_keep_prob=1.0 - dropout_rate_5,
-                                                          output_keep_prob=1.0 - dropout_rate_5)
-
-            # BiRNN
-            outputs, output_states = tf.nn.bidirectional_dynamic_rnn(cell_fw=forward_cell,
-                                                                     cell_bw=backward_cell,
-                                                                     inputs=h3,
-                                                                     dtype=tf.float64,
-                                                                     time_major=True,
-                                                                     sequence_length=seq_len)
-            outputs = tf.concat(outputs, 2)
-            #reshape to [batchsize * timestep x num_cepstrum]
-            h4 = tf.reshape(outputs,[-1,2 * n_hidden_4])
-
-        with tf.name_scope('fc5'):
-            w5 = tf.Variable(tf.random_normal([n_hidden_3, n_hidden_5],mean,std,tf.float64),name='fc5_w')
-            b5 = tf.Variable(tf.random_normal([n_hidden_5],mean,std,tf.float64),name='fc5_b')
-            h5 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(h4,w5), b5)),relu_clip)
+    # reshape to [time x batchsize x 2*n_hidden_4]
+    h3 = tf.reshape(h3, [-1, batch, n_hidden_3])
 
 
-        with tf.name_scope('fc6'):
-            w6 = tf.Variable(tf.random_normal([n_hidden_5, n_hidden_6],mean,std,tf.float64),name='logits_w')
-            b6 = tf.Variable(tf.random_normal([n_hidden_6],mean,std,tf.float64),name='logits_b')
-            h6 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(h5,w6), b6)),relu_clip)
 
-        with tf.name_scope('logits'):
-            # reshape to [time x batchsize x 2*n_hidden_4]
-            logits = tf.reshape(h6, [-1, batch, n_hidden_6])
-            logits = tf.cast(logits, tf.float32)
 
-        with tf.name_scope('ctc'):
-            decode, log_prob = tf.nn.ctc_beam_search_decoder(inputs=logits,
-                                                             sequence_length=seq_len,
-                                                             merge_repeated=True)
+    forward_cell = tf.contrib.rnn.BasicLSTMCell(n_hidden_4, forget_bias, True)
+    backward_cell = tf.contrib.rnn.BasicLSTMCell(n_hidden_4, forget_bias, True)
 
-            targets = tf.sparse_placeholder(tf.int32, [None, None], name="target")
+    #BiRNN
+    outputs, output_states = tf.nn.bidirectional_dynamic_rnn(cell_fw=forward_cell,
+                                                        cell_bw=backward_cell,
+                                                        inputs=h3,
+                                                        dtype=tf.float64,
+                                                        time_major=True,
+                                                        sequence_length=seq_len)
+    outputs = tf.concat(outputs, 2)
 
-            ctc_loss = tf.nn.ctc_loss(labels=targets,
-                                      inputs=logits,
-                                      sequence_length=seq_len)
+    #reshape to [batchsize * timestep x num_cepstrum]
+    h4 = tf.reshape(outputs,[-1,2 * n_hidden_4])
 
-            avg_loss = tf.reduce_mean(ctc_loss)
 
-        with tf.name_scope('optimizer'):
-            optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate,
-                                               beta1=beta1,
-                                               beta2=beta2,
-                                               epsilon=epsilon)
-            optimizer = optimizer.minimize(avg_loss)
+    #fully connected
+    h5 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(h4,w5), b5)),relu_clip)
+
+
+    h6 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(h5,w6), b6)),relu_clip)
+
+
+    #reshape to [time x batchsize x 2*n_hidden_4]
+    logits = tf.reshape(h6, [-1, batch, n_hidden_6])
+    logits = tf.cast(logits,tf.float32)
+
+
+    decode, log_prob = tf.nn.ctc_beam_search_decoder(inputs=logits,
+                                             sequence_length=seq_len,
+                                             merge_repeated=True)
+
+    targets = tf.sparse_placeholder(tf.int32, [None, None], name="target")
+
+    ctc_loss = tf.nn.ctc_loss(labels=targets,
+                              inputs=logits,
+                              sequence_length=seq_len)
+
+    avg_loss = tf.reduce_mean(ctc_loss)
+    optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate,
+                                       beta1=beta1,
+                                       beta2=beta2,
+                                       epsilon=epsilon)
+
+
+    optimizer = optimizer.minimize(avg_loss)
 
 
     #RUN MODEL
@@ -161,7 +157,6 @@ else:
         last_iteration = 0
 
         valid_dirs = []
-        print(checkpoint_dir)
         for root, dirs, files in os.walk(checkpoint_dir, topdown=True):
             for dir in dirs:
                 if dir[0] == 'D' and dir[1] == 'M' and dir[2] == 'C' and dir[3] == '-':
@@ -171,7 +166,7 @@ else:
         if len(valid_dirs) > 0:
             last_iteration = len(valid_dirs)
             last_checkpoint = valid_dirs[last_iteration-1]
-            print ("Restoring : "+ last_checkpoint)
+            print ("Restoring")
             # saving model state
             saver = tf.train.Saver()
             saver.restore(sess, os.path.join(os.path.join(checkpoint_dir,last_checkpoint),'tensorflow_1.ckpt'))
@@ -184,22 +179,20 @@ else:
         old_losses = []
         report = open(os.path.join(report_dir,'report.txt'),"a")
         reportcsv = open(os.path.join(report_dir,'result.csv'),"a")
-        losscsv = open(os.path.join(report_dir,'avg_loss.csv'),"a")
         csvwriter = csv.writer(reportcsv)
-        csvloss = csv.writer(losscsv)
         for iter in range(iteration):
             if iter+last_iteration == 0:
                 csvwriter.writerow(csv_fields)
             print ("iteration #"+str(iter + last_iteration))
-            report.write("iteration #"+str(iter + last_iteration) +"\n")
+            report.write("iteration #"+str(iter + last_iteration))
+            csv_values = []
+            csv_values.append(iter + last_iteration)
             if iter > 0:
                 old_losses = losses
                 losses = []
             for i in range(int(len(training_dataset) / int(batch))):
-                csv_values = []
-                csv_values.append(iter + last_iteration)
                 print ("batch #"+str(i))
-                report.write("batch #"+str(i) + "\n")
+                report.write("batch #"+str(i))
                 csv_values.append(i)
                 csv_values.append(learning_rate)
                 #get batch
@@ -215,18 +208,16 @@ else:
 
                 logg = sess.run(decode, feed)
                 print ("Encoded CTC :")
-                report.write("Encoded CTC :" + "\n")
+                report.write("Encoded CTC :")
                 decode_text = data_rep.indices_to_text(logg[0][1])
                 print(decode_text)
-                report.write(decode_text + "\n")
+                report.write(decode_text)
 
                 loss = sess.run(avg_loss, feed)
                 print ("negative log-probability :" + str(loss))
-                report.write("negative log-probability :" + str(loss) +"\n")
-                csvloss.writerow([loss])
+                report.write("negative log-probability :" + str(loss))
                 csv_values.append(loss)
                 csv_values.append(decode_text)
-
                 csvwriter.writerow(csv_values)
                 losses.append(loss)
 
@@ -238,8 +229,8 @@ else:
                 th = diff.mean()
                 percentage = th / np.array(old_losses).mean() * 100
                 print ("Learning performance : " + str(th))
-                report.write("Learning performance : " + str(th) + "\n")
-                report.write("Learning percentage : " + str(percentage) + "\n")
+                report.write("Learning performance : " + str(th))
+                report.write("Learning percentage : " + str(percentage))
 
                 if th < threshold:
                     print ("Saving ...")
@@ -249,7 +240,7 @@ else:
                     os.makedirs(target_checkpoint_dir)
                     save_path = saver.save(sess, os.path.join(target_checkpoint_dir,'tensorflow_1.ckpt'))
                     print ("Checkpoint has been saved on path : " + str(save_path))
-                    report.write("Checkpoint has been saved on path : " + str(save_path) + "\n")
+                    report.write("Checkpoint has been saved on path : " + str(save_path))
                 else:
                     print ("Overviting not saving")
             else:
@@ -260,7 +251,7 @@ else:
                 os.makedirs(target_checkpoint_dir)
                 save_path = saver.save(sess, os.path.join(target_checkpoint_dir,'tensorflow_1.ckpt'))
                 print ("Checkpoint has been saved on path : " + str(save_path))
-                report.write("Checkpoint has been saved on path : " + str(save_path) + "\n")
+                report.write("Checkpoint has been saved on path : " + str(save_path))
 
 
 
