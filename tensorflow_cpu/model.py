@@ -29,11 +29,11 @@ else:
     mean = 0
     std = 0.3
     relu_clip = 20
-    n_hidden_1 = 128
-    n_hidden_2 = 128
-    n_hidden_3 = 2 * 128
-    n_hidden_4 = 128
-    n_hidden_5 = 128
+    n_hidden_1 = 132
+    n_hidden_2 = 132
+    n_hidden_3 = 2 * 132
+    n_hidden_4 = 132
+    n_hidden_5 = 132
     n_hidden_6 = 28
 
     #property of BiRRN LSTM
