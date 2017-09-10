@@ -7,6 +7,9 @@ if len(sys.argv) < 2:
     print("CSV_DIR ~> directory of your unnormalized csv")
 else:
     csv_dir = sys.argv[1]
+    data_type = ''
+    if len(sys.argv) > 2:
+        data_type = sys.argv[2]
     for root, dirs, files in os.walk(csv_dir, topdown=False):
         for file in files:
             name, ext = file.split('.')
@@ -18,10 +21,18 @@ else:
                     result = []
                     for row in csvreader:
                         if (len(row) > 0):
-                            if not re.match("^\d+?\.\d+?$", row[0]) is None:
+                            if data_type == 'float':
+                                if not re.match("^\d+?\.\d+?$", row[0]) is None:
+                                    if len(result) == 0:
+                                        result.append(row[0])
+                                        csvwriter.writerow(row)
+                                    elif result[len(result)-1] != row[0]:
+                                        result.append(row[0])
+                                        csvwriter.writerow(row)
+                            else:
                                 if len(result) == 0:
                                     result.append(row[0])
                                     csvwriter.writerow(row)
-                                elif result[len(result)-1] != row[0]:
+                                elif result[len(result) - 1] != row[0]:
                                     result.append(row[0])
                                     csvwriter.writerow(row)
