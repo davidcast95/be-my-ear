@@ -15,8 +15,6 @@ if len(sys.argv) < 4:
     print ("CHECKPOINT_DIR ~> directory of model's checkpoint will be stored")
     print ('REPORT_DIR ~> dicretory of result per checkpoint')
 else:
-
-
     #init
     training_dir = sys.argv[1]
     checkpoint_dir = sys.argv[2]
@@ -29,11 +27,11 @@ else:
     mean = 0
     std = 0.3
     relu_clip = 20
-    n_hidden_1 = 132
-    n_hidden_2 = 132
-    n_hidden_3 = 2 * 132
-    n_hidden_4 = 132
-    n_hidden_5 = 132
+    n_hidden_1 = 128
+    n_hidden_2 = 128
+    n_hidden_3 = 2 * 128
+    n_hidden_4 = 128
+    n_hidden_5 = 128
     n_hidden_6 = 28
 
     #property of BiRRN LSTM
@@ -84,7 +82,6 @@ else:
 
 
 
-
     #SETUP NETWORK
     input_training = tf.placeholder(tf.float64, [None, None, None], "input")
 
@@ -104,8 +101,8 @@ else:
 
 
 
-    forward_cell = tf.contrib.rnn.BasicLSTMCell(n_hidden_4, forget_bias, True)
-    backward_cell = tf.contrib.rnn.BasicLSTMCell(n_hidden_4, forget_bias, True)
+    forward_cell = tf.contrib.rnn.BasicLSTMCell(n_hidden_unit, forget_bias, True)
+    backward_cell = tf.contrib.rnn.BasicLSTMCell(n_hidden_unit, forget_bias, True)
 
     #BiRNN
     outputs, output_states = tf.nn.bidirectional_dynamic_rnn(cell_fw=forward_cell,
@@ -179,14 +176,14 @@ else:
         old_losses = []
         report = open(os.path.join(report_dir,'report.txt'),"a")
         reportcsv = open(os.path.join(report_dir,'result.csv'),"a")
-        losscsv = open(os.path.join(report_dir,'avg_loss.csv'),"a")
+        losscsv = open(os.path.join(report_dir,'ctc_loss.csv'),"a")
         csvwriter = csv.writer(reportcsv)
         csvloss = csv.writer(losscsv)
         for iter in range(iteration):
             if iter+last_iteration == 0:
                 csvwriter.writerow(csv_fields)
             print ("iteration #"+str(iter + last_iteration))
-            report.write("iteration #"+str(iter + last_iteration))
+            report.write("iteration #"+str(iter + last_iteration) + "\n")
             csv_values = []
             csv_values.append(iter + last_iteration)
             if iter > 0:
@@ -194,9 +191,9 @@ else:
                 losses = []
             for i in range(int(len(training_dataset) / int(batch))):
                 print ("batch #"+str(i))
-                report.write("batch #"+str(i))
                 csv_values.append(i)
                 csv_values.append(learning_rate)
+                report.write("batch #"+str(i) + "\n")
                 #get batch
                 batch_i = training_dataset[(i*batch):(i*batch)+batch]
                 sequence_length = np.array([batch_i.shape[1] for _ in range(batch)])
@@ -210,21 +207,22 @@ else:
 
                 logg = sess.run(decode, feed)
                 print ("Encoded CTC :")
-                report.write("Encoded CTC :")
+                report.write("Encoded CTC :" + "\n")
                 decode_text = data_rep.indices_to_text(logg[0][1])
                 print(decode_text)
-                report.write(decode_text)
+                report.write(decode_text + "\n")
 
                 loss = sess.run(avg_loss, feed)
                 print ("negative log-probability :" + str(loss))
-                report.write("negative log-probability :" + str(loss))
-                csvloss.writerow([loss])
+                report.write("negative log-probability :" + str(loss) + "\n")
                 csv_values.append(loss)
                 csv_values.append(decode_text)
-                csvwriter.writerow(csv_values)
+                csvloss.writerow([loss])
                 losses.append(loss)
 
                 sess.run(optimizer, feed)
+
+            csvwriter.writerow(csv_values)
 
             if iter > 0:
 
@@ -232,20 +230,17 @@ else:
                 th = diff.mean()
                 percentage = th / np.array(old_losses).mean() * 100
                 print ("Learning performance : " + str(th))
-                report.write("Learning performance : " + str(th))
-                report.write("Learning percentage : " + str(percentage))
+                report.write("Learning performance : " + str(th) + "\n")
+                report.write("Learning percentage : " + str(percentage) + "\n")
 
-                if th < threshold:
-                    print ("Saving ...")
-                    now = strftime("%d-%m-%Y-%H-%M-%S", gmtime())
-                    saver = tf.train.Saver()
-                    target_checkpoint_dir = os.path.join(checkpoint_dir, 'DMC-'+now)
-                    os.makedirs(target_checkpoint_dir)
-                    save_path = saver.save(sess, os.path.join(target_checkpoint_dir,'tensorflow_1.ckpt'))
-                    print ("Checkpoint has been saved on path : " + str(save_path))
-                    report.write("Checkpoint has been saved on path : " + str(save_path))
-                else:
-                    print ("Overviting not saving")
+                print("Saving ...")
+                now = strftime("%d-%m-%Y-%H-%M-%S", gmtime())
+                saver = tf.train.Saver()
+                target_checkpoint_dir = os.path.join(checkpoint_dir, 'DMC-' + now)
+                os.makedirs(target_checkpoint_dir)
+                save_path = saver.save(sess, os.path.join(target_checkpoint_dir, 'tensorflow_1.ckpt'))
+                print("Checkpoint has been saved on path : " + str(save_path))
+                report.write("Checkpoint has been saved on path : " + str(save_path) + "\n")
             else:
                 print ("Saving ...")
                 now = strftime("%d-%m-%Y-%H-%M-%S", gmtime())
@@ -254,7 +249,7 @@ else:
                 os.makedirs(target_checkpoint_dir)
                 save_path = saver.save(sess, os.path.join(target_checkpoint_dir,'tensorflow_1.ckpt'))
                 print ("Checkpoint has been saved on path : " + str(save_path))
-                report.write("Checkpoint has been saved on path : " + str(save_path))
+                report.write("Checkpoint has been saved on path : " + str(save_path) + "\n")
 
 
 
