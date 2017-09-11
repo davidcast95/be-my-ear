@@ -6,6 +6,7 @@ from time import gmtime, strftime
 import modules.features.data_representation as data_rep
 import numpy as np
 import tensorflow as tf
+from tensorflow.contrib.rnn import BasicLSTMCell
 
 csv_fields = ['iteration','batch','learning_rate','ctc_loss','decoded_text']
 
@@ -15,11 +16,13 @@ if len(sys.argv) < 4:
     print ("CHECKPOINT_DIR ~> directory of model's checkpoint will be stored")
     print ('REPORT_DIR ~> dicretory of result per checkpoint')
 else:
+
+
     #init
     training_dir = sys.argv[1]
     checkpoint_dir = sys.argv[2]
     report_dir = sys.argv[3]
-    iteration = 100
+    iteration = 200
     batch = 1
     num_cep = 129
 
@@ -82,6 +85,7 @@ else:
 
 
 
+
     #SETUP NETWORK
     input_training = tf.placeholder(tf.float64, [None, None, None], "input")
 
@@ -98,11 +102,8 @@ else:
     # reshape to [time x batchsize x 2*n_hidden_4]
     h3 = tf.reshape(h3, [-1, batch, n_hidden_3])
 
-
-
-
-    forward_cell = tf.contrib.rnn.BasicLSTMCell(n_hidden_unit, forget_bias, True)
-    backward_cell = tf.contrib.rnn.BasicLSTMCell(n_hidden_unit, forget_bias, True)
+    forward_cell = BasicLSTMCell(n_hidden_4, forget_bias, True)
+    backward_cell = BasicLSTMCell(n_hidden_4, forget_bias, True)
 
     #BiRNN
     outputs, output_states = tf.nn.bidirectional_dynamic_rnn(cell_fw=forward_cell,
@@ -167,8 +168,16 @@ else:
             # saving model state
             saver = tf.train.Saver()
             saver.restore(sess, os.path.join(os.path.join(checkpoint_dir,last_checkpoint),'tensorflow_1.ckpt'))
+
+
+
         else:
             tf.global_variables_initializer().run()
+            print("Saving Base Model...")
+            saver = tf.train.Saver()
+            target_checkpoint_dir = os.path.join(checkpoint_dir, 'base')
+            os.makedirs(target_checkpoint_dir)
+            save_path = saver.save(sess, os.path.join(target_checkpoint_dir, 'base.ckpt'))
 
         _, num_cep = training_dataset[0].shape
 
@@ -176,7 +185,7 @@ else:
         old_losses = []
         report = open(os.path.join(report_dir,'report.txt'),"a")
         reportcsv = open(os.path.join(report_dir,'result.csv'),"a")
-        losscsv = open(os.path.join(report_dir,'ctc_loss.csv'),"a")
+        losscsv = open(os.path.join(report_dir,'avg_loss.csv'),"a")
         csvwriter = csv.writer(reportcsv)
         csvloss = csv.writer(losscsv)
         for iter in range(iteration):
@@ -190,10 +199,11 @@ else:
                 old_losses = losses
                 losses = []
             for i in range(int(len(training_dataset) / int(batch))):
+                csv_values = []
                 print ("batch #"+str(i))
+                report.write("batch #"+str(i) + "\n")
                 csv_values.append(i)
                 csv_values.append(learning_rate)
-                report.write("batch #"+str(i) + "\n")
                 #get batch
                 batch_i = training_dataset[(i*batch):(i*batch)+batch]
                 sequence_length = np.array([batch_i.shape[1] for _ in range(batch)])
@@ -207,7 +217,7 @@ else:
 
                 logg = sess.run(decode, feed)
                 print ("Encoded CTC :")
-                report.write("Encoded CTC :" + "\n")
+                report.write("Encoded CTC :\n")
                 decode_text = data_rep.indices_to_text(logg[0][1])
                 print(decode_text)
                 report.write(decode_text + "\n")
@@ -215,14 +225,13 @@ else:
                 loss = sess.run(avg_loss, feed)
                 print ("negative log-probability :" + str(loss))
                 report.write("negative log-probability :" + str(loss) + "\n")
+                csvloss.writerow([loss])
                 csv_values.append(loss)
                 csv_values.append(decode_text)
-                csvloss.writerow([loss])
+                csvwriter.writerow(csv_values)
                 losses.append(loss)
 
                 sess.run(optimizer, feed)
-
-            csvwriter.writerow(csv_values)
 
             if iter > 0:
 
@@ -233,14 +242,42 @@ else:
                 report.write("Learning performance : " + str(th) + "\n")
                 report.write("Learning percentage : " + str(percentage) + "\n")
 
-                print("Saving ...")
+                print ("Saving ...")
                 now = strftime("%d-%m-%Y-%H-%M-%S", gmtime())
                 saver = tf.train.Saver()
-                target_checkpoint_dir = os.path.join(checkpoint_dir, 'DMC-' + now)
+                target_checkpoint_dir = os.path.join(checkpoint_dir, 'DMC-'+now)
                 os.makedirs(target_checkpoint_dir)
-                save_path = saver.save(sess, os.path.join(target_checkpoint_dir, 'tensorflow_1.ckpt'))
-                print("Checkpoint has been saved on path : " + str(save_path))
+                save_path = saver.save(sess, os.path.join(target_checkpoint_dir,'tensorflow_1.ckpt'))
+                print ("Checkpoint has been saved on path : " + str(save_path))
                 report.write("Checkpoint has been saved on path : " + str(save_path) + "\n")
+
+                _w1 = w1.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir,"w1"),_w1)
+                _b1 = b1.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "b1"), _b1)
+                _w2 = w2.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "w2"), _w2)
+                _b2 = b2.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "b2"), _b2)
+                _w3 = w3.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "w3"), _w3)
+                _b3 = b3.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "b3"), _b3)
+                _fw_w = sess.run(forward_cell.variables)[0]
+                np.save(os.path.join(target_checkpoint_dir, "fw_w"), _fw_w)
+                _bw_w = sess.run(backward_cell.variables)[0]
+                np.save(os.path.join(target_checkpoint_dir, "bw_w"), _bw_w)
+                _w5 = w5.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "w5"), _w5)
+                _b5 = b5.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "b5"), _b5)
+                _w6 = w6.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "w6"), _w6)
+                _b6 = b6.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "b6"), _b6)
+
+
+
             else:
                 print ("Saving ...")
                 now = strftime("%d-%m-%Y-%H-%M-%S", gmtime())
@@ -251,8 +288,27 @@ else:
                 print ("Checkpoint has been saved on path : " + str(save_path))
                 report.write("Checkpoint has been saved on path : " + str(save_path) + "\n")
 
-
-
-
-
-
+                _w1 = w1.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "w1"), _w1)
+                _b1 = b1.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "b1"), _b1)
+                _w2 = w2.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "w2"), _w2)
+                _b2 = b2.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "b2"), _b2)
+                _w3 = w3.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "w3"), _w3)
+                _b3 = b3.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "b3"), _b3)
+                _fw_w = sess.run(forward_cell.variables)[0]
+                np.save(os.path.join(target_checkpoint_dir, "fw_w"), _fw_w)
+                _bw_w = sess.run(backward_cell.variables)[0]
+                np.save(os.path.join(target_checkpoint_dir, "bw_w"), _bw_w)
+                _w5 = w5.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "w5"), _w5)
+                _b5 = b5.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "b5"), _b5)
+                _w6 = w6.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "w6"), _w6)
+                _b6 = b6.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "b6"), _b6)

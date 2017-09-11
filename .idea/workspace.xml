@@ -2,8 +2,231 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96965af8-b43c-4006-ad50-9a4676b2e9fd" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tensorflow_cpu/visualize.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/references/Adam Explained.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tensorflow_cpu/model2.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P1-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P1-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P1-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P1-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P1-2.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P1-2.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P1-3.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P1-3.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P2-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P2-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P2-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P2-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P3-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P3-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P3-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P3-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P4-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P4-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P4-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P4-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P4-2.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P4-2.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P5-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P5-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P5-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P5-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P6-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P6-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P6-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P6-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P6-2.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P6-2.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P6-3.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P6-3.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P1-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P1-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P1-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P1-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P1-2.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P1-2.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P1-3.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P1-3.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P2-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P2-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P2-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P2-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P3-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P3-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P3-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P3-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P4-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P4-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P4-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P4-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P4-2.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P4-2.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P5-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P5-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P5-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P5-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P6-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P6-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P6-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P6-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P6-2.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P6-2.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P6-3.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P6-3.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P1-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P1-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P1-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P1-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P1-2.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P1-2.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P1-3.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P1-3.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P2-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P2-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P2-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P2-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P2-2.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P2-2.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P3-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P3-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P3-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P3-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P3-2.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P3-2.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P4-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P4-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P4-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P4-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P4-2.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P4-2.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P5-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P5-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P5-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P5-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P5-2.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P5-2.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P5-3.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P5-3.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-2.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-2.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-3.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-3.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-4.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-4.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P1-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P1-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P1-2.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P1-2.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P1-3.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P1-3.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P2-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P2-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P2-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P2-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P3-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P3-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P3-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P3-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P4-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P4-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P4-2.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P4-2.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P5-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P5-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P5-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P5-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P6-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P6-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P6-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P6-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P6-2.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P6-2.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P6-3.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P6-3.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P1-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P1-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P1-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P1-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P1-2.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P1-2.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P1-3.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P1-3.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P2-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P2-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P2-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P2-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P3-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P3-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P3-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P3-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P4-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P4-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P4-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P4-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P4-2.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P4-2.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P5-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P5-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P5-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P5-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-2.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-2.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-3.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-3.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P1-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P1-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P1-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P1-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P1-2.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P1-2.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P1-3.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P1-3.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P2-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P2-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P2-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P2-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P3-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P3-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P3-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P3-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P4-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P4-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P4-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P4-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P4-2.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P4-2.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P5-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P5-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P5-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P5-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P6-0.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P6-0.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P6-1.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P6-1.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P6-2.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P6-2.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P6-3.wav" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P6-3.wav" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/references/Adam Optimizer.pdf" afterPath="$PROJECT_DIR$/references/Adam Optimizer.pdf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P1-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P1-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P1-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P1-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P1-2.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P1-2.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P1-3.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P1-3.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P2-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P2-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P2-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P2-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P3-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P3-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P3-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P3-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P4-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P4-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P4-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P4-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P4-2.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P4-2.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P5-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P5-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P5-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P5-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P6-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P6-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P6-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P6-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P6-2.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P6-2.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P6-3.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P6-3.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P1-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P1-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P1-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P1-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P1-2.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P1-2.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P1-3.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P1-3.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P2-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P2-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P2-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P2-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P3-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P3-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P3-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P3-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P4-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P4-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P4-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P4-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P4-2.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P4-2.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P5-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P5-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P5-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P5-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P6-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P6-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P6-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P6-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P6-2.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P6-2.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P6-3.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P6-3.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P1-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P1-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P1-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P1-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P1-2.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P1-2.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P1-3.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P1-3.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P2-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P2-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P2-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P2-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P2-2.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P2-2.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P3-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P3-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P3-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P3-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P3-2.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P3-2.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P4-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P4-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P4-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P4-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P4-2.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P4-2.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P5-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P5-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P5-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P5-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P5-2.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P5-2.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P5-3.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P5-3.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-2.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-2.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-3.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-3.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-4.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-4.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P1-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P1-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P1-2.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P1-2.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P1-3.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P1-3.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P2-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P2-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P2-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P2-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P3-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P3-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P3-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P3-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P4-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P4-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P4-2.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P4-2.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P5-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P5-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P5-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P5-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P6-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P6-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P6-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P6-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P6-2.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P6-2.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P6-3.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P6-3.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P1-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P1-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P1-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P1-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P1-2.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P1-2.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P1-3.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P1-3.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P2-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P2-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P2-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P2-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P3-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P3-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P3-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P3-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P4-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P4-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P4-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P4-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P4-2.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P4-2.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P5-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P5-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P5-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P5-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-2.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-2.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-3.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-3.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P1-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P1-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P1-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P1-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P1-2.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P1-2.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P1-3.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P1-3.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P2-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P2-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P2-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P2-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P3-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P3-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P3-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P3-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P4-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P4-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P4-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P4-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P4-2.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P4-2.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P5-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P5-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P5-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P5-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P6-0.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P6-0.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P6-1.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P6-1.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P6-2.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P6-2.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Steven T1P6-3.txt" afterPath="$PROJECT_DIR$/datasets/raw extended/Steven T1P6-3.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/__init__.py" afterPath="$PROJECT_DIR$/modules/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/features/__init__.py" afterPath="$PROJECT_DIR$/modules/features/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/features/data_representation.py" afterPath="$PROJECT_DIR$/modules/features/data_representation.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/model/__init__.py" afterPath="$PROJECT_DIR$/modules/model/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/model/importer.py" afterPath="$PROJECT_DIR$/modules/model/importer.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tensorflow_cpu/__init__.py" afterPath="$PROJECT_DIR$/tensorflow_cpu/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tensorflow_cpu/compare.py" afterPath="$PROJECT_DIR$/tensorflow_cpu/compare.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tensorflow_cpu/model.py" afterPath="$PROJECT_DIR$/tensorflow_cpu/model.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tensorflow_cpu/preprocessing.py" afterPath="$PROJECT_DIR$/tensorflow_cpu/preprocessing.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,23 +238,33 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="model.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="model.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tensorflow_cpu/model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="89" column="36" lean-forward="false" selection-start-line="89" selection-start-column="36" selection-end-line="89" selection-end-column="36" />
+            <state relative-caret-position="261">
+              <caret line="158" column="28" lean-forward="true" selection-start-line="157" selection-start-column="8" selection-end-line="158" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="model2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tensorflow_cpu/model2.py">
+      <file leaf-file-name="compare.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tensorflow_cpu/compare.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3028">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="337">
+              <caret line="43" column="24" lean-forward="true" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="visualize.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tensorflow_cpu/visualize.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1146">
+              <caret line="27" column="21" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
               <folding>
-                <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#0#18#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -45,16 +278,6 @@
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="compare.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tensorflow_cpu/compare.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="59" column="27" lean-forward="false" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -113,8 +336,8 @@
       <find>ds</find>
       <find>print</find>
       <find>csv</find>
-      <find>report.write</find>
       <find>csv_val</find>
+      <find>report.write</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -133,10 +356,11 @@
         <option value="$PROJECT_DIR$/tes.csv" />
         <option value="$PROJECT_DIR$/tensorflow_cpu/normalized_csv.py" />
         <option value="$PROJECT_DIR$/data_manipulation/normalized_csv.py" />
-        <option value="$PROJECT_DIR$/tensorflow_cpu/compare.py" />
-        <option value="$PROJECT_DIR$/tensorflow_cpu/model.py" />
         <option value="$PROJECT_DIR$/tensorflow_gpu/model.py" />
         <option value="$PROJECT_DIR$/tensorflow_using_gpu/model.py" />
+        <option value="$PROJECT_DIR$/tensorflow_cpu/model.py" />
+        <option value="$PROJECT_DIR$/tensorflow_cpu/compare.py" />
+        <option value="$PROJECT_DIR$/tensorflow_cpu/visualize.py" />
       </list>
     </option>
   </component>
@@ -280,7 +504,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.model (1)">
+  <component name="RunManager" selected="Python.visualize">
     <configuration default="false" name="preprocessing" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -289,24 +513,6 @@
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tensorflow_cpu" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="be-my-ear" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tensorflow_cpu/preprocessing.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="preprocessing (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/modules" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -357,8 +563,8 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
-        <env name="DYLD_LIBRARY_PATH" value="/usr/local/cuda/lib" />
         <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DYLD_LIBRARY_PATH" value="/usr/local/cuda/lib" />
       </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tensorflow_using_gpu" />
@@ -367,6 +573,24 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="be-my-ear" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tensorflow_using_gpu/model.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="visualize" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tensorflow_cpu" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="be-my-ear" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tensorflow_cpu/visualize.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -438,18 +662,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.preprocessing" />
-      <item index="1" class="java.lang.String" itemvalue="Python.preprocessing (1)" />
-      <item index="2" class="java.lang.String" itemvalue="Python.model" />
-      <item index="3" class="java.lang.String" itemvalue="Python.normalized_csv" />
-      <item index="4" class="java.lang.String" itemvalue="Python.model (1)" />
+      <item index="1" class="java.lang.String" itemvalue="Python.model" />
+      <item index="2" class="java.lang.String" itemvalue="Python.normalized_csv" />
+      <item index="3" class="java.lang.String" itemvalue="Python.model (1)" />
+      <item index="4" class="java.lang.String" itemvalue="Python.visualize" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.model (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Python.model" />
-        <item index="2" class="java.lang.String" itemvalue="Python.normalized_csv" />
-        <item index="3" class="java.lang.String" itemvalue="Python.preprocessing" />
-        <item index="4" class="java.lang.String" itemvalue="Python.preprocessing (1)" />
+        <item index="0" class="java.lang.String" itemvalue="Python.visualize" />
+        <item index="1" class="java.lang.String" itemvalue="Python.model (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Python.model" />
+        <item index="3" class="java.lang.String" itemvalue="Python.normalized_csv" />
+        <item index="4" class="java.lang.String" itemvalue="Python.preprocessing" />
       </list>
     </recent_temporary>
   </component>
@@ -467,12 +691,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="823" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="823" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27825466" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28183118" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32968536" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32968536" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -497,14 +722,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/modules/features/data_representation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tensorflow_cpu/preprocessing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -830,37 +1047,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tensorflow_cpu/compare.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="59" column="27" lean-forward="false" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tensorflow_cpu/model2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3028">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tensorflow_using_gpu/model.py" />
     <entry file="file://$PROJECT_DIR$/tensorflow_cpu/model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="89" column="36" lean-forward="false" selection-start-line="89" selection-start-column="36" selection-end-line="89" selection-end-column="36" />
+        <state relative-caret-position="261">
+          <caret line="158" column="28" lean-forward="true" selection-start-line="157" selection-start-column="8" selection-end-line="158" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tensorflow_using_gpu/model.py">
+    <entry file="file://$PROJECT_DIR$/tensorflow_cpu/compare.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="20" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="10" selection-end-column="20" />
+        <state relative-caret-position="337">
+          <caret line="43" column="24" lean-forward="true" selection-start-line="43" selection-start-column="24" selection-end-line="43" selection-end-column="60" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tensorflow_cpu/visualize.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1146">
+          <caret line="27" column="21" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

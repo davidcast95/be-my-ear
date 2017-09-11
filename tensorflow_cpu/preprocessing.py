@@ -62,5 +62,3 @@ else:
                         target_vector_dir = os.path.join(feature_dir, name)
                         np.save(target_vector_dir, vector_feature.T)
                         print(name + " has been saved to " + target_vector_dir)
-
-

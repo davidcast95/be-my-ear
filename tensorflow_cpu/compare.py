@@ -59,29 +59,3 @@ else:
                         t = np.arange(0,spectrogram_feature.shape[1],1)
                         top.pcolormesh(t, f, spectrogram_feature)
                     plt.show()
-
-                        # target_vector_dir
-                        # print (name + " has been saved to " + target_vector_dir)
-        # if preprocess_type == 'spectrogram':
-        #     feature_dir = os.path.join(feature_dir, preprocess_type)
-        #     if not os.path.exists(feature_dir):
-        #         os.makedirs(feature_dir)
-        #     for root, dirs, files in os.walk(raw_dir, topdown=False):
-        #         for file in files:
-        #             name, ext = file.split('.')
-        #             if ext == 'txt':
-        #                 with open(os.path.join(raw_dir, file)) as filetarget:
-        #                     target = filetarget.read()
-        #                     target = target.replace("\n", "")
-        #                     indices_target = data_rep.text_to_indices(target)
-        #                     np.save(os.path.join(feature_dir,'_' + name),indices_target)
-        #                     filetarget.close()
-        #             if ext == 'wav':
-        #                 filename = os.path.join(root, file)
-        #                 fs, audio = wavfile.read(filename)
-        #                 f, t, vector_feature = signal.spectrogram(audio, fs)
-        #                 target_vector_dir = os.path.join(feature_dir, name)
-        #                 np.save(target_vector_dir, vector_feature.T)
-        #                 print(name + " has been saved to " + target_vector_dir)
-
-
