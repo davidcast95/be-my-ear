@@ -30,7 +30,8 @@ Each report.csv contains 4 columns (batch, learning_rate, ctc_loss, decode_text)
 You may open this file using MS. Excel (Windows) or Numbers (MacOS)
 You can filter by first column to see the changes each batch. Each rows represents amount of iterations.
 
-##### Log-12-09-2017
+##### Log-12-09-2017 
+Log link : https://github.com/davidcast95/be-my-ear/tree/master/changelogs/fourth%20gen/result/Log-12-09-2017
 We run all the models for 200 iterations. 
 We surprised by the result. MFCC has advantages over Spectrogram. 
 MFCC with 0 past-future context start discover word in around 100th ireation
