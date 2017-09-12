@@ -21,7 +21,9 @@
 NB: Initial value of all model's weight are equally similar, using Normal Distribution. The problem is, every input has its vector representation ex: MFCC (26 coef, 0 past and future context) has 26 depth, spectrogram has 129 depth. If the model want to have similar weights, we generate 129 weights from previous model (we choose spectrogram because in previous model, the weights can solve the minimum error), thus when we need 26 depth, we resize the array of weights become 26 (we use numpy array). If we need a larger depth, numpy will copy the occurance value of its array.
 
 ### Data Representation
+Each input has time index (window=25ms) and depth of frequency. 
 Because we running in 1 batch, it means this model has same behaviour with Stocastic Gradient Descent widely known as online learning. We have 104 dataset of training. So each iteration will result 104 batches.
+Labeling 28 char = {BLANK:0,a:1,b:2,...,z:26,SPACE:27} 
 
 ### Result
 ###### We recap all the result file in csv files in Log directory
