@@ -8,4 +8,4 @@
 #### Batch 2
 ![alt text](https://github.com/davidcast95/be-my-ear/blob/master/changelogs/fourth%20gen/result/Log-12-09-2017/supporting%20images/Screen%20Shot%202017-09-12%20at%2012.43.06%20PM.png?raw=true "Batch-2")
 
-
+more results has been recorded in summary.xlsx and summary.numbers
