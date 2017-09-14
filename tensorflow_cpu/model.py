@@ -24,7 +24,7 @@ else:
     report_dir = sys.argv[3]
     iteration = 200
     batch = 1
-    num_cep = 129
+    num_cep = 286
 
     #property of weight
     mean = 0
@@ -45,7 +45,7 @@ else:
     beta1 = 0.9
     beta2 = 0.9
     epsilon = 1e-6
-    learning_rate = 0.001
+    learning_rate = 0.0001
     threshold = 0
 
     training_dataset = []
@@ -192,7 +192,7 @@ else:
             if iter+last_iteration == 0:
                 csvwriter.writerow(csv_fields)
             print ("iteration #"+str(iter + last_iteration))
-            report.write("iteration #"+str(iter + last_iteration) + "\n")
+            report.write("iteration #"+str(iter + last_iteration))
             csv_values = []
             csv_values.append(iter + last_iteration)
             if iter > 0:
@@ -201,7 +201,7 @@ else:
             for i in range(int(len(training_dataset) / int(batch))):
                 csv_values = []
                 print ("batch #"+str(i))
-                report.write("batch #"+str(i) + "\n")
+                report.write("batch #"+str(i))
                 csv_values.append(i)
                 csv_values.append(learning_rate)
                 #get batch
@@ -217,14 +217,14 @@ else:
 
                 logg = sess.run(decode, feed)
                 print ("Encoded CTC :")
-                report.write("Encoded CTC :\n")
+                report.write("Encoded CTC :")
                 decode_text = data_rep.indices_to_text(logg[0][1])
                 print(decode_text)
-                report.write(decode_text + "\n")
+                report.write(decode_text)
 
                 loss = sess.run(avg_loss, feed)
                 print ("negative log-probability :" + str(loss))
-                report.write("negative log-probability :" + str(loss) + "\n")
+                report.write("negative log-probability :" + str(loss))
                 csvloss.writerow([loss])
                 csv_values.append(loss)
                 csv_values.append(decode_text)
@@ -239,8 +239,8 @@ else:
                 th = diff.mean()
                 percentage = th / np.array(old_losses).mean() * 100
                 print ("Learning performance : " + str(th))
-                report.write("Learning performance : " + str(th) + "\n")
-                report.write("Learning percentage : " + str(percentage) + "\n")
+                report.write("Learning performance : " + str(th))
+                report.write("Learning percentage : " + str(percentage))
 
                 print ("Saving ...")
                 now = strftime("%d-%m-%Y-%H-%M-%S", gmtime())
@@ -249,7 +249,7 @@ else:
                 os.makedirs(target_checkpoint_dir)
                 save_path = saver.save(sess, os.path.join(target_checkpoint_dir,'tensorflow_1.ckpt'))
                 print ("Checkpoint has been saved on path : " + str(save_path))
-                report.write("Checkpoint has been saved on path : " + str(save_path) + "\n")
+                report.write("Checkpoint has been saved on path : " + str(save_path))
 
                 _w1 = w1.eval(sess)
                 np.save(os.path.join(target_checkpoint_dir,"w1"),_w1)
@@ -286,7 +286,7 @@ else:
                 os.makedirs(target_checkpoint_dir)
                 save_path = saver.save(sess, os.path.join(target_checkpoint_dir,'tensorflow_1.ckpt'))
                 print ("Checkpoint has been saved on path : " + str(save_path))
-                report.write("Checkpoint has been saved on path : " + str(save_path) + "\n")
+                report.write("Checkpoint has been saved on path : " + str(save_path))
 
                 _w1 = w1.eval(sess)
                 np.save(os.path.join(target_checkpoint_dir, "w1"), _w1)
