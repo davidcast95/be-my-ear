@@ -43,9 +43,16 @@ Run your first example
 1. Preprocessing Data
     - prepare your raw data (this refer to dataset directory on this project)
     - raw data consist of two files : .wav and .txt (audio source and target source)
-    - charset for target source : { a : 1, b : 2, ... z : 26, SPACE : 27 }
-    - run python preprocessing.py RAW_DIR FEATURE_DIR NUM_CONTEXT
-      example : python preprocessing.py "D:\be-my-ear-master\datasets\raw extended" "D:\feature" 3
+    - charset for target source : { a : 1, b : 2 }
+    - special charset :
+        ḝ -> e like menang
+        e -> e like sate
+        ƞ -> ng
+        ñ -> ny
+        S -> sy
+        x -> kh
+    - run python preprocessing.py RAW_DIR FEATURE_DIR FEATURE_TYPE NUM_CONTEXT
+      example : python preprocessing.py "D:\be-my-ear-master\datasets\raw extended" "D:\feature" mfcc 3
     - this script will create dataset files of MFCC features with 3 context (past, now and future)
 2. Build and run Model
     - prepare directory for your model
