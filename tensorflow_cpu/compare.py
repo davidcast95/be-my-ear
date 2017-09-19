@@ -20,7 +20,6 @@ else:
     compare_result_dir = sys.argv[2]
     feature_1 = sys.argv[3]
     feature_2 = sys.argv[4]
-    time_window = 0.025
     if len(sys.argv) == 6:
         time_window = int(sys.argv[5]) / 1000.0
     if not os.path.exists(raw_dir):
@@ -37,7 +36,7 @@ else:
                 if ext == 'wav':
                     filename = os.path.join(root, file)
                     fs, audio = wavfile.read(filename)
-                    mfcc_feature = mfcc(audio,fs,time_window)
+                    mfcc_feature = mfcc(audio, samplerate=fs, numcep=26)
                     f, t, spectrogram_feature = signal.spectrogram(audio, fs)
 
                     if feature_1 == 'mfcc' and feature_2 == 'spectrogram':

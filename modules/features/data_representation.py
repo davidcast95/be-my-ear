@@ -5,7 +5,7 @@ from scipy.io import wavfile
 
 #===================================Char and Integer Representation===================================
 
-charset = ['','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','r','s','t','u','v','w','x','y','z',' ']
+charset = ['','a','b','c','d','e','ḝ','f','g','h','i','j','k','l','m','n','ƞ','ñ','o','p','r','s','S','t','u','w','x','y','z',' ']
 
 def text_to_indices(text):
     return np.array([charset.index(char) for char in text.lower()])
