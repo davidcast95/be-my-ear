@@ -3,6 +3,7 @@ sys.path.append("../")
 import os
 import numpy as np
 import modules.features.data_representation as data_rep
+import modules.features.spectrogram as spectrogram
 from scipy import signal
 from scipy.io import wavfile
 
@@ -12,7 +13,7 @@ if len(sys.argv) < 5:
     print ('RAW_DIR ~> directory of audio raw formatted .WAV')
     print ('FEATURE_DIR ~> directory of target preprocessing files will be created (MFCC)')
     print ('FEATURE_TYPE ~> mffc / spectrogram')
-    print ('NUM_CONTEXT ~> number of past and future context')
+    print ('NUM_CONTEXT ~> mfcc : number of past and future context, spectrogram : binsize ')
 else:
     raw_dir = sys.argv[1]
     feature_dir = sys.argv[2]
@@ -28,14 +29,13 @@ else:
             for root, dirs, files in os.walk(raw_dir, topdown=False):
                 for file in files:
                     name, ext = file.split('.')
-                    if ext == 'txt':
-                        with open(os.path.join(raw_dir,file)) as filetarget:
+                    if ext == 'wav':
+                        with open(os.path.join(raw_dir,name + '.txt'), encoding='utf-8') as filetarget:
                             target = filetarget.read()
                             target = target.replace("\n","")
                             indices_target = data_rep.text_to_indices(target)
                             np.save(os.path.join(feature_dir,'_' + name),indices_target)
                             filetarget.close()
-                    if ext == 'wav':
                         filename = os.path.join(root, file)
                         vector_feature = data_rep.audio_to_feature_representation(filename,num_context)
                         target_vector_dir = os.path.join(feature_dir, name)
@@ -48,17 +48,15 @@ else:
             for root, dirs, files in os.walk(raw_dir, topdown=False):
                 for file in files:
                     name, ext = file.split('.')
-                    if ext == 'txt':
-                        with open(os.path.join(raw_dir, file)) as filetarget:
+                    if ext == 'wav':
+                        with open(os.path.join(raw_dir,name + '.txt'), encoding='utf-8') as filetarget:
                             target = filetarget.read()
-                            target = target.replace("\n", "")
+                            target = target.replace("\n","")
                             indices_target = data_rep.text_to_indices(target)
                             np.save(os.path.join(feature_dir,'_' + name),indices_target)
                             filetarget.close()
-                    if ext == 'wav':
                         filename = os.path.join(root, file)
-                        fs, audio = wavfile.read(filename)
-                        f, t, vector_feature = signal.spectrogram(audio, fs)
+                        vector_feature = spectrogram.generate(filename, num_context)
                         target_vector_dir = os.path.join(feature_dir, name)
-                        np.save(target_vector_dir, vector_feature.T)
+                        np.save(target_vector_dir, vector_feature)
                         print(name + " has been saved to " + target_vector_dir)

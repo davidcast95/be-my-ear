@@ -6,7 +6,8 @@ from time import gmtime, strftime
 import modules.features.data_representation as data_rep
 import numpy as np
 import tensorflow as tf
-from tensorflow.contrib.rnn import BasicLSTMCell
+from tensorflow.contrib.rnn import GRUCell
+from tensorflow.contrib.keras import layers
 
 csv_fields = ['iteration','batch','learning_rate','ctc_loss','decoded_text']
 
@@ -22,43 +23,56 @@ else:
     training_dir = sys.argv[1]
     checkpoint_dir = sys.argv[2]
     report_dir = sys.argv[3]
-    iteration = 200
-    batch = 1
+    iteration = 400
+    batch = 8
     num_cep = 286
+
+    # property of Batch Normalization
+    scale = 80
+    offset = 0
+    variance_epsilon = 0
 
     #property of weight
     mean = 0
     std = 0.3
-    relu_clip = 20
+    relu_clip = 80
     n_hidden_1 = 128
     n_hidden_2 = 128
     n_hidden_3 = 2 * 128
-    n_hidden_4 = 128
     n_hidden_5 = 128
-    n_hidden_6 = 28
+    n_hidden_6 = 30
 
     #property of BiRRN LSTM
-    n_hidden_unit = 8 * 128
+    n_hidden_4 = 128
     forget_bias = 0
 
     #property of AdamOptimizer (http://arxiv.org/abs/1412.6980) parameters
     beta1 = 0.9
-    beta2 = 0.9
-    epsilon = 1e-6
-    learning_rate = 0.0001
+    beta2 = 0.999
+    epsilon = 0.001
+    learning_rate = 0.001
     threshold = 0
 
     training_dataset = []
     target_dataset = []
-
+    global_mean = []
+    global_var = []
     # load training dataset
     for root, dirs, files in os.walk(training_dir, topdown=False):
         for file in files:
             if file[0] == '_':
                 target_dataset.append(np.load(os.path.join(training_dir, file)))
             else:
-                training_dataset.append(np.load(os.path.join(training_dir, file)))
+                new_training_set = np.load(os.path.join(training_dir, file))
+                training_dataset.append(new_training_set)
+                datasets = np.array(new_training_set)
+                global_mean.append(datasets.mean())
+                global_var.append(datasets.var())
 
+    global_mean = np.array(global_mean).mean()
+    print("Dataset mean : " + str(global_mean))
+    global_var = np.array(global_var).var()
+    print("Dataset variance : " + str(global_var))
     training_dataset = data_rep.sparse_dataset(training_dataset)
 
     #init weight
@@ -89,6 +103,9 @@ else:
     #SETUP NETWORK
     input_training = tf.placeholder(tf.float64, [None, None, None], "input")
 
+    #batch normalization
+    input_training = tf.nn.batch_normalization(input_training, mean, global_var,offset,scale,variance_epsilon)
+
     seq_len = tf.placeholder(tf.int32, [None], name="sequence_length")
 
     # reshape to [batchsize * timestep x num_cepstrum]
@@ -102,8 +119,8 @@ else:
     # reshape to [time x batchsize x 2*n_hidden_4]
     h3 = tf.reshape(h3, [-1, batch, n_hidden_3])
 
-    forward_cell = BasicLSTMCell(n_hidden_4, forget_bias, True)
-    backward_cell = BasicLSTMCell(n_hidden_4, forget_bias, True)
+    forward_cell = GRUCell(n_hidden_4)
+    backward_cell = GRUCell(n_hidden_4)
 
     #BiRNN
     outputs, output_states = tf.nn.bidirectional_dynamic_rnn(cell_fw=forward_cell,
@@ -192,7 +209,7 @@ else:
             if iter+last_iteration == 0:
                 csvwriter.writerow(csv_fields)
             print ("iteration #"+str(iter + last_iteration))
-            report.write("iteration #"+str(iter + last_iteration) + '\n')
+            report.write("iteration #"+str(iter + last_iteration))
             csv_values = []
             csv_values.append(iter + last_iteration)
             if iter > 0:
@@ -201,7 +218,7 @@ else:
             for i in range(int(len(training_dataset) / int(batch))):
                 csv_values = []
                 print ("batch #"+str(i))
-                report.write("batch #"+str(i) + '\n')
+                report.write("batch #"+str(i))
                 csv_values.append(i)
                 csv_values.append(learning_rate)
                 #get batch
@@ -217,14 +234,14 @@ else:
 
                 logg = sess.run(decode, feed)
                 print ("Encoded CTC :")
-                report.write("Encoded CTC :\n")
+                report.write("Encoded CTC :")
                 decode_text = data_rep.indices_to_text(logg[0][1])
                 print(decode_text)
-                report.write(decode_text + '\n')
+                report.write(decode_text)
 
                 loss = sess.run(avg_loss, feed)
                 print ("negative log-probability :" + str(loss))
-                report.write("negative log-probability :" + str(loss) + '\n')
+                report.write("negative log-probability :" + str(loss))
                 csvloss.writerow([loss])
                 csv_values.append(loss)
                 csv_values.append(decode_text)
@@ -239,8 +256,8 @@ else:
                 th = diff.mean()
                 percentage = th / np.array(old_losses).mean() * 100
                 print ("Learning performance : " + str(th))
-                report.write("Learning performance : " + str(th) + '\n')
-                report.write("Learning percentage : " + str(percentage) + '\n')
+                report.write("Learning performance : " + str(th))
+                report.write("Learning percentage : " + str(percentage))
 
                 print ("Saving ...")
                 now = strftime("%d-%m-%Y-%H-%M-%S", gmtime())
@@ -249,7 +266,7 @@ else:
                 os.makedirs(target_checkpoint_dir)
                 save_path = saver.save(sess, os.path.join(target_checkpoint_dir,'tensorflow_1.ckpt'))
                 print ("Checkpoint has been saved on path : " + str(save_path))
-                report.write("Checkpoint has been saved on path : " + str(save_path) + '\n')
+                report.write("Checkpoint has been saved on path : " + str(save_path))
 
                 _w1 = w1.eval(sess)
                 np.save(os.path.join(target_checkpoint_dir,"w1"),_w1)
@@ -286,7 +303,7 @@ else:
                 os.makedirs(target_checkpoint_dir)
                 save_path = saver.save(sess, os.path.join(target_checkpoint_dir,'tensorflow_1.ckpt'))
                 print ("Checkpoint has been saved on path : " + str(save_path))
-                report.write("Checkpoint has been saved on path : " + str(save_path) + '\n')
+                report.write("Checkpoint has been saved on path : " + str(save_path))
 
                 _w1 = w1.eval(sess)
                 np.save(os.path.join(target_checkpoint_dir, "w1"), _w1)

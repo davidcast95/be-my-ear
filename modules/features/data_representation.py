@@ -5,15 +5,28 @@ from scipy.io import wavfile
 
 #===================================Char and Integer Representation===================================
 
-charset = ['','a','b','c','d','e','ḝ','f','g','h','i','j','k','l','m','n','ƞ','ñ','o','p','r','s','S','t','u','w','x','y','z',' ']
+charset = ['a','b','c','d','e','ḝ','f','g','h','i','j','k','l','m','n','ƞ','ñ','o','p','r','s','S','t','u','w','x','y','z',' ','']
+
 
 def text_to_indices(text):
-    return np.array([charset.index(char) for char in text.lower()])
+    return np.array([charset.index(char) for char in text])
+
 
 def indices_to_text(indices):
     str = ''
     for index in indices:
-        str += charset[index]
+        if (charset[index] == 'ḝ'):
+            str += 'e'
+        elif charset[index] == 'ƞ':
+            str += 'ng'
+        elif charset[index] == 'ñ':
+            str += 'ny'
+        elif charset[index] == 'S':
+            str += 'sy'
+        elif charset[index] == 'x':
+            str += 'kh'
+        else:
+            str += charset[index]
     return str
 
 #===================================Sparse Representation===================================
@@ -60,13 +73,14 @@ def sparse_dataset(x):
 def audio_to_feature_representation(audio_filename, numcontext):
     # Load wav files
     fs, audio = wavfile.read(audio_filename)
-
+    if len(audio.shape) == 2:
+        samples = audio.mean(axis=1,dtype=np.int16)
     # Get mfcc coefficients
     if fs == 8000:
         numcep = 13
     else:
         numcep = 26
-    orig_inputs = mfcc(audio, samplerate=fs, numcep=numcep)
+    orig_inputs = mfcc(audio, samplerate=fs,winlen=0.02, winstep=0.01,nfft=1024, numcep=numcep,winfunc=lambda x:np.hanning((x)))
 
     # We only keep every second feature (BiRNN stride = 2)
     orig_inputs = orig_inputs[::2]
