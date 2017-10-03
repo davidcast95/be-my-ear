@@ -1,11 +1,12 @@
 import numpy as np
 from python_speech_features import mfcc
 from scipy.io import wavfile
+import random
 
 
 #===================================Char and Integer Representation===================================
 
-charset = ['a','b','c','d','e','ḝ','f','g','h','i','j','k','l','m','n','ƞ','ñ','o','p','r','s','S','t','u','w','x','y','z',' ','']
+charset = ['a','b','c','d','e','Ə','f','g','h','i','j','k','l','m','n','ƞ','ñ','o','p','r','s','S','t','u','w','x','y','z',' ','']
 
 
 def text_to_indices(text):
@@ -15,7 +16,7 @@ def text_to_indices(text):
 def indices_to_text(indices):
     str = ''
     for index in indices:
-        if (charset[index] == 'ḝ'):
+        if (charset[index] == 'Ə'):
             str += 'e'
         elif charset[index] == 'ƞ':
             str += 'ng'
@@ -66,6 +67,7 @@ def sparse_dataset(x):
         sparse_datasets[i, 0:t] = x[i]
     return sparse_datasets
 
+
 #===================================Audio Representation===================================
 
 #This function get from https://svds.com/tensorflow-rnn-tutorial/
@@ -74,13 +76,13 @@ def audio_to_feature_representation(audio_filename, numcontext):
     # Load wav files
     fs, audio = wavfile.read(audio_filename)
     if len(audio.shape) == 2:
-        samples = audio.mean(axis=1,dtype=np.int16)
+        audio = audio.mean(axis=1,dtype=np.int16)
     # Get mfcc coefficients
     if fs == 8000:
         numcep = 13
     else:
         numcep = 26
-    orig_inputs = mfcc(audio, samplerate=fs,winlen=0.02, winstep=0.01,nfft=1024, numcep=numcep,winfunc=lambda x:np.hanning((x)))
+    orig_inputs = mfcc(audio, samplerate=fs,winlen=0.02, winstep=0.01,nfft=1024, numcep=numcep,winfunc=lambda x:np.blackman((x)))
 
     # We only keep every second feature (BiRNN stride = 2)
     orig_inputs = orig_inputs[::2]
