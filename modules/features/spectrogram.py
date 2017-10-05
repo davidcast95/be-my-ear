@@ -2,6 +2,8 @@ import numpy as np
 from matplotlib import pyplot as plt
 import scipy.io.wavfile as wav
 from numpy.lib import stride_tricks
+from python_speech_features import sigproc
+import modules.features.data_representation as data_rep
 
 """ short time fourier transform of audio signal """
 
@@ -57,6 +59,9 @@ def generate(audiopath, binsize=512):
     samplerate, samples = wav.read(audiopath)
     if len(samples.shape) == 2:
         samples = samples.mean(axis=1,dtype=np.int16)
+    # samples = data_rep.normalize(samples, 0)
+    samples = sigproc.preemphasis(samples, 0.97)
+
     s = stft(samples, binsize)
     sshow, freq = logscale_spec(s, factor=1.0, sr=samplerate)
     ims = 20. * np.log10(np.abs(sshow) / 10e-6)  # amplitude to decibel

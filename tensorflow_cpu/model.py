@@ -74,43 +74,54 @@ def batch_norm_layer(x, scope, is_training, epsilon=0.001, decay=0.99, reuse=Non
 
 csv_fields = ['iteration','batch','learning_rate','ctc_loss','decoded_text']
 
-if len(sys.argv) < 5:
-    print ('this method needs 4 args TRAINING_DIR CHECKPOINT_DIR REPORT_DIR')
+if len(sys.argv) == 3:
+    print ('this method needs 3 args TRAINING_DIR CHECKPOINT_DIR REPORT_DIR')
     print ('TRAINING_DIR ~> directory of target preprocessing files will be created by preprocessing.py')
     print ('TESTING_DIR ~> directory of target preprocessing files will be created by preprocessing.py')
-    print ("CHECKPOINT_DIR ~> directory of model's checkpoint will be stored")
-    print ('REPORT_DIR ~> dicretory of result per checkpoint')
+    print ("MODEL_DIR ~> directory of model's will be stored")
 else:
 
 
     #init
     training_dir = sys.argv[1]
     testing_dir = sys.argv[2]
-    checkpoint_dir = sys.argv[3]
-    report_dir = sys.argv[4]
+    model_dir = sys.argv[3]
+    checkpoint_dir = os.path.join(model_dir,'checkpoints')
+    report_dir = os.path.join(model_dir,'reports')
+    log_dir = os.path.join(model_dir,'logs')
 
-    iteration = 400
-    training_batch = 8
+    print(checkpoint_dir)
+    if not os.path.exists(checkpoint_dir):
+        os.makedirs(checkpoint_dir)
+
+    if not os.path.exists(report_dir):
+        os.makedirs(report_dir)
+
+    if not os.path.exists(log_dir):
+        os.makedirs(log_dir)
+
+    iteration = 100
+    training_batch = 1
     testing_batch = 1
-    num_cep = 161
+    num_cep = 286
 
     # property of Batch Normalization
-    scale = 220
+    scale = 100
     offset = 0
     variance_epsilon = 0
 
     #property of weight
     mean = 0
     std = 0.3
-    relu_clip = 220
-    n_hidden_1 = 192
-    n_hidden_2 = 192
-    n_hidden_3 = 2 * 192
-    n_hidden_5 = 192
+    relu_clip = 100
+    n_hidden_1 = 96
+    n_hidden_2 = 96
+    n_hidden_3 = 2 * 96
+    n_hidden_5 = 96
     n_hidden_6 = 30
 
     #property of BiRRN LSTM
-    n_hidden_4 = 192
+    n_hidden_4 = 96
     forget_bias = 0
 
     #property of AdamOptimizer (http://arxiv.org/abs/1412.6980) parameters
@@ -238,12 +249,17 @@ else:
 
             targets = tf.sparse_placeholder(tf.int32, [None, None], name="target")
 
+
         with tf.name_scope('loss'):
             ctc_loss = tf.nn.ctc_loss(labels=targets,
                                       inputs=logits,
                                       sequence_length=seq_len)
 
             avg_loss = tf.reduce_mean(ctc_loss)
+
+        with tf.name_scope('accuracy'):
+        	distance = tf.edit_distance(tf.cast(decode[0], tf.int32), targets)
+        	ler = tf.reduce_mean(distance, name='label_error_rate')
 
         with tf.name_scope('optimizer'):
             optimizer = tf.train.AdamOptimizer(learning_rate=learning_rate,
@@ -253,18 +269,21 @@ else:
 
             optimizer = optimizer.minimize(avg_loss)
 
+
+
         summaries = tf.summary.merge_all()
 
 
-    # #Tensorboard
-    # writer = tf.summary.FileWriter(report_dir,tf.get_default_graph())
 
     #
     #RUN MODEL
     with tf.Session() as sess:
+        #Tensorboard
+        writer = tf.summary.FileWriter(log_dir,graph=sess.graph)
         last_iteration = 0
 
         valid_dirs = []
+
         for root, dirs, files in os.walk(checkpoint_dir, topdown=False):
             for dir in dirs:
                 if dir[0] == 'D' and dir[1] == 'M' and dir[2] == 'C' and dir[3] == '-':
@@ -297,10 +316,10 @@ else:
         training_old_losses = []
         testing_losses = []
         testing_old_losses = []
-        report_training = open(os.path.join(report_dir, 'report_training.txt'), "a")
-        reporttrainingcsv = open(os.path.join(report_dir, 'result_training.csv'), "a")
-        report_testing = open(os.path.join(report_dir, 'report_testing.txt'), "a")
-        reporttestingcsv = open(os.path.join(report_dir, 'result_testing.csv'), "a")
+        report_training = open(os.path.join(report_dir, 'report_training.txt'), "w")
+        reporttrainingcsv = open(os.path.join(report_dir, 'result_training.csv'), "w")
+        report_testing = open(os.path.join(report_dir, 'report_testing.txt'), "w")
+        reporttestingcsv = open(os.path.join(report_dir, 'result_testing.csv'), "w")
         trainingcsvwriter = csv.writer(reporttrainingcsv)
         testingcsvwriter = csv.writer(reporttestingcsv)
         for iter in range(iteration):
@@ -345,25 +364,107 @@ else:
                     is_training : True
                 }
 
-                logg = sess.run(decode, feed)
+                loss, logg, _ = sess.run([avg_loss, decode, optimizer], feed)
                 print ("Encoded CTC :")
                 report_training.write("Encoded CTC :" + '\n')
                 decode_text = data_rep.indices_to_text(logg[0][1])
                 print(decode_text)
+                print("target : \n" + data_rep.indices_to_text(target[0]))
                 report_training.write(decode_text + '\n')
+                report_training.write("target : " + data_rep.indices_to_text(target[0]) + '\n')
+                csv_training_values.append(target)
                 #
                 # summ = sess.run(summaries, feed)
                 # writer.add_summary(summ,iter)
 
-                loss = sess.run(avg_loss, feed)
                 print ("negative log-probability :" + str(loss))
                 report_training.write("negative log-probability :" + str(loss) + '\n')
                 csv_training_values.append(loss)
                 csv_training_values.append(decode_text)
+                csv_training_values.append(data_rep.indices_to_text(target[0]))
                 trainingcsvwriter.writerow(csv_training_values)
                 training_losses.append(loss)
 
-                sess.run(optimizer, feed)
+
+            if iter > 0:
+
+                diff = np.array(training_losses) - np.array(training_old_losses)
+                th = diff.mean()
+                percentage = th / np.array(training_old_losses).mean() * 100
+                print("Learning performance : " + str(th))
+                report_training.write("Learning performance : " + str(th) + '\n')
+                report_training.write("Learning percentage : " + str(percentage) + '\n')
+
+                print("Saving ...")
+                now = strftime("%Y-%m-%d-%H-%M-%S", gmtime())
+                saver = tf.train.Saver()
+                target_checkpoint_dir = os.path.join(checkpoint_dir, 'DMC-' + now)
+                os.makedirs(target_checkpoint_dir)
+                save_path = saver.save(sess, os.path.join(target_checkpoint_dir, 'tensorflow_1.ckpt'))
+                print("Checkpoint has been saved on path : " + str(save_path))
+                report_training.write("Checkpoint has been saved on path : " + str(save_path) + '\n')
+
+                _w1 = w1.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "w1"), _w1)
+                _b1 = b1.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "b1"), _b1)
+                _w2 = w2.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "w2"), _w2)
+                _b2 = b2.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "b2"), _b2)
+                _w3 = w3.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "w3"), _w3)
+                _b3 = b3.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "b3"), _b3)
+                _fw_w = sess.run(forward_cell.variables)[0]
+                np.save(os.path.join(target_checkpoint_dir, "fw_w"), _fw_w)
+                _bw_w = sess.run(backward_cell.variables)[0]
+                np.save(os.path.join(target_checkpoint_dir, "bw_w"), _bw_w)
+                _w5 = w5.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "w5"), _w5)
+                _b5 = b5.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "b5"), _b5)
+                _w6 = w6.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "w6"), _w6)
+                _b6 = b6.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "b6"), _b6)
+
+
+
+            else:
+                print("Saving ...")
+                now = strftime("%Y-%m-%d-%H-%M-%S", gmtime())
+                saver = tf.train.Saver()
+                target_checkpoint_dir = os.path.join(checkpoint_dir, 'DMC-' + now)
+                os.makedirs(target_checkpoint_dir)
+                save_path = saver.save(sess, os.path.join(target_checkpoint_dir, 'tensorflow_1.ckpt'))
+                print("Checkpoint has been saved on path : " + str(save_path))
+                report_training.write("Checkpoint has been saved on path : " + str(save_path) + '\n')
+
+                _w1 = w1.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "w1"), _w1)
+                _b1 = b1.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "b1"), _b1)
+                _w2 = w2.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "w2"), _w2)
+                _b2 = b2.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "b2"), _b2)
+                _w3 = w3.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "w3"), _w3)
+                _b3 = b3.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "b3"), _b3)
+                _fw_w = sess.run(forward_cell.variables)[0]
+                np.save(os.path.join(target_checkpoint_dir, "fw_w"), _fw_w)
+                _bw_w = sess.run(backward_cell.variables)[0]
+                np.save(os.path.join(target_checkpoint_dir, "bw_w"), _bw_w)
+                _w5 = w5.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "w5"), _w5)
+                _b5 = b5.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "b5"), _b5)
+                _w6 = w6.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "w6"), _w6)
+                _b6 = b6.eval(sess)
+                np.save(os.path.join(target_checkpoint_dir, "b6"), _b6)
 
             # =================================TESTING PHASE=================================
 
@@ -406,20 +507,24 @@ else:
                     is_training: False
                 }
 
-                logg = sess.run(decode, feed)
+                loss, logg, label_error_rate = sess.run([avg_loss, decode, ler], feed)
                 print("Encoded CTC :")
                 report_testing.write("Encoded CTC :" + '\n')
                 decode_text = data_rep.indices_to_text(logg[0][1])
                 print(decode_text)
+                print("target : \n" + data_rep.indices_to_text(target[0]))
                 report_testing.write(decode_text + '\n')
-                #
-                # summ = sess.run(summaries, feed)
-                # writer.add_summary(summ,iter)
-
-                loss = sess.run(avg_loss, feed)
+                report_testing.write("target : " + data_rep.indices_to_text(target[0]) + '\n')
+                
                 print("negative log-probability :" + str(loss))
                 report_testing.write("negative log-probability :" + str(loss) + '\n')
                 csv_testing_values.append(loss)
                 csv_testing_values.append(decode_text)
-                testingcsvwriter.writerow(csv_testing_values)
+                csv_testing_values.append(data_rep.indices_to_text(target[0]))
                 testing_losses.append(loss)
+
+                print("accuracy of label error rate")
+                print("Label error rate : " + str(label_error_rate))
+                report_testing.write("Label error rate : " + str(label_error_rate) + '\n')
+                csv_testing_values.append(label_error_rate)
+                testingcsvwriter.writerow(csv_testing_values)

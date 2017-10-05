@@ -2,6 +2,7 @@ import numpy as np
 from python_speech_features import mfcc
 from scipy.io import wavfile
 import random
+from numpy import mean, sqrt, square, arange
 
 
 #===================================Char and Integer Representation===================================
@@ -68,6 +69,19 @@ def sparse_dataset(x):
     return sparse_datasets
 
 
+def normalize(x,new_min=0,new_max=1):
+    min = x.min()
+    max = x.max()
+    return new_min + (((x - min) * 1.0 / (max - min)) * (new_max - new_min))
+
+def normalize_to_db(x, db=0):
+    targetrms = 10**(db/20)
+    rms_x = rms(x)
+    return x / (rms_x / targetrms)
+
+def rms(x) :
+    return sqrt(mean(square(x)))
+
 #===================================Audio Representation===================================
 
 #This function get from https://svds.com/tensorflow-rnn-tutorial/
@@ -82,6 +96,8 @@ def audio_to_feature_representation(audio_filename, numcontext):
         numcep = 13
     else:
         numcep = 26
+
+    audio = normalize(audio, 0)
     orig_inputs = mfcc(audio, samplerate=fs,winlen=0.02, winstep=0.01,nfft=1024, numcep=numcep,winfunc=lambda x:np.blackman((x)))
 
     # We only keep every second feature (BiRNN stride = 2)
