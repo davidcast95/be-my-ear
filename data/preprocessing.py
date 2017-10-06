@@ -38,6 +38,7 @@ else:
                             filetarget.close()
                         filename = os.path.join(root, file)
                         vector_feature = data_rep.audio_to_feature_representation(filename,num_context)
+                        vector_feature = data_rep.normalize(vector_feature,0,100)
                         target_vector_dir = os.path.join(feature_dir, name)
                         np.save(target_vector_dir, vector_feature)
                         print (name + " has been saved to " + target_vector_dir)

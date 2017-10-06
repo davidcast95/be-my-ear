@@ -8,6 +8,7 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.contrib.rnn import GRUCell
 from tensorflow.python.training import moving_averages
+import warnings
 
 def batch_norm(x, scope, is_training, epsilon=0.001, decay=0.99):
     """
@@ -103,7 +104,9 @@ else:
     iteration = 100
     training_batch = 1
     testing_batch = 1
-    num_cep = 286
+    num_cep = 247
+    min_label_error_rate_diff = 0.005
+
 
     # property of Batch Normalization
     scale = 100
@@ -114,14 +117,14 @@ else:
     mean = 0
     std = 0.3
     relu_clip = 100
-    n_hidden_1 = 96
-    n_hidden_2 = 96
-    n_hidden_3 = 2 * 96
-    n_hidden_5 = 96
+    n_hidden_1 = 192
+    n_hidden_2 = 192
+    n_hidden_3 = 2 * 192
+    n_hidden_5 = 192
     n_hidden_6 = 30
 
     #property of BiRRN LSTM
-    n_hidden_4 = 96
+    n_hidden_4 = 192
     forget_bias = 0
 
     #property of AdamOptimizer (http://arxiv.org/abs/1412.6980) parameters
@@ -136,6 +139,7 @@ else:
     target_training_dataset = []
     testing_dataset = []
     target_testing_dataset = []
+    global_ler = []
 
     # load training dataset
     print("Loading training dataset")
@@ -480,6 +484,7 @@ else:
 
             shuffled_index = np.arange(len(testing_dataset))
             np.random.shuffle(shuffled_index)
+            current_ler = []
 
             for i in range(int(len(testing_dataset) / int(testing_batch))):
                 csv_testing_values = []
@@ -508,6 +513,7 @@ else:
                 }
 
                 loss, logg, label_error_rate = sess.run([avg_loss, decode, ler], feed)
+                current_ler.append(label_error_rate)
                 print("Encoded CTC :")
                 report_testing.write("Encoded CTC :" + '\n')
                 decode_text = data_rep.indices_to_text(logg[0][1])
@@ -528,3 +534,15 @@ else:
                 report_testing.write("Label error rate : " + str(label_error_rate) + '\n')
                 csv_testing_values.append(label_error_rate)
                 testingcsvwriter.writerow(csv_testing_values)
+
+            if len(global_ler) > 0:
+                current_ler = np.array(current_ler)
+                avg_global_ler = global_ler.mean()
+                avg_current_ler = current_ler.mean()
+                if avg_global_ler - avg_current_ler < min_label_error_rate_diff:
+                    warnings.warn("Training phase stop, because the network doesn't seem to improved, consider to lowering the learning_rate (last label error rate is = " + str(avg_current_ler) + ")")
+
+            global_ler = np.array(current_ler)
+
+
+

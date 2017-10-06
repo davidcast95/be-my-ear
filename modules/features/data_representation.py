@@ -95,7 +95,7 @@ def audio_to_feature_representation(audio_filename, numcontext):
     if fs == 8000:
         numcep = 13
     else:
-        numcep = 26
+        numcep = 13
 
     audio = normalize(audio, 0)
     orig_inputs = mfcc(audio, samplerate=fs,winlen=0.02, winstep=0.01,nfft=1024, numcep=numcep,winfunc=lambda x:np.blackman((x)))
