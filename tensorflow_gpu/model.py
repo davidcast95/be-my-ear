@@ -375,10 +375,10 @@ else:
                 report_training.write("Encoded CTC :" + '\n')
                 decode_text = data_rep.indices_to_text(logg[0][1])
                 print(decode_text)
-                print("target : \n" + data_rep.indices_to_text(target[0]))
+                print("first target : \n" + data_rep.indices_to_text(target[0]))
                 report_training.write(decode_text + '\n')
-                report_training.write("target : " + data_rep.indices_to_text(target[0]) + '\n')
-                csv_training_values.append(target)
+                report_training.write("first target : " + data_rep.indices_to_text(target[0]) + '\n')
+                csv_training_values.append(data_rep.indices_to_text(target[0]))
                 #
                 # summ = sess.run(summaries, feed)
                 # writer.add_summary(summ,iter)
@@ -537,14 +537,23 @@ else:
                 csv_testing_values.append(label_error_rate)
                 testingcsvwriter.writerow(csv_testing_values)
 
-            if len(global_ler) > 0:
+            if (iter == 0):
+                global_ler = np.array(current_ler)
+                print("Current label error rate : " + str(global_ler.mean()))
+                report_testing.write("Current label error rate : " + str(global_ler.mean()) + '\n')
+            elif len(global_ler) > 0:
                 current_ler = np.array(current_ler)
                 avg_global_ler = global_ler.mean()
                 avg_current_ler = current_ler.mean()
+                print("Best label error rate : " + str(avg_global_ler))
+                report_testing.write("Best label error rate : " + str(avg_global_ler) + '\n')
+                print("Current label error rate : " + str(avg_current_ler))
+                report_testing.write("Current label error rate : " + str(avg_current_ler) + '\n')
                 if avg_global_ler - avg_current_ler < min_label_error_rate_diff:
-                    warnings.warn("Training phase stop, because the network doesn't seem to improved, consider to lowering the learning_rate (last label error rate is = " + str(avg_current_ler) + ")")
+                    warnings.warn("Training phase not learning, because the network doesn't seem to improved, consider to lowering the learning_rate (last label error rate is = " + str(avg_current_ler) + ")")
+                else:
+                    global_ler = np.array(current_ler)
 
-            global_ler = np.array(current_ler)
             
             pass
 
