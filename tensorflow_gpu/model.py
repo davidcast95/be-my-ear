@@ -320,14 +320,15 @@ else:
         training_old_losses = []
         testing_losses = []
         testing_old_losses = []
+
         for iter in range(iteration):
 
-	        report_training = open(os.path.join(report_dir, 'report_training.txt'), "a")
-	        reporttrainingcsv = open(os.path.join(report_dir, 'result_training.csv'), "a")
-	        report_testing = open(os.path.join(report_dir, 'report_testing.txt'), "a")
-	        reporttestingcsv = open(os.path.join(report_dir, 'result_testing.csv'), "a")
-	        trainingcsvwriter = csv.writer(reporttrainingcsv)
-	        testingcsvwriter = csv.writer(reporttestingcsv)
+            report_training = open(os.path.join(report_dir, 'report_training.txt'), "a")
+            reporttrainingcsv = open(os.path.join(report_dir, 'result_training.csv'), "a")
+            report_testing = open(os.path.join(report_dir, 'report_testing.txt'), "a")
+            reporttestingcsv = open(os.path.join(report_dir, 'result_testing.csv'), "a")
+            trainingcsvwriter = csv.writer(reporttrainingcsv)
+            testingcsvwriter = csv.writer(reporttestingcsv)
 
             #=================================TRAINING PHASE=================================
             if iter+last_iteration == 0:
