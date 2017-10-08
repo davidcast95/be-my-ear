@@ -117,14 +117,14 @@ else:
     mean = 0
     std = 0.3
     relu_clip = 100
-    n_hidden_1 = 192
-    n_hidden_2 = 192
-    n_hidden_3 = 2 * 192
-    n_hidden_5 = 192
+    n_hidden_1 = 1024
+    n_hidden_2 = 1024
+    n_hidden_3 = 2 * 1024
+    n_hidden_5 = 1024
     n_hidden_6 = 30
 
     #property of BiRRN LSTM
-    n_hidden_4 = 192
+    n_hidden_4 = 1024
     forget_bias = 0
 
     #property of AdamOptimizer (http://arxiv.org/abs/1412.6980) parameters
@@ -320,13 +320,14 @@ else:
         training_old_losses = []
         testing_losses = []
         testing_old_losses = []
-        report_training = open(os.path.join(report_dir, 'report_training.txt'), "w")
-        reporttrainingcsv = open(os.path.join(report_dir, 'result_training.csv'), "w")
-        report_testing = open(os.path.join(report_dir, 'report_testing.txt'), "w")
-        reporttestingcsv = open(os.path.join(report_dir, 'result_testing.csv'), "w")
-        trainingcsvwriter = csv.writer(reporttrainingcsv)
-        testingcsvwriter = csv.writer(reporttestingcsv)
         for iter in range(iteration):
+
+	        report_training = open(os.path.join(report_dir, 'report_training.txt'), "a")
+	        reporttrainingcsv = open(os.path.join(report_dir, 'result_training.csv'), "a")
+	        report_testing = open(os.path.join(report_dir, 'report_testing.txt'), "a")
+	        reporttestingcsv = open(os.path.join(report_dir, 'result_testing.csv'), "a")
+	        trainingcsvwriter = csv.writer(reporttrainingcsv)
+	        testingcsvwriter = csv.writer(reporttestingcsv)
 
             #=================================TRAINING PHASE=================================
             if iter+last_iteration == 0:
@@ -344,8 +345,8 @@ else:
 
             for i in range(int(len(training_dataset) / int(training_batch))):
                 csv_training_values = []
-                print ("=================================TRAINING PHASE BATCH #"+str(i)+"=================================")
-                report_training.write("=================================TRAINING PHASE BATCH #"+str(i)+"=================================" + '\n')
+                print ("=================================TRAINING PHASE BATCH #"+str(i)+" ITERATION AT "+str(iter)+"=================================")
+                report_training.write("=================================TRAINING PHASE BATCH #"+str(i)+" ITERATION AT "+str(iter)+"=================================" + '\n')
                 csv_training_values.append(i)
                 csv_training_values.append(learning_rate)
                 #get batch shuffled index
@@ -543,6 +544,8 @@ else:
                     warnings.warn("Training phase stop, because the network doesn't seem to improved, consider to lowering the learning_rate (last label error rate is = " + str(avg_current_ler) + ")")
 
             global_ler = np.array(current_ler)
+            
+            pass
 
 
 
