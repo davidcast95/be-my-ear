@@ -7,8 +7,8 @@ from numpy import mean, sqrt, square, arange
 
 #===================================Char and Integer Representation===================================
 
-charset = ['a','b','c','d','e','Ə','f','g','h','i','j','k','l','m','n','ƞ','ñ','o','p','r','s','S','t','u','w','x','y','z',' ','']
-
+# charset = ['a','b','c','d','e','Ə','f','g','h','i','j','k','l','m','n','ƞ','ñ','o','p','r','s','S','t','u','w','x','y','z',' ',''] #30
+charset = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','r','s','t','u','w','y','z',' ',''] #25
 
 def text_to_indices(text):
     return np.array([charset.index(char) for char in text])
@@ -92,10 +92,7 @@ def audio_to_feature_representation(audio_filename, numcontext):
     if len(audio.shape) == 2:
         audio = audio.mean(axis=1,dtype=np.int16)
     # Get mfcc coefficients
-    if fs == 8000:
-        numcep = 13
-    else:
-        numcep = 13
+    numcep = 13
 
     audio = normalize(audio, 0)
     orig_inputs = mfcc(audio, samplerate=fs,winlen=0.02, winstep=0.01,nfft=1024, numcep=numcep,winfunc=lambda x:np.blackman((x)))

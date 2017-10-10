@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96965af8-b43c-4006-ad50-9a4676b2e9fd" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tensorflow_cpu/model_2.py" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/features/mfcc-10/Chen T1P1-0.npy" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/features/mfcc-10/Chen T1P1-1.npy" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/features/mfcc-10/Chen T1P1-2.npy" afterPath="" />
@@ -1604,8 +1605,292 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/testing-features/mfcc-5/_Odi T2P12.npy" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/testing-features/mfcc-5/_Ona T1P5-0.npy" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/testing-features/mfcc-5/_Steven T1P4-0.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/101.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/101.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/102.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/102.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/103.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/103.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/104.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/104.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/105.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/105.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/106.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/106.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/107.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/107.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/108.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/108.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/109.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/109.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/110.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/110.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/111.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/111.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/112.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/112.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/113.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/113.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/114.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/114.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/115.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/115.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/116.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/116.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/117.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/117.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/118.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/118.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/119.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/119.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/120.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/120.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/121.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/121.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/122.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/122.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/123.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/123.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/124.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/124.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/125.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/125.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/126.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/126.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/127.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/127.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/128.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/128.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/129.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/129.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/130.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/130.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/131.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/131.wav" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/buku/Bab 3.pages" afterPath="$PROJECT_DIR$/buku/Bab 3.pages" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T1P1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T1P1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T1P2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T1P2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T1P3.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T1P3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T1P4.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T1P4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T1P5.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T1P5.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T1P6.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T1P6.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P10.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P10.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P12.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P12.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P13.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P13.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P14.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P14.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P17.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P17.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P18.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P18.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P19.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P19.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P20.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P20.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P22.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P22.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P23.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P23.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P24.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P24.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P26.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P26.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P27.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P27.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P29.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P29.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P3.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P30.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P30.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P4.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P5.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P5.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P6.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P6.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P7.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P7.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P8.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P8.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P9.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P9.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P1-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P1-0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P1-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P1-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P1-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P1-2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P1-3.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P1-3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P2-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P2-0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P2-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P2-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P3-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P3-0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P3-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P3-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P4-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P4-0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P4-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P4-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P4-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P4-2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P5-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P5-0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P5-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P5-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P6-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P6-0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P6-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P6-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P6-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P6-2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P6-3.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P6-3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P1-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P1-0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P1-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P1-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P1-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P1-2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P1-3.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P1-3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P2-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P2-0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P2-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P2-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P3-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P3-0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P3-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P3-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P4-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P4-0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P4-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P4-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P4-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P4-2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P5-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P5-0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P5-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P5-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P6-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P6-0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P6-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P6-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P6-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P6-2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P6-3.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P6-3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P1-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P1-0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P1-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P1-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P1-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P1-2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P1-3.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P1-3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P2-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P2-0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P2-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P2-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P2-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P2-2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P3-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P3-0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P3-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P3-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P3-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P3-2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P4-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P4-0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P4-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P4-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P4-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P4-2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P5-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P5-0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P5-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P5-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P5-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P5-2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P5-3.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P5-3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-3.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-4.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P10.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P10.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P12.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P12.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P3.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P4.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P5.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P5.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P6.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P6.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P7.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P7.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P8.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P8.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P9.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P9.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P10.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P10.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P11.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P11.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P3.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P4.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P5.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P5.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P6.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P6.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P7.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P7.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P8.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P8.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P9.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P9.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P1-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P1-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P1-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P1-2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P1-3.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P1-3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P2-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P2-0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P2-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P2-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P3-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P3-0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P4-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P4-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P4-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P4-2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P5-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P5-0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P5-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P5-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P6-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P6-0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P6-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P6-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P6-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P6-2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P6-3.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P6-3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P10.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P10.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P11.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P11.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P12.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P12.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P13.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P13.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P14.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P14.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P15.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P15.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P16.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P16.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P17.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P17.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P18.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P18.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P19.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P19.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P20.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P20.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P21.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P21.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P22.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P22.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P23.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P23.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P24.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P24.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P25.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P25.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P26.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P26.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P27.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P27.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P28.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P28.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P29.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P29.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P3.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P30.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P30.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P31.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P31.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P32.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P32.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P33.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P33.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P34.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P34.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P35.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P35.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P36.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P36.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P37.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P37.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P38.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P38.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P39.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P39.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P4.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P40.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P40.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P41.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P41.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P42.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P42.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P43.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P43.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P45.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P45.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P46.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P46.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P47.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P47.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P48.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P48.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P5.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P5.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P6.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P6.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P7.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P7.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P8.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P8.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P9.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P9.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P1-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P1-0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P1-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P1-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P1-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P1-2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P1-3.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P1-3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P2-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P2-0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P2-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P2-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P3-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P3-0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P3-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P3-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P4-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P4-0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P4-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P4-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P4-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P4-2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P5-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P5-0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P5-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P5-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-3.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/101.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/101.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/102.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/102.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/103.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/103.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/104.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/104.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/105.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/105.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/106.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/106.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/107.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/107.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/108.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/108.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/109.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/109.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/110.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/110.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/111.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/111.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/112.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/112.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/113.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/113.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/114.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/114.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/115.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/115.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/116.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/116.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/117.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/117.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/118.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/118.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/119.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/119.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/120.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/120.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/121.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/121.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/122.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/122.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/123.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/123.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/124.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/124.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/125.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/125.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/126.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/126.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/127.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/127.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/128.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/128.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/129.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/129.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/130.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/130.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/131.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/131.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/references/Baidu Research - Deep Speech.pdf" afterPath="$PROJECT_DIR$/references/Baidu Research - Deep Speech.pdf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/preprocessing.py" afterPath="$PROJECT_DIR$/data/preprocessing.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/visualize.py" afterPath="$PROJECT_DIR$/data/visualize.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/features/data_representation.py" afterPath="$PROJECT_DIR$/modules/features/data_representation.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/features/spectrogram.py" afterPath="$PROJECT_DIR$/modules/features/spectrogram.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tensorflow_cpu/model.py" afterPath="$PROJECT_DIR$/tensorflow_cpu/model.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tensorflow_gpu/model.py" afterPath="$PROJECT_DIR$/tensorflow_gpu/model.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -1621,8 +1906,8 @@
       <file leaf-file-name="model.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tensorflow_cpu/model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5025">
-              <caret line="337" column="36" lean-forward="false" selection-start-line="337" selection-start-column="36" selection-end-line="337" selection-end-column="36" />
+            <state relative-caret-position="5490">
+              <caret line="368" column="21" lean-forward="false" selection-start-line="368" selection-start-column="21" selection-end-line="368" selection-end-column="21" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -1633,8 +1918,8 @@
       <file leaf-file-name="model.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tensorflow_gpu/model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3084">
-              <caret line="544" column="41" lean-forward="true" selection-start-line="544" selection-start-column="41" selection-end-line="544" selection-end-column="41" />
+            <state relative-caret-position="283">
+              <caret line="343" column="0" lean-forward="true" selection-start-line="343" selection-start-column="0" selection-end-line="343" selection-end-column="0" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -1642,11 +1927,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="model_2.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tensorflow_cpu/model_2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2520">
+              <caret line="170" column="36" lean-forward="false" selection-start-line="170" selection-start-column="36" selection-end-line="170" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="visualize.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/visualize.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="46" column="83" lean-forward="false" selection-start-line="46" selection-start-column="83" selection-end-line="47" selection-end-column="81" />
+            <state relative-caret-position="870">
+              <caret line="58" column="57" lean-forward="false" selection-start-line="58" selection-start-column="57" selection-end-line="58" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -1655,8 +1950,8 @@
       <file leaf-file-name="preprocessing.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/preprocessing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="39" lean-forward="false" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+            <state relative-caret-position="870">
+              <caret line="58" column="24" lean-forward="false" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -1665,8 +1960,8 @@
       <file leaf-file-name="spectrogram.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/features/spectrogram.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+            <state relative-caret-position="990">
+              <caret line="72" column="35" lean-forward="false" selection-start-line="72" selection-start-column="35" selection-end-line="72" selection-end-column="35" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -1689,31 +1984,11 @@
       <file leaf-file-name="data_representation.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/features/data_representation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1260">
-              <caret line="88" column="4" lean-forward="false" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="4" />
+            <state relative-caret-position="1635">
+              <caret line="113" column="28" lean-forward="false" selection-start-line="113" selection-start-column="28" selection-end-line="113" selection-end-column="28" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="testing_conection.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/www/scripts/testing_conection.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/www/templates/home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="35" lean-forward="false" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -1754,6 +2029,7 @@
       <find>trainingcsvwriter</find>
       <find>preem</find>
       <find>pre</find>
+      <find>shuffled_index</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -1789,11 +2065,13 @@
         <option value="$PROJECT_DIR$/server/www/templates/create_connection.html" />
         <option value="$PROJECT_DIR$/server/www/scripts/testing_conection.py" />
         <option value="$PROJECT_DIR$/server/www/index.py" />
-        <option value="$PROJECT_DIR$/data/visualize.py" />
-        <option value="$PROJECT_DIR$/modules/features/spectrogram.py" />
-        <option value="$PROJECT_DIR$/data/preprocessing.py" />
+        <option value="$PROJECT_DIR$/tensorflow_cpu/model_2.py" />
         <option value="$PROJECT_DIR$/modules/features/data_representation.py" />
         <option value="$PROJECT_DIR$/tensorflow_cpu/model.py" />
+        <option value="$PROJECT_DIR$/data/preprocessing.py" />
+        <option value="$PROJECT_DIR$/data/visualize_dpf.py" />
+        <option value="$PROJECT_DIR$/data/visualize.py" />
+        <option value="$PROJECT_DIR$/modules/features/spectrogram.py" />
         <option value="$PROJECT_DIR$/tensorflow_gpu/model.py" />
       </list>
     </option>
@@ -1801,7 +2079,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="825" />
+    <option name="height" value="823" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -1818,8 +2096,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1884,38 +2162,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="be-my-ear" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="be-my-ear" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="features" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="be-my-ear" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="be-my-ear" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1930,18 +2176,19 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/server" />
-      <recent name="$PROJECT_DIR$/www/scripts" />
-      <recent name="$PROJECT_DIR$/www/model" />
-      <recent name="$PROJECT_DIR$/tes" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/server/www/scripts" />
       <recent name="$PROJECT_DIR$/server/www" />
       <recent name="$PROJECT_DIR$/server/www/template" />
       <recent name="$PROJECT_DIR$/server" />
       <recent name="$PROJECT_DIR$/modules/features" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tensorflow_cpu" />
+      <recent name="$PROJECT_DIR$/server" />
+      <recent name="$PROJECT_DIR$/www/scripts" />
+      <recent name="$PROJECT_DIR$/www/model" />
+      <recent name="$PROJECT_DIR$/tes" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -2142,10 +2389,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="825" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="823" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3662375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39270386" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32968536" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2173,35 +2420,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tensorflow_cpu/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="27" lean-forward="false" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tensorflow_cpu/preprocessing.py" />
-    <entry file="file://$PROJECT_DIR$/tensorflow_cpu/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="23" lean-forward="false" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/modules/features/data_representation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="59" column="49" lean-forward="false" selection-start-line="59" selection-start-column="49" selection-end-line="59" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tensorflow_cpu/preprocessing.py" />
     <entry file="file://$PROJECT_DIR$/modules/features/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -2365,7 +2583,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" column="35" lean-forward="false" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2380,7 +2597,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2391,14 +2607,6 @@
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/visualize.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="46" column="83" lean-forward="false" selection-start-line="46" selection-start-column="83" selection-end-line="47" selection-end-column="81" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2416,10 +2624,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/features/spectrogram.py">
+    <entry file="file://$USER_HOME$/training/preproccessed data/testing-features/words_spectrogram_320_5/130.npy">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/training/preproccessed data/features/words_spectrogram_320_5/117.npy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="54" lean-forward="true" selection-start-line="7" selection-start-column="54" selection-end-line="7" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/training/preproccessed data/features/words_spectrogram_320_5/122.npy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tensorflow_cpu/model_2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2520">
+          <caret line="170" column="36" lean-forward="false" selection-start-line="170" selection-start-column="36" selection-end-line="170" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tensorflow_cpu/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5490">
+          <caret line="368" column="21" lean-forward="false" selection-start-line="368" selection-start-column="21" selection-end-line="368" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/features/data_representation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1635">
+          <caret line="113" column="28" lean-forward="false" selection-start-line="113" selection-start-column="28" selection-end-line="113" selection-end-column="28" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -2428,16 +2675,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/data/preprocessing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="39" lean-forward="false" selection-start-line="22" selection-start-column="39" selection-end-line="22" selection-end-column="39" />
+        <state relative-caret-position="870">
+          <caret line="58" column="24" lean-forward="false" selection-start-line="58" selection-start-column="24" selection-end-line="58" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/features/data_representation.py">
+    <entry file="file://$PROJECT_DIR$/data/visualize_dpf.py" />
+    <entry file="file://$PROJECT_DIR$/data/visualize.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="88" column="4" lean-forward="false" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="4" />
+        <state relative-caret-position="870">
+          <caret line="58" column="57" lean-forward="false" selection-start-line="58" selection-start-column="57" selection-end-line="58" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/features/spectrogram.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="72" column="35" lean-forward="false" selection-start-line="72" selection-start-column="35" selection-end-line="72" selection-end-column="35" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -2452,20 +2708,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tensorflow_cpu/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5025">
-          <caret line="337" column="36" lean-forward="false" selection-start-line="337" selection-start-column="36" selection-end-line="337" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tensorflow_gpu/model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3084">
-          <caret line="544" column="41" lean-forward="true" selection-start-line="544" selection-start-column="41" selection-end-line="544" selection-end-column="41" />
+        <state relative-caret-position="283">
+          <caret line="343" column="0" lean-forward="true" selection-start-line="343" selection-start-column="0" selection-end-line="343" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

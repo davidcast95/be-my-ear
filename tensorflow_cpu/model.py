@@ -101,30 +101,30 @@ else:
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
 
-    iteration = 100
-    training_batch = 1
+    iteration = 1000
+    training_batch = 4
     testing_batch = 1
-    num_cep = 247
+    num_cep = 341
     min_label_error_rate_diff = 0.005
 
 
     # property of Batch Normalization
-    scale = 100
+    scale = 1
     offset = 0
     variance_epsilon = 0
 
     #property of weight
     mean = 0
     std = 0.3
-    relu_clip = 100
-    n_hidden_1 = 1024
-    n_hidden_2 = 1024
-    n_hidden_3 = 2 * 1024
-    n_hidden_5 = 1024
-    n_hidden_6 = 30
+    relu_clip = 20
+    n_hidden_1 = 128
+    n_hidden_2 = 128
+    n_hidden_3 = 2 * 128
+    n_hidden_5 = 128
+    n_hidden_6 = 25
 
     #property of BiRRN LSTM
-    n_hidden_4 = 1024
+    n_hidden_4 = 128
     forget_bias = 0
 
     #property of AdamOptimizer (http://arxiv.org/abs/1412.6980) parameters

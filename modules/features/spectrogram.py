@@ -1,5 +1,6 @@
 import numpy as np
 from matplotlib import pyplot as plt
+from scipy import signal
 import scipy.io.wavfile as wav
 from numpy.lib import stride_tricks
 from python_speech_features import sigproc
@@ -54,15 +55,72 @@ def logscale_spec(spec, sr=44100, factor=20.):
     return newspec, freqs
 
 
+def generate(audiopath, binsize=512, numcontext=0, istxt=False):
+    if istxt:
+        samples = np.loadtxt(audiopath,dtype=np.int16, delimiter=',')
+        print(samples.shape)
+        samplerate = 16000
+    else:
+        samplerate, samples = wav.read(audiopath)
+        if len(samples.shape) == 2:
+            samples = samples[:,0]
 
-def generate(audiopath, binsize=512):
-    samplerate, samples = wav.read(audiopath)
-    if len(samples.shape) == 2:
-        samples = samples.mean(axis=1,dtype=np.int16)
-    # samples = data_rep.normalize(samples, 0)
     samples = sigproc.preemphasis(samples, 0.97)
+
 
     s = stft(samples, binsize)
     sshow, freq = logscale_spec(s, factor=1.0, sr=samplerate)
     ims = 20. * np.log10(np.abs(sshow) / 10e-6)  # amplitude to decibel
-    return ims
+
+    # return ims
+    _, numcep = ims.shape
+    # For each time slice of the training set, we need to copy the context this makes
+    # the numcep dimensions vector into a numcep + 2*numcep*numcontext dimensions
+    # because of:
+    #  - numcep dimensions for the current mfcc feature set
+    #  - numcontext*numcep dimensions for each of the past and future (x2) mfcc feature set
+    # => so numcep + 2*numcontext*numcep
+    train_inputs = np.array([], np.float32)
+    train_inputs.resize((ims.shape[0], numcep + 2 * numcep * numcontext))
+
+    # Prepare pre-fix post fix context
+    empty_spectrogram = np.array([])
+    empty_spectrogram.resize((numcep))
+
+    # Prepare train_inputs with past and future contexts
+    time_slices = range(train_inputs.shape[0])
+    context_past_min = time_slices[0] + numcontext
+    context_future_max = time_slices[-1] - numcontext
+    for time_slice in time_slices:
+        # Reminder: array[start:stop:step]
+        # slices from indice |start| up to |stop| (not included), every |step|
+
+        # Add empty context data of the correct size to the start and end
+
+        # Pick up to numcontext time slices in the past, and complete with empty
+        need_empty_past = max(0, (context_past_min - time_slice))
+        empty_source_past = list(empty_spectrogram for empty_slots in range(need_empty_past))
+        data_source_past = ims[max(0, time_slice - numcontext):time_slice]
+
+        # Pick up to numcontext time slices in the future, and complete with empty
+        need_empty_future = max(0, (time_slice - context_future_max))
+        empty_source_future = list(empty_spectrogram for empty_slots in range(need_empty_future))
+        data_source_future = ims[time_slice + 1:time_slice + numcontext + 1]
+
+        if need_empty_past:
+            past = np.concatenate((empty_source_past, data_source_past))
+        else:
+            past = data_source_past
+
+        if need_empty_future:
+            future = np.concatenate((data_source_future, empty_source_future))
+        else:
+            future = data_source_future
+
+        past = np.reshape(past, numcontext * numcep)
+        now = ims[time_slice]
+        future = np.reshape(future, numcontext * numcep)
+
+        train_inputs[time_slice] = np.concatenate((past, now, future))
+    return train_inputs
+
