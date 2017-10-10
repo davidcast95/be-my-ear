@@ -10,6 +10,7 @@ import tensorflow as tf
 from tensorflow.contrib.rnn import LSTMCell, MultiRNNCell, stack_bidirectional_dynamic_rnn
 from tensorflow.python.training import moving_averages
 import warnings
+from timeit import default_timer as timer
 
 
 def batch_norm(x, scope, is_training, epsilon=0.001, decay=0.99):
@@ -163,6 +164,8 @@ else:
                 testing_dataset.append(new_testing_set)
 
     with tf.device('/gpu:0'):
+        start = timer()
+        print("Building the model")
         alpha = tf.Variable(0.001,name="alpha")
         is_training = tf.placeholder(tf.bool, name="is_training")
 
@@ -237,7 +240,6 @@ else:
                              lambda: tf.reshape(h7_bn, [-1, testing_batch, n_hidden_7]))
             logits = tf.cast(logits, tf.float32)
 
-            tf.summary.histogram("logits", logits)
 
         with tf.name_scope('decoder'):
             decode, log_prob = tf.nn.ctc_beam_search_decoder(inputs=logits,
@@ -265,7 +267,8 @@ else:
 
             optimizer = optimizer.minimize(avg_loss)
 
-        summaries = tf.summary.merge_all()
+        elapsed_time = timer() - start
+        print("Elapsed time : " + str(elapsed_time))
 
     #
     # RUN MODEL
@@ -287,21 +290,26 @@ else:
         if len(valid_dirs) > 0:
             last_iteration = len(valid_dirs)
             last_checkpoint = valid_dirs[last_iteration - 1]
+            start = timer()
             print("Restoring " + os.path.join(os.path.join(checkpoint_dir, last_checkpoint)))
             # saving model state
             saver = tf.train.Saver()
             saver.restore(sess, os.path.join(os.path.join(checkpoint_dir, last_checkpoint), 'tensorflow_1.ckpt'))
             target_checkpoint_dir = os.path.join(os.path.join(checkpoint_dir, last_checkpoint))
 
+            elapsed_time = timer() - start
+            print("Elapsed time : " + str(elapsed_time))
         else:
             tf.global_variables_initializer().run()
+            start = timer()
             print("Saving Base Model...")
             now = strftime("%Y-%m-%d-%H-%M-%S", gmtime())
             saver = tf.train.Saver()
             target_checkpoint_dir = os.path.join(checkpoint_dir, 'DMC-' + now)
             os.makedirs(target_checkpoint_dir)
             save_path = saver.save(sess, os.path.join(target_checkpoint_dir, 'tensorflow_1.ckpt'))
-
+            elapsed_time = timer() - start
+            print("Elapsed time : " + str(elapsed_time))
         _, num_cep = training_dataset[0].shape
 
         training_losses = []
@@ -320,6 +328,7 @@ else:
             testingcsvwriter = csv.writer(reporttestingcsv)
 
             # =================================TRAINING PHASE=================================
+            start = timer()
             print("iteration #" + str(iter + last_iteration))
             report_training.write("iteration #" + str(iter + last_iteration) + '\n')
             csv_training_values = []
@@ -384,6 +393,14 @@ else:
                 trainingcsvwriter.writerow(csv_training_values)
                 training_losses.append(loss)
 
+                elapsed_time = timer() - start
+                cycle_batch = int(len(training_dataset) / int(training_batch))
+                remaining_time = (((iteration - iter) * cycle_batch) - i) * elapsed_time
+                print("Elapsed time : " + str(elapsed_time))
+                report_training.write("Elapsed time: " + str(elapsed_time) + '\n')
+                print("Remaining time : " + str(remaining_time))
+                report_training.write("Remaining time: " + str(remaining_time) + '\n')
+
             if iter > 0:
 
                 diff = np.array(training_losses) - np.array(training_old_losses)
@@ -396,8 +413,9 @@ else:
                 print("Saving ...")
                 now = strftime("%Y-%m-%d-%H-%M-%S", gmtime())
                 saver = tf.train.Saver()
-                target_checkpoint_dir = os.path.join(checkpoint_dir, 'DMC-' + now)
-                os.makedirs(target_checkpoint_dir)
+                target_checkpoint_dir = os.path.join(checkpoint_dir, 'DMC-checkpoint-' + str(iter % 100))
+                if not os.path.exists(target_checkpoint_dir):
+                    os.makedirs(target_checkpoint_dir)
                 save_path = saver.save(sess, os.path.join(target_checkpoint_dir, 'tensorflow_1.ckpt'))
                 print("Checkpoint has been saved on path : " + str(save_path))
                 report_training.write("Checkpoint has been saved on path : " + str(save_path) + '\n')
@@ -455,6 +473,7 @@ else:
                 np.save(os.path.join(target_checkpoint_dir, "w7"), _w7)
                 _b7 = b7.eval(sess)
                 np.save(os.path.join(target_checkpoint_dir, "b7"), _b7)
+
 
             # =================================TESTING PHASE=================================
 

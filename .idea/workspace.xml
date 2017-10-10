@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96965af8-b43c-4006-ad50-9a4676b2e9fd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tensorflow_cpu/model_2.py" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/features/mfcc-10/Chen T1P1-0.npy" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/features/mfcc-10/Chen T1P1-1.npy" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/features/mfcc-10/Chen T1P1-2.npy" afterPath="" />
@@ -1667,230 +1666,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/130.wav" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/131.txt" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/131.wav" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/buku/Bab 3.pages" afterPath="$PROJECT_DIR$/buku/Bab 3.pages" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T1P1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T1P1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T1P2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T1P2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T1P3.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T1P3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T1P4.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T1P4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T1P5.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T1P5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T1P6.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T1P6.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P10.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P10.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P12.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P12.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P13.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P13.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P14.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P14.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P17.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P17.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P18.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P18.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P19.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P19.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P20.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P20.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P22.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P22.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P23.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P23.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P24.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P24.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P26.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P26.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P27.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P27.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P29.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P29.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P3.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P30.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P30.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P4.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P5.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P6.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P6.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P7.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P7.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P8.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P8.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Abel T2P9.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Abel T2P9.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P1-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P1-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P1-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P1-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P1-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P1-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P1-3.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P1-3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P2-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P2-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P2-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P2-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P3-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P3-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P3-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P3-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P4-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P4-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P4-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P4-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P4-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P4-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P5-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P5-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P5-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P5-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P6-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P6-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P6-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P6-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P6-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P6-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Chen T1P6-3.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Chen T1P6-3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P1-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P1-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P1-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P1-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P1-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P1-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P1-3.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P1-3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P2-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P2-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P2-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P2-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P3-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P3-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P3-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P3-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P4-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P4-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P4-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P4-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P4-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P4-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P5-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P5-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P5-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P5-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P6-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P6-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P6-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P6-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P6-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P6-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P6-3.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T1P6-3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P1-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P1-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P1-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P1-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P1-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P1-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P1-3.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P1-3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P2-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P2-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P2-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P2-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P2-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P2-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P3-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P3-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P3-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P3-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P3-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P3-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P4-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P4-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P4-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P4-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P4-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P4-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P5-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P5-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P5-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P5-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P5-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P5-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P5-3.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P5-3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-3.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-4.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Dewe T2P6-4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P10.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P10.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P12.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P12.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P3.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P4.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P5.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P6.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P6.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P7.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P7.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P8.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P8.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P9.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T1P9.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P10.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P10.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P11.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P11.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P3.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P4.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P5.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P6.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P6.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P7.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P7.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P8.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P8.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P9.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Kaesang T2P9.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P1-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P1-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P1-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P1-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P1-3.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P1-3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P2-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P2-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P2-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P2-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P3-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P3-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P4-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P4-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P4-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P4-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P5-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P5-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P5-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P5-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P6-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P6-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P6-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P6-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P6-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P6-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T1P6-3.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T1P6-3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P10.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P10.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P11.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P11.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P12.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P12.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P13.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P13.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P14.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P14.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P15.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P15.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P16.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P16.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P17.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P17.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P18.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P18.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P19.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P19.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P20.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P20.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P21.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P21.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P22.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P22.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P23.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P23.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P24.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P24.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P25.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P25.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P26.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P26.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P27.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P27.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P28.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P28.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P29.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P29.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P3.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P30.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P30.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P31.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P31.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P32.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P32.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P33.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P33.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P34.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P34.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P35.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P35.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P36.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P36.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P37.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P37.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P38.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P38.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P39.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P39.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P4.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P40.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P40.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P41.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P41.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P42.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P42.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P43.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P43.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P45.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P45.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P46.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P46.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P47.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P47.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P48.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P48.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P5.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P6.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P6.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P7.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P7.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P8.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P8.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Odi T2P9.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Odi T2P9.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P1-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P1-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P1-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P1-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P1-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P1-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P1-3.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P1-3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P2-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P2-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P2-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P2-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P3-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P3-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P3-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P3-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P4-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P4-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P4-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P4-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P4-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P4-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P5-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P5-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P5-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P5-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-0.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-1.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-2.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-3.png" afterPath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/101.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/101.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/102.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/102.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/103.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/103.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/104.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/104.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/105.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/105.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/106.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/106.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/107.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/107.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/108.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/108.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/109.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/109.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/110.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/110.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/111.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/111.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/112.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/112.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/113.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/113.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/114.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/114.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/115.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/115.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/116.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/116.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/117.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/117.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/118.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/118.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/119.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/119.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/120.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/120.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/121.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/121.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/122.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/122.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/123.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/123.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/124.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/124.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/125.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/125.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/126.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/126.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/127.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/127.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/128.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/128.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/129.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/129.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/130.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/130.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/visualize/words/131.png" afterPath="$PROJECT_DIR$/datasets/visualize/words/131.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/references/Baidu Research - Deep Speech.pdf" afterPath="$PROJECT_DIR$/references/Baidu Research - Deep Speech.pdf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/preprocessing.py" afterPath="$PROJECT_DIR$/data/preprocessing.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/visualize.py" afterPath="$PROJECT_DIR$/data/visualize.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/features/data_representation.py" afterPath="$PROJECT_DIR$/modules/features/data_representation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/features/spectrogram.py" afterPath="$PROJECT_DIR$/modules/features/spectrogram.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tensorflow_cpu/model.py" afterPath="$PROJECT_DIR$/tensorflow_cpu/model.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tensorflow_gpu/model.py" afterPath="$PROJECT_DIR$/tensorflow_gpu/model.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -1918,8 +1694,8 @@
       <file leaf-file-name="model.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tensorflow_gpu/model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
-              <caret line="343" column="0" lean-forward="true" selection-start-line="343" selection-start-column="0" selection-end-line="343" selection-end-column="0" />
+            <state relative-caret-position="1200">
+              <caret line="401" column="48" lean-forward="false" selection-start-line="401" selection-start-column="48" selection-end-line="401" selection-end-column="48" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -2710,8 +2486,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tensorflow_gpu/model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="343" column="0" lean-forward="true" selection-start-line="343" selection-start-column="0" selection-end-line="343" selection-end-column="0" />
+        <state relative-caret-position="1200">
+          <caret line="401" column="48" lean-forward="false" selection-start-line="401" selection-start-column="48" selection-end-line="401" selection-end-column="48" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
