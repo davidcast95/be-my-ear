@@ -11,7 +11,12 @@ from numpy import mean, sqrt, square, arange
 charset = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','r','s','t','u','w','y','z',' ',''] #25
 
 def text_to_indices(text):
-    return np.array([charset.index(char) for char in text])
+    text = text.replace(".","")
+    text = text.replace(",","")
+    text = text.replace("v","f")
+    text = text.replace("-"," ")
+    text = text.replace("?","")
+    return np.array([charset.index(char) for char in text.lower()])
 
 
 def indices_to_text(indices):
@@ -90,12 +95,12 @@ def audio_to_feature_representation(audio_filename, numcontext):
     # Load wav files
     fs, audio = wavfile.read(audio_filename)
     if len(audio.shape) == 2:
-        audio = audio.mean(axis=1,dtype=np.int16)
+        audio = audio[:,0]
     # Get mfcc coefficients
-    numcep = 13
+    numcep = 24
 
-    audio = normalize(audio, 0)
-    orig_inputs = mfcc(audio, samplerate=fs,winlen=0.02, winstep=0.01,nfft=1024, numcep=numcep,winfunc=lambda x:np.blackman((x)))
+    # audio = normalize(audio, 0)
+    orig_inputs = mfcc(audio, samplerate=fs,winlen=0.02, winstep=0.01,nfft=int(0.02 * fs), numcep=numcep,winfunc=lambda x:np.hamming((x)))
 
     # We only keep every second feature (BiRNN stride = 2)
     orig_inputs = orig_inputs[::2]

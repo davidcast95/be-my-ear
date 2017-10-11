@@ -32,7 +32,7 @@ else:
                         f = np.arange(0, vector_feature.shape[1], 1)
                         print(vector_feature.T.min())
                         print(vector_feature.T.max())
-                        ax.pcolormesh(t, f, vector_feature.T, vmin=-100,vmax=100)
+                        ax.pcolormesh(t, f, vector_feature.T)
                         ax.set_title(name)
                         fig.savefig(os.path.join(raw_dir,name + '.png'))
                         # plt.show()
