@@ -7,7 +7,7 @@ from time import gmtime, strftime
 import modules.features.data_representation as data_rep
 import numpy as np
 import tensorflow as tf
-from tensorflow.contrib.rnn import LSTMCell, MultiRNNCell, stack_bidirectional_dynamic_rnn
+from tensorflow.contrib.rnn import BasicLSTMCell, DropoutWrapper
 from tensorflow.python.training import moving_averages
 import warnings
 from timeit import default_timer as timer
@@ -103,8 +103,8 @@ else:
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
 
-    iteration = 100
-    training_batch = 4
+    iteration = 300
+    training_batch = 2
     testing_batch = 1
     num_cep = 264
     min_label_error_rate_diff = 0.005
@@ -112,27 +112,26 @@ else:
     # property of Batch Normalization
     scale = 1
     offset = 0
-    variance_epsilon = 0.0001
+    variance_epsilon = 0.001
 
     # property of weight
-    mean = 0
-    std = 0.16
+    mean = 1
+    std = 0.046875
     relu_clip = 100
     n_hidden_1 = 128
     n_hidden_2 = 128
     n_hidden_3 = 2 * 128
-    n_hidden_6 = 128
-    n_hidden_7 = 25
+    n_hidden_5 = 128
+    n_hidden_6 = 25
 
     # property of BiRRN LSTM
     n_hidden_4 = 128
-    n_hidden_5 = 128
-    forget_bias = 0
+    forget_bias = 1
 
     # property of AdamOptimizer (http://arxiv.org/abs/1412.6980) parameters
     beta1 = 0.9
     beta2 = 0.999
-    epsilon = 0.001
+    epsilon = 1e-8
     decay = 0.999
     learning_rate = 0.001
     threshold = 0
@@ -174,72 +173,86 @@ else:
         seq_len = tf.placeholder(tf.int32, [None], name="sequence_length")
 
         with tf.name_scope('forward-net'):
+            shape_input_batch = tf.shape(input_batch)
+
+            # Permute n_steps and batch_size
+            transpose_input_batch = tf.transpose(input_batch, [1,0,2])
+
             # reshape to [batchsize * timestep x num_cepstrum]
-            reshape_input_batch = tf.reshape(input_batch, [-1, num_cep])
-            with tf.variable_scope('fc1') as fc1:
-                w1 = tf.Variable(tf.random_normal([num_cep, n_hidden_1], mean, std, tf.float32), name='fc1_w')
-                b1 = tf.Variable(tf.random_normal([n_hidden_1], mean, std, tf.float32), name='fc1_b')
+            reshape_input_batch = tf.reshape(transpose_input_batch, [-1, num_cep])
+            print(reshape_input_batch)
+            w1 = tf.Variable(tf.random_normal([num_cep, n_hidden_1], mean, std, tf.float32), name='fc1_w')
+            b1 = tf.Variable(tf.random_normal([n_hidden_1], mean, std, tf.float32), name='fc1_b')
 
             h1 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(reshape_input_batch, w1), b1)), relu_clip)
             h1_bn = batch_norm(h1, 'fc1_bn', tf.cast(is_training, tf.bool))
+            h1_dropout = tf.nn.dropout(h1_bn,1 - 0.05)
 
-            with tf.variable_scope('fc2') as fc2:
-                w2 = tf.Variable(tf.random_normal([n_hidden_1, n_hidden_2], mean, std, tf.float32), name='fc2_w')
-                b2 = tf.Variable(tf.random_normal([n_hidden_2], mean, std, tf.float32), name='fc2_b')
 
-            h2 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(h1_bn, w2), b2)), relu_clip)
+            w2 = tf.Variable(tf.random_normal([n_hidden_1, n_hidden_2], mean, std, tf.float32), name='fc2_w')
+            b2 = tf.Variable(tf.random_normal([n_hidden_2], mean, std, tf.float32), name='fc2_b')
+
+            h2 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(h1_dropout, w2), b2)), relu_clip)
             h2_bn = batch_norm(h2, 'fc2_bn', tf.cast(is_training, tf.bool))
+            h2_dropout = tf.nn.dropout(h2_bn,1 - 0.05)
 
-            with tf.variable_scope('fc3') as fc3:
-                w3 = tf.Variable(tf.random_normal([n_hidden_2, n_hidden_3], mean, std, tf.float32), name='fc3_w')
-                b3 = tf.Variable(tf.random_normal([n_hidden_3], mean, std, tf.float32), name='fc3_b')
 
-            h3 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(h2_bn, w3), b3)), relu_clip)
+            w3 = tf.Variable(tf.random_normal([n_hidden_2, n_hidden_3], mean, std, tf.float32), name='fc3_w')
+            b3 = tf.Variable(tf.random_normal([n_hidden_3], mean, std, tf.float32), name='fc3_b')
+
+            h3 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(h2_dropout, w3), b3)), relu_clip)
             h3_bn = batch_norm(h3, 'fc3_bn', tf.cast(is_training, tf.bool))
+            h3_dropout = tf.nn.dropout(h3_bn,1 - 0.05)
 
-        with tf.name_scope('biRNN-1'):
+        with tf.name_scope('biRNN'):
             # reshape to [batchsize x time x 2*n_hidden_4]
-            h3_bn = tf.cond(is_training,
-                            lambda: tf.reshape(h3_bn, [training_batch, -1, n_hidden_3]),
-                            lambda: tf.reshape(h3_bn, [testing_batch, -1, n_hidden_3]))
+            # h3_dropout = tf.reshape(h3_dropout, [shape_input_batch[0], -1, n_hidden_3])
 
-            forward_cell_1 = LSTMCell(n_hidden_4,cell_clip=relu_clip)
-            backward_cell_1 = LSTMCell(n_hidden_4,cell_clip=relu_clip)
-            forward_cell_2 = LSTMCell(n_hidden_5,cell_clip=relu_clip)
-            backward_cell_2 = LSTMCell(n_hidden_5,cell_clip=relu_clip)
+            # reshape to [time x batchsize x 2*n_hidden_4]
+            h3_dropout = tf.reshape(h3_dropout, [-1, shape_input_batch[0], n_hidden_3])
+
+
+            forward_cell_1 = BasicLSTMCell(n_hidden_4, forget_bias=forget_bias, state_is_tuple=True)
+            forward_cell_1 = DropoutWrapper(forward_cell_1,1.0 - 0.0, 1.0 - 0.0)
+            backward_cell_1 = BasicLSTMCell(n_hidden_4, forget_bias=forget_bias, state_is_tuple=True)
+            backward_cell_1 = DropoutWrapper(backward_cell_1, 1.0 - 0.0, 1.0 - 0.0)
+            # forward_cell_2 = BasicLSTMCell(n_hidden_5)
+            # backward_cell_2 = BasicLSTMCell(n_hidden_5)
 
             # BiRNN
-            outputs, output_states_fw, output_states_bw = stack_bidirectional_dynamic_rnn(cells_fw=[forward_cell_1],
-                                                                                          cells_bw=[backward_cell_1],
-                                                                                          inputs=h3_bn,
-                                                                                          dtype=tf.float32,
-                                                                                          sequence_length=seq_len,
-                                                                                          parallel_iterations=32,
-                                                                                          scope="biRNN")
+            # outputs, output_states_fw, output_states_bw = stack_bidirectional_dynamic_rnn(cells_fw=[forward_cell_1],
+            #                                                                               cells_bw=[backward_cell_1],
+            #                                                                               inputs=h3_dropout,
+            #                                                                               dtype=tf.float32,
+            #                                                                               sequence_length=seq_len,
+            #                                                                               parallel_iterations=32,
+            #                                                                               scope="biRNN")
+
+            outputs, _ = tf.nn.bidirectional_dynamic_rnn(cell_fw=forward_cell_1,
+                                                         cell_bw=backward_cell_1,
+                                                         inputs=h3_dropout,
+                                                         time_major=True,
+                                                         sequence_length=seq_len,
+                                                         dtype=tf.float32)
+
             outputs = tf.concat(outputs, 2)
 
-            with tf.variable_scope('fc6') as fc6:
-                w6 = tf.Variable(tf.random_normal([n_hidden_3, n_hidden_6], mean, std, tf.float32), name='fc6_w')
-                b6 = tf.Variable(tf.random_normal([n_hidden_6], mean, std, tf.float32), name='fc6_b')
+            w5 = tf.Variable(tf.random_normal([n_hidden_3, n_hidden_5], mean, std, tf.float32), name='fc5_w')
+            b5 = tf.Variable(tf.random_normal([n_hidden_5], mean, std, tf.float32), name='fc5_b')
             # reshape to [batchsize * timestep x num_cepstrum]
-            h5 = tf.reshape(outputs, [-1, 2 * n_hidden_5])
-            h6 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(h5, w6), b6)), relu_clip)
-            h6_bn = batch_norm(h6, 'fc6_bn', tf.cast(is_training, tf.bool))
+            h4 = tf.reshape(outputs, [-1, 2 * n_hidden_4])
+            h5 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(h4, w5), b5)), relu_clip)
+            h5_bn = batch_norm(h5, 'fc5_bn', tf.cast(is_training, tf.bool))
+            h5_dropout = tf.nn.dropout(h5_bn, 1.0 - 0.05)
 
         with tf.name_scope('logits'):
-            with tf.variable_scope('fc7') as fc7:
-                w7 = tf.Variable(tf.random_normal([n_hidden_6, n_hidden_7], mean, std, tf.float32), name='fc7_w')
-                b7 = tf.Variable(tf.random_normal([n_hidden_7], mean, std, tf.float32), name='fc7_b')
+            w6 = tf.Variable(tf.random_normal([n_hidden_5, n_hidden_6], mean, std, tf.float32), name='fc7_w')
+            b6 = tf.Variable(tf.random_normal([n_hidden_6], mean, std, tf.float32), name='fc7_b')
 
-            h7 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(h6_bn, w7), b7)), relu_clip)
-            h7_bn = batch_norm(h7, 'fc7_bn', tf.cast(is_training, tf.bool))
+            h6 = tf.add(tf.matmul(h5_dropout, w6), b6)
 
             # reshape to [time x batchsize x n_hidden_7]
-            logits = tf.cond(is_training,
-                             lambda: tf.reshape(h7_bn, [-1, training_batch, n_hidden_7]),
-                             lambda: tf.reshape(h7_bn, [-1, testing_batch, n_hidden_7]))
-            logits = tf.cast(logits, tf.float32)
-
+            logits = tf.reshape(h6, [-1, shape_input_batch[0], n_hidden_6])
 
         with tf.name_scope('decoder'):
             decode, log_prob = tf.nn.ctc_beam_search_decoder(inputs=logits,
@@ -254,6 +267,7 @@ else:
                                       sequence_length=seq_len)
 
             avg_loss = tf.reduce_mean(ctc_loss)
+            tf.summary.histogram("avg_loss", avg_loss)
 
         with tf.name_scope('accuracy'):
             distance = tf.edit_distance(tf.cast(decode[0], tf.int32), targets)
@@ -276,7 +290,7 @@ else:
         # Tensorboard
         writer = tf.summary.FileWriter(log_dir, graph=sess.graph)
         last_iteration = 0
-
+        writer.close()
         valid_dirs = []
 
         for root, dirs, files in os.walk(checkpoint_dir, topdown=False):
@@ -358,7 +372,7 @@ else:
                     target.append(target_training_dataset[training_shuffled_index[j + (i * training_batch)]])
 
                 batch_i = data_rep.sparse_dataset(batch_i)
-
+                print(batch_i.shape)
                 # batch_i = training_dataset[(i*batch):(i*batch)+batch]
                 sequence_length = np.array([batch_i.shape[1] for _ in range(training_batch)])
 
@@ -421,25 +435,25 @@ else:
                 report_training.write("Checkpoint has been saved on path : " + str(save_path) + '\n')
 
                 _w1 = w1.eval(sess)
-                np.save(os.path.join(target_checkpoint_dir, "w1"), _w1)
+                np.savetxt(os.path.join(target_checkpoint_dir, "w1"), _w1)
                 _b1 = b1.eval(sess)
-                np.save(os.path.join(target_checkpoint_dir, "b1"), _b1)
+                np.savetxt(os.path.join(target_checkpoint_dir, "b1"), _b1)
                 _w2 = w2.eval(sess)
-                np.save(os.path.join(target_checkpoint_dir, "w2"), _w2)
+                np.savetxt(os.path.join(target_checkpoint_dir, "w2"), _w2)
                 _b2 = b2.eval(sess)
-                np.save(os.path.join(target_checkpoint_dir, "b2"), _b2)
+                np.savetxt(os.path.join(target_checkpoint_dir, "b2"), _b2)
                 _w3 = w3.eval(sess)
-                np.save(os.path.join(target_checkpoint_dir, "w3"), _w3)
+                np.savetxt(os.path.join(target_checkpoint_dir, "w3"), _w3)
                 _b3 = b3.eval(sess)
-                np.save(os.path.join(target_checkpoint_dir, "b3"), _b3)
+                np.savetxt(os.path.join(target_checkpoint_dir, "b3"), _b3)
                 _w6 = w6.eval(sess)
-                np.save(os.path.join(target_checkpoint_dir, "w6"), _w6)
+                np.savetxt(os.path.join(target_checkpoint_dir, "w6"), _w6)
                 _b6 = b6.eval(sess)
-                np.save(os.path.join(target_checkpoint_dir, "b6"), _b6)
+                np.savetxt(os.path.join(target_checkpoint_dir, "b6"), _b6)
                 _w7 = w7.eval(sess)
-                np.save(os.path.join(target_checkpoint_dir, "w7"), _w7)
+                np.savetxt(os.path.join(target_checkpoint_dir, "w7"), _w7)
                 _b7 = b7.eval(sess)
-                np.save(os.path.join(target_checkpoint_dir, "b7"), _b7)
+                np.savetxt(os.path.join(target_checkpoint_dir, "b7"), _b7)
 
 
 
@@ -454,25 +468,25 @@ else:
                 report_training.write("Checkpoint has been saved on path : " + str(save_path) + '\n')
 
                 _w1 = w1.eval(sess)
-                np.save(os.path.join(target_checkpoint_dir, "w1"), _w1)
+                np.savetxt(os.path.join(target_checkpoint_dir, "w1"), _w1)
                 _b1 = b1.eval(sess)
-                np.save(os.path.join(target_checkpoint_dir, "b1"), _b1)
+                np.savetxt(os.path.join(target_checkpoint_dir, "b1"), _b1)
                 _w2 = w2.eval(sess)
-                np.save(os.path.join(target_checkpoint_dir, "w2"), _w2)
+                np.savetxt(os.path.join(target_checkpoint_dir, "w2"), _w2)
                 _b2 = b2.eval(sess)
-                np.save(os.path.join(target_checkpoint_dir, "b2"), _b2)
+                np.savetxt(os.path.join(target_checkpoint_dir, "b2"), _b2)
                 _w3 = w3.eval(sess)
-                np.save(os.path.join(target_checkpoint_dir, "w3"), _w3)
+                np.savetxt(os.path.join(target_checkpoint_dir, "w3"), _w3)
                 _b3 = b3.eval(sess)
-                np.save(os.path.join(target_checkpoint_dir, "b3"), _b3)
+                np.savetxt(os.path.join(target_checkpoint_dir, "b3"), _b3)
                 _w6 = w6.eval(sess)
-                np.save(os.path.join(target_checkpoint_dir, "w6"), _w6)
+                np.savetxt(os.path.join(target_checkpoint_dir, "w6"), _w6)
                 _b6 = b6.eval(sess)
-                np.save(os.path.join(target_checkpoint_dir, "b6"), _b6)
+                np.savetxt(os.path.join(target_checkpoint_dir, "b6"), _b6)
                 _w7 = w7.eval(sess)
-                np.save(os.path.join(target_checkpoint_dir, "w7"), _w7)
+                np.savetxt(os.path.join(target_checkpoint_dir, "w7"), _w7)
                 _b7 = b7.eval(sess)
-                np.save(os.path.join(target_checkpoint_dir, "b7"), _b7)
+                np.savetxt(os.path.join(target_checkpoint_dir, "b7"), _b7)
 
 
             # =================================TESTING PHASE=================================

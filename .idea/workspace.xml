@@ -2,6 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96965af8-b43c-4006-ad50-9a4676b2e9fd" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/www/config/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/www/config/model.ini" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/www/preprocessed_data/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/www/scripts/preprocessing.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/www/scripts/run_model.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/www/socket/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/www/socket/close_port.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/www/socket/test_client.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/www/socket/test_server.py" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/clean_training/0291wav.wav" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/features/mfcc-10/Chen T1P1-0.npy" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/features/mfcc-10/Chen T1P1-1.npy" afterPath="" />
@@ -1667,10 +1676,9 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/130.wav" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/131.txt" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/131.wav" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/buku/Bab 2.pages" afterPath="$PROJECT_DIR$/buku/Bab 2.pages" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/buku/Bab 3.pages" afterPath="$PROJECT_DIR$/buku/Bab 3.pages" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/visualize.py" afterPath="$PROJECT_DIR$/data/visualize.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_training/0192.txt" afterPath="$PROJECT_DIR$/datasets/clean_training/0192.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/features/data_representation.py" afterPath="$PROJECT_DIR$/modules/features/data_representation.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tensorflow_cpu/model.py" afterPath="$PROJECT_DIR$/tensorflow_cpu/model.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tensorflow_gpu/model.py" afterPath="$PROJECT_DIR$/tensorflow_gpu/model.py" />
     </list>
@@ -1687,22 +1695,44 @@
       <file leaf-file-name="model.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tensorflow_cpu/model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="138" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="568" selection-end-column="0" />
+            <state relative-caret-position="5930">
+              <caret line="536" column="70" lean-forward="false" selection-start-line="536" selection-start-column="70" selection-end-line="536" selection-end-column="70" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#439#1172#0" expanded="false" />
+                <element signature="e#1263#3109#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="model.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tensorflow_gpu/model.py">
+      <file leaf-file-name="preprocessing.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/www/scripts/preprocessing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="635">
-              <caret line="237" column="52" lean-forward="false" selection-start-line="237" selection-start-column="52" selection-end-line="237" selection-end-column="52" />
+            <state relative-caret-position="255">
+              <caret line="17" column="63" lean-forward="true" selection-start-line="17" selection-start-column="63" selection-end-line="17" selection-end-column="63" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="preprocessing.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/preprocessing.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-139">
+              <caret line="14" column="48" lean-forward="true" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_server.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/www/socket/test_server.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3392">
+              <caret line="62" column="12" lean-forward="false" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="12" />
               <folding>
-                <element signature="e#0#9#0" expanded="true" />
+                <element signature="e#580#1313#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -1711,10 +1741,52 @@
       <file leaf-file-name="data_representation.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/features/data_representation.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="68" column="14" lean-forward="false" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="14" />
+            <state relative-caret-position="16">
+              <caret line="42" column="4" lean-forward="false" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="close_port.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/www/socket/close_port.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding>
-                <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_client.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/www/socket/test_client.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="model.ini" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/www/config/model.ini">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="17" lean-forward="false" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/www/index.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1733,7 +1805,6 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>ds</find>
-      <find>print</find>
       <find>csv</find>
       <find>csv_val</find>
       <find>report.write</find>
@@ -1748,7 +1819,20 @@
       <find>shuffled_index</find>
       <find>pre</find>
       <find>avg</find>
+      <find>_bn</find>
+      <find>decay</find>
+      <find>random_normal</find>
+      <find>bn</find>
+      <find>batch_n</find>
+      <find>tf.s</find>
+      <find>tf.sum</find>
+      <find>relu</find>
+      <find>print</find>
+      <find>gamm</find>
     </findStrings>
+    <replaceStrings>
+      <replace>random_uniform</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -1789,15 +1873,23 @@
         <option value="$PROJECT_DIR$/data/visualize.py" />
         <option value="$PROJECT_DIR$/data/preprocessing.py" />
         <option value="$PROJECT_DIR$/modules/features/data_representation.py" />
-        <option value="$PROJECT_DIR$/tensorflow_cpu/model.py" />
         <option value="$PROJECT_DIR$/tensorflow_gpu/model.py" />
+        <option value="$PROJECT_DIR$/tensorflow_cpu/model.py" />
+        <option value="$PROJECT_DIR$/server/www/config/model.ini" />
+        <option value="$PROJECT_DIR$/server/www/socket/close_server.py" />
+        <option value="$PROJECT_DIR$/server/www/socket/close_port.py" />
+        <option value="$PROJECT_DIR$/server/www/socket/test_client.py" />
+        <option value="$PROJECT_DIR$/server/www/scripts/run_model.py" />
+        <option value="$PROJECT_DIR$/server/www/scripts/preprocessing.py" />
+        <option value="$PROJECT_DIR$/server/www/socket/test_server.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="x" value="-8" />
+    <option name="y" value="58" />
     <option name="width" value="1440" />
-    <option name="height" value="823" />
+    <option name="height" value="730" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -1814,7 +1906,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -1852,20 +1943,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="tensorflow_gpu" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="be-my-ear" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="be-my-ear" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="tensorflow_cpu" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1880,7 +1957,135 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="be-my-ear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="be-my-ear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="be-my-ear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="be-my-ear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="wav_data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="be-my-ear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="be-my-ear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="socket" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="be-my-ear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="be-my-ear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="scripts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="be-my-ear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="be-my-ear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="preprocessed_data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="be-my-ear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="be-my-ear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1895,10 +2100,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="features" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1918,6 +2119,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1926,19 +2128,19 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/server/www/scripts" />
-      <recent name="$PROJECT_DIR$/server/www" />
-      <recent name="$PROJECT_DIR$/server/www/template" />
-      <recent name="$PROJECT_DIR$/server" />
-      <recent name="$PROJECT_DIR$/modules/features" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/tensorflow_cpu" />
       <recent name="$PROJECT_DIR$/server" />
       <recent name="$PROJECT_DIR$/www/scripts" />
       <recent name="$PROJECT_DIR$/www/model" />
       <recent name="$PROJECT_DIR$/tes" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/server/www/wav_data" />
+      <recent name="$PROJECT_DIR$/server/www/scripts" />
+      <recent name="$PROJECT_DIR$/server/www" />
+      <recent name="$PROJECT_DIR$/server/www/template" />
+      <recent name="$PROJECT_DIR$/server" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1953,61 +2155,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.index">
-    <configuration default="false" name="data_representation" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/modules/features" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="be-my-ear" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/modules/features/data_representation.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="spectrogram" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="be-my-ear" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/modules/features/spectrogram.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="tensorboard" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tensorflow_cpu" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="be-my-ear" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tensorflow_cpu/tensorboard.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python tests.Unittests in test_client.py">
     <configuration default="false" name="www" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -2042,6 +2190,54 @@
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="run_model" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/server/www/scripts" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="be-my-ear" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server/www/scripts/run_model.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in test_server.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/server/www/socket" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="be-my-ear" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/server/www/socket/test_server.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in test_client.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/server/www/socket" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="be-my-ear" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/server/www/socket/test_client.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method />
     </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
@@ -2109,19 +2305,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.data_representation" />
-      <item index="1" class="java.lang.String" itemvalue="Python.spectrogram" />
-      <item index="2" class="java.lang.String" itemvalue="Python.tensorboard" />
-      <item index="3" class="java.lang.String" itemvalue="Python.www" />
-      <item index="4" class="java.lang.String" itemvalue="Python.index" />
+      <item index="0" class="java.lang.String" itemvalue="Python.www" />
+      <item index="1" class="java.lang.String" itemvalue="Python.index" />
+      <item index="2" class="java.lang.String" itemvalue="Python.run_model" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in test_server.py" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in test_client.py" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.index" />
-        <item index="1" class="java.lang.String" itemvalue="Python.www" />
-        <item index="2" class="java.lang.String" itemvalue="Python.tensorboard" />
-        <item index="3" class="java.lang.String" itemvalue="Python.spectrogram" />
-        <item index="4" class="java.lang.String" itemvalue="Python.data_representation" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in test_client.py" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in test_server.py" />
+        <item index="2" class="java.lang.String" itemvalue="Python.run_model" />
+        <item index="3" class="java.lang.String" itemvalue="Python.index" />
+        <item index="4" class="java.lang.String" itemvalue="Python.www" />
       </list>
     </recent_temporary>
   </component>
@@ -2138,15 +2334,29 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="Unittests_in_test_client_py - 2017.10.14 at 13h 58m 42s.xml">
+      <configuration name="Unittests in test_client.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_server_py - 2017.10.14 at 13h 57m 03s.xml">
+      <configuration name="Unittests in test_server.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_server_py - 2017.10.14 at 13h 57m 29s.xml">
+      <configuration name="Unittests in test_server.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_server_py - 2017.10.14 at 13h 59m 03s.xml">
+      <configuration name="Unittests in test_server.py" configurationId="tests" />
+    </history-entry>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="823" extended-state="0" />
+    <frame x="-8" y="58" width="1440" height="730" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39270386" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43276107" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32968536" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32968536" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291536" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37774295" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -2170,14 +2380,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/modules/generals/utility.py" />
-    <entry file="file://$PROJECT_DIR$/tensorflow_cpu/preprocessing.py" />
-    <entry file="file://$PROJECT_DIR$/tes/tes.csv" />
-    <entry file="file://$PROJECT_DIR$/tes/tes 2-normalized.csv" />
-    <entry file="file://$PROJECT_DIR$/tes/tes-normalized.csv" />
-    <entry file="file://$PROJECT_DIR$/tes/tes 2.csv" />
-    <entry file="file://$PROJECT_DIR$/tensorflow_cpu/model2.py" />
-    <entry file="file://$PROJECT_DIR$/tensorflow_using_gpu/model.py" />
     <entry file="file://$PROJECT_DIR$/tensorflow_cpu/visualize.py" />
     <entry file="file://$PROJECT_DIR$/data_manipulation/normalized_csv.py" />
     <entry file="file://$PROJECT_DIR$/tensorflow_cpu/view_numpy.py" />
@@ -2301,13 +2503,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/tensorflow_3.5/lib/python3.6/site-packages/flask/templating.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
@@ -2322,27 +2517,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/www/scripts/testing_conection.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/www/index.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#40#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2378,26 +2556,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2520">
           <caret line="170" column="36" lean-forward="false" selection-start-line="170" selection-start-column="36" selection-end-line="170" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/visualize_dpf.py" />
-    <entry file="file://$PROJECT_DIR$/modules/features/spectrogram.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="72" column="35" lean-forward="false" selection-start-line="72" selection-start-column="35" selection-end-line="72" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#18#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/www/templates/create_connection.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="24" lean-forward="false" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2405,7 +2571,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2413,7 +2578,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="27" column="81" lean-forward="false" selection-start-line="27" selection-start-column="81" selection-end-line="27" selection-end-column="81" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2421,7 +2585,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="21" column="103" lean-forward="false" selection-start-line="21" selection-start-column="103" selection-end-line="21" selection-end-column="103" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2429,44 +2592,145 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
           <caret line="3584" column="25" lean-forward="false" selection-start-line="3584" selection-start-column="25" selection-end-line="3584" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/features/spectrogram.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="72" column="35" lean-forward="false" selection-start-line="72" selection-start-column="35" selection-end-line="72" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tensorflow_gpu/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2790">
+          <caret line="188" column="0" lean-forward="true" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/www/index.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/www/config/model.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="17" lean-forward="false" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/www/socket/close_port.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/www/socket/test_client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharmCE2017.1/python_stubs/-961075835/time.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="168" column="4" lean-forward="false" selection-start-line="168" selection-start-column="4" selection-end-line="168" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/www/scripts/run_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="345" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+            <element signature="e#284#1017#0" expanded="false" />
+            <element signature="e#1108#2954#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/www/preprocessed_data/2017-10-22-05-35-04.wav.npy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/www/scripts/preprocessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="63" lean-forward="true" selection-start-line="17" selection-start-column="63" selection-end-line="17" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tensorflow_cpu/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5930">
+          <caret line="536" column="70" lean-forward="false" selection-start-line="536" selection-start-column="70" selection-end-line="536" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#439#1172#0" expanded="false" />
+            <element signature="e#1263#3109#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/modules/features/data_representation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="42" column="4" lean-forward="false" selection-start-line="42" selection-start-column="4" selection-end-line="42" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/preprocessing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="30" column="47" lean-forward="true" selection-start-line="30" selection-start-column="47" selection-end-line="30" selection-end-column="47" />
+        <state relative-caret-position="-139">
+          <caret line="14" column="48" lean-forward="true" selection-start-line="14" selection-start-column="48" selection-end-line="14" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/features/data_representation.py">
+    <entry file="file://$PROJECT_DIR$/server/www/socket/test_server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="68" column="14" lean-forward="false" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="14" />
+        <state relative-caret-position="-3392">
+          <caret line="62" column="12" lean-forward="false" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="12" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tensorflow_cpu/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="138" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="568" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tensorflow_gpu/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="635">
-          <caret line="237" column="52" lean-forward="false" selection-start-line="237" selection-start-column="52" selection-end-line="237" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#580#1313#0" expanded="false" />
           </folding>
         </state>
       </provider>
