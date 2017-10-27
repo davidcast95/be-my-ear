@@ -99,7 +99,6 @@ def audio_to_feature_representation(audio_filename, numcontext):
     # Get mfcc coefficients
     numcep = 24
 
-    # audio = normalize(audio, 0)
     orig_inputs = mfcc(audio, samplerate=fs,winlen=0.02, winstep=0.01,nfft=int(0.02 * fs), numcep=numcep,winfunc=lambda x:np.hamming((x)))
 
     # We only keep every second feature (BiRNN stride = 2)
