@@ -1,6 +1,8 @@
 import numpy as np
 from python_speech_features import mfcc
 from scipy.io import wavfile
+import wave
+
 import random
 from numpy import mean, sqrt, square, arange
 
@@ -74,15 +76,17 @@ def sparse_dataset(x):
     return sparse_datasets
 
 
+#===================================Normalization===================================
+
 def normalize(x,new_min=0,new_max=1):
     min = x.min()
     max = x.max()
     return new_min + (((x - min) * 1.0 / (max - min)) * (new_max - new_min))
 
 def normalize_to_db(x, db=0):
-    targetrms = 10**(db/20)
-    rms_x = rms(x)
-    return x / (rms_x / targetrms)
+    targetdB = 10**(db/20)
+    peak = x.max()
+    return (targetdB * 32767 / peak * x).astype(np.int16)
 
 def rms(x) :
     return sqrt(mean(square(x)))
@@ -91,13 +95,17 @@ def rms(x) :
 
 #This function get from https://svds.com/tensorflow-rnn-tutorial/
 
-def audio_to_feature_representation(audio_filename, numcontext):
+def mfcc_num_context(audio_filename, numcontext):
     # Load wav files
     fs, audio = wavfile.read(audio_filename)
     if len(audio.shape) == 2:
         audio = audio[:,0]
     # Get mfcc coefficients
     numcep = 24
+
+
+    #peak normalized
+    audio = normalize_to_db(audio, 0)
 
     orig_inputs = mfcc(audio, samplerate=fs,winlen=0.02, winstep=0.01,nfft=int(0.02 * fs), numcep=numcep,winfunc=lambda x:np.hamming((x)))
 

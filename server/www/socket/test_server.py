@@ -16,6 +16,7 @@ import server.www.scripts.preprocessing as preproc
 
 wav_data = '../wav_data'
 preprocessed_data = '../preprocessed_data'
+model_data = '../model'
 type = 'mfcc'
 num_context = 5
 
@@ -157,10 +158,10 @@ epsilon = float(config['adam']['epsilon'])
 learning_rate = float(config['adam']['learning_rate'])
 print('\n')
 
-with tf.device('/cpu:0'):
+with tf.device('/gpu:0'):
     start = timer()
     print("Building the model")
-    alpha = tf.Variable(0.001, name="alpha")
+    alpha = tf.Variable(0.001,name="alpha")
     is_training = tf.placeholder(tf.bool, name="is_training")
 
     # initialize input network
@@ -171,83 +172,75 @@ with tf.device('/cpu:0'):
         shape_input_batch = tf.shape(input_batch)
 
         # Permute n_steps and batch_size
-        transpose_input_batch = tf.transpose(input_batch, [1, 0, 2])
+        transpose_input_batch = tf.transpose(input_batch, [1,0,2])
 
         # reshape to [batchsize * timestep x num_cepstrum]
         reshape_input_batch = tf.reshape(transpose_input_batch, [-1, num_cep])
         print(reshape_input_batch)
-        w1 = tf.get_variable('fc1_w', [num_cep, n_hidden_1], tf.float32, tf.random_normal_initializer(mean, std))
-        b1 = tf.get_variable('fc1_b', [n_hidden_1], tf.float32, tf.random_normal_initializer(mean, std))
+        w1 = tf.get_variable('fc1_w',[num_cep, n_hidden_1],tf.float32,tf.random_normal_initializer(mean,std))
+        b1 = tf.get_variable('fc1_b',[n_hidden_1],tf.float32,tf.random_normal_initializer(mean,std))
 
         h1 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(reshape_input_batch, w1), b1)), relu_clip)
         h1_bn = batch_norm(h1, 'fc1_bn', tf.cast(is_training, tf.bool))
-        # h1_dropout = tf.nn.dropout(h1_bn,1 - 0.05)
+        h1_dropout = tf.nn.dropout(h1_bn,1 - 0.05)
 
 
-        w2 = tf.get_variable('fc2_w', [n_hidden_1, n_hidden_2], tf.float32, tf.random_normal_initializer(mean, std))
-        b2 = tf.get_variable('fc2_b', [n_hidden_2], tf.float32, tf.random_normal_initializer(mean, std))
+        w2 = tf.get_variable('fc2_w',[n_hidden_1, n_hidden_2],tf.float32,tf.random_normal_initializer(mean,std))
+        b2 = tf.get_variable('fc2_b',[n_hidden_2],tf.float32,tf.random_normal_initializer(mean,std))
 
-        h2 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(h1_bn, w2), b2)), relu_clip)
+        h2 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(h1_dropout, w2), b2)), relu_clip)
         h2_bn = batch_norm(h2, 'fc2_bn', tf.cast(is_training, tf.bool))
-        # h2_dropout = tf.nn.dropout(h2_bn,1 - 0.05)
+        h2_dropout = tf.nn.dropout(h2_bn,1 - 0.05)
 
 
-        w3 = tf.get_variable('fc3_w', [n_hidden_2, n_hidden_3], tf.float32, tf.random_normal_initializer(mean, std))
-        b3 = tf.get_variable('fc3_b', [n_hidden_3], tf.float32, tf.random_normal_initializer(mean, std))
+        w3 = tf.get_variable('fc3_w',[n_hidden_2, n_hidden_3],tf.float32,tf.random_normal_initializer(mean,std))
+        b3 = tf.get_variable('fc3_b',[n_hidden_3],tf.float32,tf.random_normal_initializer(mean,std))
 
-        h3 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(h2_bn, w3), b3)), relu_clip)
+        h3 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(h2_dropout, w3), b3)), relu_clip)
         h3_bn = batch_norm(h3, 'fc3_bn', tf.cast(is_training, tf.bool))
-        # h3_dropout = tf.nn.dropout(h3_bn,1 - 0.05)
+        h3_dropout = tf.nn.dropout(h3_bn,1 - 0.05)
 
     with tf.name_scope('biRNN'):
         # reshape to [batchsize x time x 2*n_hidden_4]
         # h3_dropout = tf.reshape(h3_dropout, [shape_input_batch[0], -1, n_hidden_3])
 
         # reshape to [time x batchsize x 2*n_hidden_4]
-        h3_bn = tf.reshape(h3_bn, [-1, shape_input_batch[0], n_hidden_3])
+        h3_dropout = tf.reshape(h3_dropout, [-1, shape_input_batch[0], n_hidden_3])
+
 
         forward_cell_1 = BasicLSTMCell(n_hidden_4, forget_bias=1.0, state_is_tuple=True)
-        # forward_cell_1 = DropoutWrapper(forward_cell_1,1.0 - 0.0, 1.0 - 0.0)
+        forward_cell_1 = DropoutWrapper(forward_cell_1,1.0 - 0.0, 1.0 - 0.0)
         backward_cell_1 = BasicLSTMCell(n_hidden_4, forget_bias=1.0, state_is_tuple=True)
-        # backward_cell_1 = DropoutWrapper(backward_cell_1, 1.0 - 0.0, 1.0 - 0.0)
-        # forward_cell_2 = BasicLSTMCell(n_hidden_5)
-        # backward_cell_2 = BasicLSTMCell(n_hidden_5)
-
-        # BiRNN
-        # outputs, output_states_fw, output_states_bw = stack_bidirectional_dynamic_rnn(cells_fw=[forward_cell_1],
-        #                                                                               cells_bw=[backward_cell_1],
-        #                                                                               inputs=h3_dropout,
-        #                                                                               dtype=tf.float32,
-        #                                                                               sequence_length=seq_len,
-        #                                                                               parallel_iterations=32,
-        #                                                                               scope="biRNN")
+        backward_cell_1 = DropoutWrapper(backward_cell_1, 1.0 - 0.0, 1.0 - 0.0)
 
         outputs, _ = tf.nn.bidirectional_dynamic_rnn(cell_fw=forward_cell_1,
                                                      cell_bw=backward_cell_1,
-                                                     inputs=h3_bn,
+                                                     inputs=h3_dropout,
                                                      time_major=True,
                                                      sequence_length=seq_len,
                                                      dtype=tf.float32)
 
         outputs = tf.concat(outputs, 2)
 
-        w6 = tf.get_variable('fc6_w', [n_hidden_3, n_hidden_6], tf.float32, tf.random_normal_initializer(mean, std))
-        b6 = tf.get_variable('fc6_b', [n_hidden_6], tf.float32, tf.random_normal_initializer(mean, std))
+
+        w6 = tf.get_variable('fc6_w',[n_hidden_3, n_hidden_6],tf.float32,tf.random_normal_initializer(mean,std))
+        b6 = tf.get_variable('fc6_b',[n_hidden_6],tf.float32,tf.random_normal_initializer(mean,std))
         # reshape to [batchsize * timestep x num_cepstrum]
         h5 = tf.reshape(outputs, [-1, 2 * n_hidden_5])
         h6 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(h5, w6), b6)), relu_clip)
         h6_bn = batch_norm(h6, 'fc6_bn', tf.cast(is_training, tf.bool))
-        # h6_dropout = tf.nn.dropout(h6_bn,1.0 - 0.05)
+        h6_dropout = tf.nn.dropout(h6_bn,1.0 - 0.05)
 
     with tf.name_scope('logits'):
-        w7 = tf.get_variable('fc7_w', [n_hidden_6, n_hidden_7], tf.float32, tf.random_normal_initializer(mean, std))
-        b7 = tf.get_variable('fc7_b', [n_hidden_7], tf.float32, tf.random_normal_initializer(mean, std))
+        w7 = tf.get_variable('fc7_w',[n_hidden_6, n_hidden_7],tf.float32,tf.random_normal_initializer(mean,std))
+        b7 = tf.get_variable('fc7_b',[n_hidden_7],tf.float32,tf.random_normal_initializer(mean,std))
 
-        h7 = tf.add(tf.matmul(h6_bn, w7), b7)
+        h7 = tf.add(tf.matmul(h6_dropout, w7), b7)
         # h7_bn = batch_norm(h7, 'fc7_bn', tf.cast(is_training, tf.bool))
 
         # reshape to [time x batchsize x n_hidden_7]
         logits = tf.reshape(h7, [-1, shape_input_batch[0], n_hidden_7])
+
 
     with tf.name_scope('decoder'):
         decode, log_prob = tf.nn.ctc_beam_search_decoder(inputs=logits,
@@ -279,6 +272,18 @@ with tf.device('/cpu:0'):
     elapsed_time = timer() - start
     print("Elapsed time : " + str(elapsed_time))
 
+# with tf.Session(config=tf.ConfigProto(allow_soft_placement=True, log_device_placement=False)) as sess:
+#     tf.global_variables_initializer().run()
+#     # if os.path.exists(os.path.join(model_data, 'tensorflow_1.ckpt')):
+#     start = timer()
+#     print("Restoring " + os.path.join(os.path.join(model_data)))
+#     # saving model state
+#     saver = tf.train.Saver()
+#     saver.restore(sess, os.path.join(model_data, 'tensorflow_1.ckpt'))
+#
+#     elapsed_time = timer() - start
+#     print("Elapsed time : " + str(elapsed_time))
+
 
 def run_model():
     datas = []
@@ -290,8 +295,7 @@ def run_model():
                     filename = os.path.join(root,file)
                     datas.append(np.load(filename))
 
-    print(datas)
-    with tf.Session() as sess:
+    with tf.Session(config=tf.ConfigProto(allow_soft_placement=True, log_device_placement=False)) as sess:
         for data in datas:
             batch_i = preproc.data_rep.sparse_dataset([data])
 
@@ -322,14 +326,15 @@ def preprocessing_data():
                     if type == 'mfcc':
                         preproc.mffc_rep_wav(root,file,num_context)
 
-    run_model()
+    # run_model()
 
 # create a socket object
 serversocket = socket.socket(
     socket.AF_INET, socket.SOCK_STREAM)
 
 # get local machine name
-host = "192.168.0.105"
+# host = socket.gethostbyname(socket.gethostname())
+host = "192.168.1.5"
 port = 14093
 
 # bind to the port
@@ -357,12 +362,17 @@ while True:
         data = clientsocket.recv(1280)
         wavfile.writeframes(data)
         length += 1280
-        print(len(data))
         print("duration : {}".format(str(length / 16000)))
         if (len(data) == 0):
             print("wav has been generated")
             wavfile.close()
             preprocessing_data()
+            wavfile.close()
+            print("saved : "+ str(now+'.wav'))
+            now = strftime("%Y-%m-%d-%H-%M-%S", gmtime())
+            wavfile = wave.open(os.path.join('..', 'wav_data', now + '.wav'), 'w')
+            wavfile.setparams((1, 2, 16000, 0, 'NONE', 'not compressed'))
+            length = 0
             break
 
 

@@ -12,8 +12,6 @@ from tensorflow.python.training import moving_averages
 import warnings
 from timeit import default_timer as timer
 
-from tensorflow.contrib.keras import layers
-
 
 def batch_norm(x, scope, is_training, epsilon=0.001, decay=0.99):
     """
@@ -122,16 +120,15 @@ else:
     mean = 1
     std = 0.046875
     relu_clip = 100
-    n_hidden_1 = 1024
-    n_hidden_2 = 1024
-    n_hidden_3 = 2 * 1024
-    n_hidden_6 = 1024
-    n_hidden_7 = 25
+    n_hidden_1 = 128
+    n_hidden_2 = 128
+    n_hidden_3 = 2 * 128
+    n_hidden_5 = 128
+    n_hidden_6 = 25
 
     # property of BiRRN LSTM
-    n_hidden_4 = 1024
-    n_hidden_5 = 1024
-    forget_bias = 0
+    n_hidden_4 = 128
+    forget_bias = 1
 
     # property of AdamOptimizer (http://arxiv.org/abs/1412.6980) parameters
     beta1 = 0.9
@@ -167,15 +164,11 @@ else:
                 new_testing_set = np.load(os.path.join(testing_dir, file))
                 testing_dataset.append(new_testing_set)
 
-    with tf.device('/gpu:0'):
+    with tf.device('/cpu:0'):
         start = timer()
         print("Building the model")
         alpha = tf.Variable(0.001,name="alpha")
         is_training = tf.placeholder(tf.bool, name="is_training")
-
-        # initialize input network
-        input_batch = tf.placeholder(tf.float32, [None, None, None], "input")
-        seq_len = tf.placeholder(tf.int32, [None], name="sequence_length")
 
         # initialize input network
         with tf.name_scope("input"):
@@ -185,17 +178,20 @@ else:
             shape_input_batch = tf.shape(input_batch)
 
             # Permute n_steps and batch_size
-            transpose_input_batch = tf.transpose(input_batch, [1, 0, 2])
+            transpose_input_batch = tf.transpose(input_batch, [1,0,2])
 
             # reshape to [batchsize * timestep x num_cepstrum]
             reshape_input_batch = tf.reshape(transpose_input_batch, [-1, num_cep])
+
 
         with tf.name_scope("fc1"):
             w1 = tf.Variable(tf.random_normal([num_cep, n_hidden_1], mean, std, tf.float32), name='fc1_w')
             b1 = tf.Variable(tf.random_normal([n_hidden_1], mean, std, tf.float32), name='fc1_b')
             h1 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(reshape_input_batch, w1), b1)), relu_clip)
             h1_bn = batch_norm(h1, 'fc1_bn', tf.cast(is_training, tf.bool))
-            h1_dropout = tf.nn.dropout(h1_bn, 1 - 0.05)
+            h1_dropout = tf.nn.dropout(h1_bn,1 - 0.05)
+
+
 
         with tf.name_scope("fc2"):
             w2 = tf.Variable(tf.random_normal([n_hidden_1, n_hidden_2], mean, std, tf.float32), name='fc2_w')
@@ -203,7 +199,8 @@ else:
 
             h2 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(h1_dropout, w2), b2)), relu_clip)
             h2_bn = batch_norm(h2, 'fc2_bn', tf.cast(is_training, tf.bool))
-            h2_dropout = tf.nn.dropout(h2_bn, 1 - 0.05)
+            h2_dropout = tf.nn.dropout(h2_bn,1 - 0.05)
+
 
         with tf.name_scope("fc3"):
             w3 = tf.Variable(tf.random_normal([n_hidden_2, n_hidden_3], mean, std, tf.float32), name='fc3_w')
@@ -211,7 +208,7 @@ else:
 
             h3 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(h2_dropout, w3), b3)), relu_clip)
             h3_bn = batch_norm(h3, 'fc3_bn', tf.cast(is_training, tf.bool))
-            h3_dropout = tf.nn.dropout(h3_bn, 1 - 0.05)
+            h3_dropout = tf.nn.dropout(h3_bn,1 - 0.05)
 
         with tf.name_scope('biRNN'):
             # reshape to [batchsize x time x 2*n_hidden_4]
@@ -221,9 +218,9 @@ else:
             h3_dropout = tf.reshape(h3_dropout, [-1, shape_input_batch[0], n_hidden_3])
 
 
-            forward_cell_1 = BasicLSTMCell(n_hidden_4, forget_bias=1.0, state_is_tuple=True)
+            forward_cell_1 = BasicLSTMCell(n_hidden_4, forget_bias=forget_bias, state_is_tuple=True)
             forward_cell_1 = DropoutWrapper(forward_cell_1,1.0 - 0.0, 1.0 - 0.0)
-            backward_cell_1 = BasicLSTMCell(n_hidden_4, forget_bias=1.0, state_is_tuple=True)
+            backward_cell_1 = BasicLSTMCell(n_hidden_4, forget_bias=forget_bias, state_is_tuple=True)
             backward_cell_1 = DropoutWrapper(backward_cell_1, 1.0 - 0.0, 1.0 - 0.0)
             # forward_cell_2 = BasicLSTMCell(n_hidden_5)
             # backward_cell_2 = BasicLSTMCell(n_hidden_5)
@@ -246,26 +243,24 @@ else:
 
             outputs = tf.concat(outputs, 2)
 
-
-        with tf.name_scope("fc-5"):
-            w6 = tf.get_variable('fc5_w',[n_hidden_3, n_hidden_6],tf.float32,tf.random_normal_initializer(mean,std))
-            b6 = tf.get_variable('fc5_b',[n_hidden_6],tf.float32,tf.random_normal_initializer(mean,std))
+            w5 = tf.Variable(tf.random_normal([n_hidden_3, n_hidden_5], mean, std, tf.float32), name='fc5_w')
+            b5 = tf.Variable(tf.random_normal([n_hidden_5], mean, std, tf.float32), name='fc5_b')
             # reshape to [batchsize * timestep x num_cepstrum]
-            h5 = tf.reshape(outputs, [-1, 2 * n_hidden_5])
-            h6 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(h5, w6), b6)), relu_clip)
-            h6_bn = batch_norm(h6, 'fc5_bn', tf.cast(is_training, tf.bool))
-            h6_dropout = tf.nn.dropout(h6_bn,1.0 - 0.05)
+            h4 = tf.reshape(outputs, [-1, 2 * n_hidden_4])
+
+        with tf.name_scope("fc5"):
+            h5 = tf.minimum(tf.nn.relu(tf.add(tf.matmul(h4, w5), b5)), relu_clip)
+            h5_bn = batch_norm(h5, 'fc5_bn', tf.cast(is_training, tf.bool))
+            h5_dropout = tf.nn.dropout(h5_bn, 1.0 - 0.05)
 
         with tf.name_scope('logits'):
-            w7 = tf.get_variable('fc6_w',[n_hidden_6, n_hidden_7],tf.float32,tf.random_normal_initializer(mean,std))
-            b7 = tf.get_variable('fc6_b',[n_hidden_7],tf.float32,tf.random_normal_initializer(mean,std))
+            w6 = tf.Variable(tf.random_normal([n_hidden_5, n_hidden_6], mean, std, tf.float32), name='fc7_w')
+            b6 = tf.Variable(tf.random_normal([n_hidden_6], mean, std, tf.float32), name='fc7_b')
 
-            h7 = tf.add(tf.matmul(h6_dropout, w7), b7)
-            # h7_bn = batch_norm(h7, 'fc7_bn', tf.cast(is_training, tf.bool))
+            h6 = tf.add(tf.matmul(h5_dropout, w6), b6)
 
             # reshape to [time x batchsize x n_hidden_7]
-            logits = tf.reshape(h7, [-1, shape_input_batch[0], n_hidden_7])
-
+            logits = tf.reshape(h6, [-1, shape_input_batch[0], n_hidden_6])
 
         with tf.name_scope('decoder'):
             decode, log_prob = tf.nn.ctc_beam_search_decoder(inputs=logits,
@@ -295,8 +290,10 @@ else:
 
             optimizer = optimizer.minimize(avg_loss)
 
+
         elapsed_time = timer() - start
         print("Elapsed time : " + str(elapsed_time))
+
         summary = tf.summary.merge_all()
 
     #
@@ -430,8 +427,6 @@ else:
                 print("Remaining time : " + str(remaining_time))
                 report_training.write("Remaining time: " + str(remaining_time) + '\n')
 
-
-
             if iter > 0:
 
                 diff = np.array(training_losses) - np.array(training_old_losses)
@@ -467,10 +462,6 @@ else:
                 np.savetxt(os.path.join(target_checkpoint_dir, "w6"), _w6)
                 _b6 = b6.eval(sess)
                 np.savetxt(os.path.join(target_checkpoint_dir, "b6"), _b6)
-                _w7 = w7.eval(sess)
-                np.savetxt(os.path.join(target_checkpoint_dir, "w7"), _w7)
-                _b7 = b7.eval(sess)
-                np.savetxt(os.path.join(target_checkpoint_dir, "b7"), _b7)
 
 
 
@@ -500,15 +491,10 @@ else:
                 np.savetxt(os.path.join(target_checkpoint_dir, "w6"), _w6)
                 _b6 = b6.eval(sess)
                 np.savetxt(os.path.join(target_checkpoint_dir, "b6"), _b6)
-                _w7 = w7.eval(sess)
-                np.savetxt(os.path.join(target_checkpoint_dir, "w7"), _w7)
-                _b7 = b7.eval(sess)
-                np.savetxt(os.path.join(target_checkpoint_dir, "b7"), _b7)
 
 
             # =================================TESTING PHASE=================================
 
-            testing_writer = tf.summary.FileWriter(os.path.join(log_dir, 'testing'), graph=sess.graph)
             print("iteration #" + str(iter + last_iteration))
             report_testing.write("iteration #" + str(iter + last_iteration) + '\n')
             print("moving avg")
@@ -552,8 +538,7 @@ else:
                     alpha: 0
                 }
 
-                loss, logg, label_error_rate, sum_result = sess.run([avg_loss, decode, ler, summary], feed)
-                testing_writer.add_summary(sum_result,(iter * testing_batch) + i)
+                loss, logg, label_error_rate = sess.run([avg_loss, decode, ler], feed)
                 current_ler.append(label_error_rate)
                 print("Encoded CTC :")
                 report_testing.write("Encoded CTC :" + '\n')
