@@ -85,7 +85,7 @@ def normalize(x,new_min=0,new_max=1):
 
 def normalize_to_db(x, db=0):
     targetdB = 10**(db/20)
-    peak = np.abs(x).max
+    peak = np.abs(x).max()
     return (((targetdB * 32767) / peak) * x).astype(np.int)
 
 def rms(x) :
