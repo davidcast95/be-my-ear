@@ -233,7 +233,7 @@ else:
 
             outputs, _ = tf.nn.bidirectional_dynamic_rnn(cell_fw=forward_cell_1,
                                                          cell_bw=backward_cell_1,
-                                                         inputs=h3_dropout,
+                                                         inputs=h3_bn,
                                                          time_major=True,
                                                          sequence_length=seq_len,
                                                          dtype=tf.float32)
