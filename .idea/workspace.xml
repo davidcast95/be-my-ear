@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96965af8-b43c-4006-ad50-9a4676b2e9fd" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/log_spectrum.py" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/data/normalized_csv.py" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/clean_training/0291wav.wav" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/features/mfcc-10/Chen T1P1-0.npy" afterPath="" />
@@ -1669,7 +1668,8 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/130.wav" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/131.txt" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/131.wav" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tensorflow_gpu/model.py" afterPath="$PROJECT_DIR$/tensorflow_gpu/model.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/features/data_representation.py" afterPath="$PROJECT_DIR$/modules/features/data_representation.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -1707,21 +1707,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="data_representation.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/features/data_representation.py">
+      <file leaf-file-name="test_server.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/www/socket/test_server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="894">
-              <caret line="122" column="0" lean-forward="false" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+            <state relative-caret-position="1778">
+              <caret line="346" column="0" lean-forward="true" selection-start-line="346" selection-start-column="0" selection-end-line="346" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="model.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="data_representation.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/modules/features/data_representation.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="102" column="27" lean-forward="true" selection-start-line="102" selection-start-column="27" selection-end-line="102" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="model.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tensorflow_gpu/model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="123" column="18" lean-forward="false" selection-start-line="123" selection-start-column="18" selection-end-line="123" selection-end-column="18" />
+            <state relative-caret-position="18">
+              <caret line="107" column="52" lean-forward="true" selection-start-line="107" selection-start-column="52" selection-end-line="107" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -1767,8 +1777,8 @@
       <find>merge_al</find>
       <find>sum_result</find>
       <find>tf.sum</find>
-      <find>add_sum</find>
       <find>training_wr</find>
+      <find>add_sum</find>
     </findStrings>
     <replaceStrings>
       <replace>random_uniform</replace>
@@ -1817,21 +1827,21 @@
         <option value="$PROJECT_DIR$/server/www/scripts/preprocessing.py" />
         <option value="$PROJECT_DIR$/data/preprocessing.py" />
         <option value="$PROJECT_DIR$/data/visualize.py" />
-        <option value="$PROJECT_DIR$/modules/features/data_representation.py" />
         <option value="$PROJECT_DIR$/data/normalized_wav.py" />
         <option value="$PROJECT_DIR$/modules/features/spectrogram.py" />
         <option value="$PROJECT_DIR$/modules/model/importer.py" />
-        <option value="$PROJECT_DIR$/server/www/socket/test_server.py" />
         <option value="$PROJECT_DIR$/tensorflow_cpu/test_label_error_rate.py" />
         <option value="$PROJECT_DIR$/tensorflow_cpu/model_tensorfboard.py" />
         <option value="$PROJECT_DIR$/tensorflow_gpu/model.py" />
+        <option value="$PROJECT_DIR$/server/www/socket/test_server.py" />
+        <option value="$PROJECT_DIR$/modules/features/data_representation.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="730" />
+    <option name="height" value="822" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -1915,6 +1925,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="be-my-ear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="be-my-ear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="be-my-ear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="be-my-ear" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="www" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="socket" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -2222,7 +2272,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="730" extended-state="0" />
+    <frame x="0" y="23" width="1440" height="822" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.47138768" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -2542,14 +2592,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/www/socket/test_server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5295">
-          <caret line="353" column="0" lean-forward="false" selection-start-line="353" selection-start-column="0" selection-end-line="353" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tensorflow_cpu/test_label_error_rate.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -2576,10 +2618,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/modules/features/data_representation.py">
+    <entry file="file://$PROJECT_DIR$/tensorflow_gpu/model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="894">
-          <caret line="122" column="0" lean-forward="false" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+        <state relative-caret-position="18">
+          <caret line="107" column="52" lean-forward="true" selection-start-line="107" selection-start-column="52" selection-end-line="107" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/www/socket/test_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1778">
+          <caret line="346" column="0" lean-forward="true" selection-start-line="346" selection-start-column="0" selection-end-line="346" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2595,10 +2645,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tensorflow_gpu/model.py">
+    <entry file="file://$PROJECT_DIR$/modules/features/data_representation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="123" column="18" lean-forward="false" selection-start-line="123" selection-start-column="18" selection-end-line="123" selection-end-column="18" />
+        <state relative-caret-position="396">
+          <caret line="102" column="27" lean-forward="true" selection-start-line="102" selection-start-column="27" selection-end-line="102" selection-end-column="27" />
           <folding />
         </state>
       </provider>
