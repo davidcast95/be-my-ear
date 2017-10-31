@@ -442,9 +442,10 @@ else:
                 report_training.write("Learning percentage : " + str(percentage) + '\n')
 
                 print("Saving ...")
-                now = strftime("%Y-%m-%d-%H-%M-%S", gmtime())
+                # now = strftime("%Y-%m-%d-%H-%M-%S", gmtime())
                 saver = tf.train.Saver()
-                target_checkpoint_dir = os.path.join(checkpoint_dir, 'DMC-' + now)
+                # target_checkpoint_dir = os.path.join(checkpoint_dir, 'DMC-' + now)
+                target_checkpoint_dir = os.path.join(checkpoint_dir, 'DMC-iteration-' + (iteration % 10))
                 if not os.path.exists(target_checkpoint_dir):
                     os.makedirs(target_checkpoint_dir)
                 save_path = saver.save(sess, os.path.join(target_checkpoint_dir, 'tensorflow_1.ckpt'))
@@ -476,9 +477,10 @@ else:
 
             else:
                 print("Saving ...")
-                now = strftime("%Y-%m-%d-%H-%M-%S", gmtime())
+                # now = strftime("%Y-%m-%d-%H-%M-%S", gmtime())
                 saver = tf.train.Saver()
-                target_checkpoint_dir = os.path.join(checkpoint_dir, 'DMC-' + now)
+                # target_checkpoint_dir = os.path.join(checkpoint_dir, 'DMC-' + now)
+                target_checkpoint_dir = os.path.join(checkpoint_dir, 'DMC-iteration-' + (iteration % 10))
                 os.makedirs(target_checkpoint_dir)
                 save_path = saver.save(sess, os.path.join(target_checkpoint_dir, 'tensorflow_1.ckpt'))
                 print("Checkpoint has been saved on path : " + str(save_path))

@@ -1668,8 +1668,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/130.wav" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/131.txt" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/words/131.wav" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/features/data_representation.py" afterPath="$PROJECT_DIR$/modules/features/data_representation.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tensorflow_gpu/model.py" afterPath="$PROJECT_DIR$/tensorflow_gpu/model.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -1717,7 +1716,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="data_representation.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="data_representation.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/features/data_representation.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="396">
@@ -1727,11 +1726,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="model.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="model.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tensorflow_gpu/model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="107" column="52" lean-forward="true" selection-start-line="107" selection-start-column="52" selection-end-line="107" selection-end-column="52" />
+            <state relative-caret-position="218">
+              <caret line="336" column="46" lean-forward="true" selection-start-line="336" selection-start-column="46" selection-end-line="336" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -1749,7 +1748,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>report.write</find>
       <find>mfcc</find>
       <find>is_tra</find>
       <find>sess</find>
@@ -1776,9 +1774,10 @@
       <find>sess.r</find>
       <find>merge_al</find>
       <find>sum_result</find>
-      <find>tf.sum</find>
       <find>training_wr</find>
       <find>add_sum</find>
+      <find>tf.sum</find>
+      <find>DMC</find>
     </findStrings>
     <replaceStrings>
       <replace>random_uniform</replace>
@@ -1832,9 +1831,9 @@
         <option value="$PROJECT_DIR$/modules/model/importer.py" />
         <option value="$PROJECT_DIR$/tensorflow_cpu/test_label_error_rate.py" />
         <option value="$PROJECT_DIR$/tensorflow_cpu/model_tensorfboard.py" />
-        <option value="$PROJECT_DIR$/tensorflow_gpu/model.py" />
         <option value="$PROJECT_DIR$/server/www/socket/test_server.py" />
         <option value="$PROJECT_DIR$/modules/features/data_representation.py" />
+        <option value="$PROJECT_DIR$/tensorflow_gpu/model.py" />
       </list>
     </option>
   </component>
@@ -2607,25 +2606,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tensorflow_cpu/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="459" column="6" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="582" selection-end-column="0" />
-          <folding>
-            <element signature="e#439#1172#0" expanded="false" />
-            <element signature="e#1263#3109#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tensorflow_gpu/model.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="107" column="52" lean-forward="true" selection-start-line="107" selection-start-column="52" selection-end-line="107" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/www/socket/test_server.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1778">
@@ -2649,6 +2629,25 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="102" column="27" lean-forward="true" selection-start-line="102" selection-start-column="27" selection-end-line="102" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tensorflow_cpu/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="459" column="6" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="582" selection-end-column="0" />
+          <folding>
+            <element signature="e#439#1172#0" expanded="false" />
+            <element signature="e#1263#3109#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tensorflow_gpu/model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="336" column="46" lean-forward="true" selection-start-line="336" selection-start-column="46" selection-end-line="336" selection-end-column="46" />
           <folding />
         </state>
       </provider>
