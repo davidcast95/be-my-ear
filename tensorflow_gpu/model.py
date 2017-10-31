@@ -280,12 +280,12 @@ else:
                                       sequence_length=seq_len)
 
             avg_loss = tf.reduce_mean(ctc_loss)
-            tf.summary.scalar("ctc_loss", avg_loss)
+            # tf.summary.scalar("ctc_loss", avg_loss)
 
         with tf.name_scope('accuracy'):
             distance = tf.edit_distance(tf.cast(decode[0], tf.int32), targets)
             ler = tf.reduce_mean(distance, name='label_error_rate')
-            tf.summary.scalar("accuracy", ler)
+            # tf.summary.scalar("accuracy", ler)
 
         with tf.name_scope('optimizer'):
             optimizer = tf.train.AdamOptimizer(learning_rate=alpha,
@@ -297,13 +297,13 @@ else:
 
         elapsed_time = timer() - start
         print("Elapsed time : " + str(elapsed_time))
-        summary = tf.summary.merge_all()
+        # summary = tf.summary.merge_all()
 
     #
     # RUN MODEL
     with tf.Session(config=tf.ConfigProto(allow_soft_placement=True, log_device_placement=False)) as sess:
         # Tensorboard
-        training_writer = tf.summary.FileWriter(os.path.join(log_dir,'training'), graph=sess.graph)
+        # training_writer = tf.summary.FileWriter(os.path.join(log_dir,'training'), graph=sess.graph)
         last_iteration = 0
         valid_dirs = []
 
@@ -400,8 +400,8 @@ else:
                     alpha: learning_rate
                 }
 
-                loss, logg, _, sum_result = sess.run([avg_loss, decode, optimizer, summary], feed)
-                training_writer.add_summary(sum_result,(iter * training_batch) + i)
+                loss, logg, _ = sess.run([avg_loss, decode, optimizer], feed)
+                # training_writer.add_summary(sum_result,(iter * training_batch) + i)
                 print("Encoded CTC :")
                 report_training.write("Encoded CTC :" + '\n')
                 decode_text = data_rep.indices_to_text(logg[0][1])
@@ -510,7 +510,7 @@ else:
 
             # =================================TESTING PHASE=================================
 
-            testing_writer = tf.summary.FileWriter(os.path.join(log_dir, 'testing'), graph=sess.graph)
+            # testing_writer = tf.summary.FileWriter(os.path.join(log_dir, 'testing'), graph=sess.graph)
             print("iteration #" + str(iter + last_iteration))
             report_testing.write("iteration #" + str(iter + last_iteration) + '\n')
             print("moving avg")
@@ -554,8 +554,8 @@ else:
                     alpha: 0
                 }
 
-                loss, logg, label_error_rate, sum_result = sess.run([avg_loss, decode, ler, summary], feed)
-                testing_writer.add_summary(sum_result,(iter * testing_batch) + i)
+                loss, logg, label_error_rate = sess.run([avg_loss, decode, ler], feed)
+                # testing_writer.add_summary(sum_result,(iter * testing_batch) + i)
                 current_ler.append(label_error_rate)
                 print("Encoded CTC :")
                 report_testing.write("Encoded CTC :" + '\n')
