@@ -108,7 +108,7 @@ else:
         os.makedirs(os.path.join(log_dir,'testing'))
 
     iteration = 300
-    training_batch = 2
+    training_batch = 8
     testing_batch = 1
     num_cep = 264
     min_label_error_rate_diff = 0.005
@@ -121,7 +121,7 @@ else:
     # property of weight
     mean = 1
     std = 0.046875
-    relu_clip = 100
+    relu_clip = 20
     n_hidden_1 = 1024
     n_hidden_2 = 1024
     n_hidden_3 = 2 * 1024
