@@ -11,7 +11,7 @@ from tensorflow.contrib.rnn import BasicLSTMCell, DropoutWrapper
 from tensorflow.python.training import moving_averages
 import warnings
 from timeit import default_timer as timer
-
+from matplotlib import pyplot
 from tensorflow.contrib.keras import layers
 
 
@@ -440,26 +440,26 @@ else:
                 print("Checkpoint has been saved on path : " + str(save_path))
                 report_training.write("Checkpoint has been saved on path : " + str(save_path) + '\n')
 
-                _w1 = w1.eval(sess)
-                np.savetxt(os.path.join(target_checkpoint_dir, "w1"), _w1)
-                _b1 = b1.eval(sess)
-                np.savetxt(os.path.join(target_checkpoint_dir, "b1"), _b1)
-                _w2 = w2.eval(sess)
-                np.savetxt(os.path.join(target_checkpoint_dir, "w2"), _w2)
-                _b2 = b2.eval(sess)
-                np.savetxt(os.path.join(target_checkpoint_dir, "b2"), _b2)
-                _w3 = w3.eval(sess)
-                np.savetxt(os.path.join(target_checkpoint_dir, "w3"), _w3)
-                _b3 = b3.eval(sess)
-                np.savetxt(os.path.join(target_checkpoint_dir, "b3"), _b3)
-                _w6 = w6.eval(sess)
-                np.savetxt(os.path.join(target_checkpoint_dir, "w6"), _w6)
-                _b6 = b6.eval(sess)
-                np.savetxt(os.path.join(target_checkpoint_dir, "b6"), _b6)
-                _w7 = w7.eval(sess)
-                np.savetxt(os.path.join(target_checkpoint_dir, "w7"), _w7)
-                _b7 = b7.eval(sess)
-                np.savetxt(os.path.join(target_checkpoint_dir, "b7"), _b7)
+                # _w1 = w1.eval(sess)
+                # np.savetxt(os.path.join(target_checkpoint_dir, "w1"), _w1)
+                # _b1 = b1.eval(sess)
+                # np.savetxt(os.path.join(target_checkpoint_dir, "b1"), _b1)
+                # _w2 = w2.eval(sess)
+                # np.savetxt(os.path.join(target_checkpoint_dir, "w2"), _w2)
+                # _b2 = b2.eval(sess)
+                # np.savetxt(os.path.join(target_checkpoint_dir, "b2"), _b2)
+                # _w3 = w3.eval(sess)
+                # np.savetxt(os.path.join(target_checkpoint_dir, "w3"), _w3)
+                # _b3 = b3.eval(sess)
+                # np.savetxt(os.path.join(target_checkpoint_dir, "b3"), _b3)
+                # _w6 = w6.eval(sess)
+                # np.savetxt(os.path.join(target_checkpoint_dir, "w6"), _w6)
+                # _b6 = b6.eval(sess)
+                # np.savetxt(os.path.join(target_checkpoint_dir, "b6"), _b6)
+                # _w7 = w7.eval(sess)
+                # np.savetxt(os.path.join(target_checkpoint_dir, "w7"), _w7)
+                # _b7 = b7.eval(sess)
+                # np.savetxt(os.path.join(target_checkpoint_dir, "b7"), _b7)
 
 
 
@@ -473,26 +473,26 @@ else:
                 print("Checkpoint has been saved on path : " + str(save_path))
                 report_training.write("Checkpoint has been saved on path : " + str(save_path) + '\n')
 
-                _w1 = w1.eval(sess)
-                np.savetxt(os.path.join(target_checkpoint_dir, "w1"), _w1)
-                _b1 = b1.eval(sess)
-                np.savetxt(os.path.join(target_checkpoint_dir, "b1"), _b1)
-                _w2 = w2.eval(sess)
-                np.savetxt(os.path.join(target_checkpoint_dir, "w2"), _w2)
-                _b2 = b2.eval(sess)
-                np.savetxt(os.path.join(target_checkpoint_dir, "b2"), _b2)
-                _w3 = w3.eval(sess)
-                np.savetxt(os.path.join(target_checkpoint_dir, "w3"), _w3)
-                _b3 = b3.eval(sess)
-                np.savetxt(os.path.join(target_checkpoint_dir, "b3"), _b3)
-                _w6 = w6.eval(sess)
-                np.savetxt(os.path.join(target_checkpoint_dir, "w6"), _w6)
-                _b6 = b6.eval(sess)
-                np.savetxt(os.path.join(target_checkpoint_dir, "b6"), _b6)
-                _w7 = w7.eval(sess)
-                np.savetxt(os.path.join(target_checkpoint_dir, "w7"), _w7)
-                _b7 = b7.eval(sess)
-                np.savetxt(os.path.join(target_checkpoint_dir, "b7"), _b7)
+                # _w1 = w1.eval(sess)
+                # np.savetxt(os.path.join(target_checkpoint_dir, "w1"), _w1)
+                # _b1 = b1.eval(sess)
+                # np.savetxt(os.path.join(target_checkpoint_dir, "b1"), _b1)
+                # _w2 = w2.eval(sess)
+                # np.savetxt(os.path.join(target_checkpoint_dir, "w2"), _w2)
+                # _b2 = b2.eval(sess)
+                # np.savetxt(os.path.join(target_checkpoint_dir, "b2"), _b2)
+                # _w3 = w3.eval(sess)
+                # np.savetxt(os.path.join(target_checkpoint_dir, "w3"), _w3)
+                # _b3 = b3.eval(sess)
+                # np.savetxt(os.path.join(target_checkpoint_dir, "b3"), _b3)
+                # _w6 = w6.eval(sess)
+                # np.savetxt(os.path.join(target_checkpoint_dir, "w6"), _w6)
+                # _b6 = b6.eval(sess)
+                # np.savetxt(os.path.join(target_checkpoint_dir, "b6"), _b6)
+                # _w7 = w7.eval(sess)
+                # np.savetxt(os.path.join(target_checkpoint_dir, "w7"), _w7)
+                # _b7 = b7.eval(sess)
+                # np.savetxt(os.path.join(target_checkpoint_dir, "b7"), _b7)
 
 
             # =================================TESTING PHASE=================================
@@ -540,7 +540,15 @@ else:
                     alpha: 0
                 }
 
-                loss, logg, label_error_rate = sess.run([avg_loss, decode, ler], feed)
+                loss, logg, label_error_rate, decode_logit = sess.run([avg_loss, decode, ler, logits], feed)
+
+                #draw logits
+                print(decode_logit.shape)
+                # fig, ax = plt.subplots()
+                # t = np.arange(0, vector_feature.shape[0], 1)
+                # f = np.arange(0, vector_feature.shape[1], 1)
+                # ax.pcolormesh(t, f, vector_feature.T, cmap="jet", vmin=-80, vmax=80)
+
                 current_ler.append(label_error_rate)
                 print("Encoded CTC :")
                 report_testing.write("Encoded CTC :" + '\n')
