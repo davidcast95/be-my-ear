@@ -1,2 +1,2 @@
-model_checkpoint_path: "/Users/davidwibisono/training/fifth gen attempt 3/checkpoints/DMC-03-10-2017-07-50-52/tensorflow_1.ckpt"
-all_model_checkpoint_paths: "/Users/davidwibisono/training/fifth gen attempt 3/checkpoints/DMC-03-10-2017-07-50-52/tensorflow_1.ckpt"
+model_checkpoint_path: "/Users/davidwibisono/training/seventh-gen-128/checkpoints/DMC-2017-11-06-09-54-05/tensorflow_1.ckpt"
+all_model_checkpoint_paths: "/Users/davidwibisono/training/seventh-gen-128/checkpoints/DMC-2017-11-06-09-54-05/tensorflow_1.ckpt"
