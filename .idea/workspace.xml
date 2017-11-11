@@ -1767,8 +1767,8 @@
       <file leaf-file-name="old_model.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tensorflow_gpu/old_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="548" column="38" lean-forward="true" selection-start-line="548" selection-start-column="38" selection-end-line="548" selection-end-column="38" />
+            <state relative-caret-position="2375">
+              <caret line="553" column="24" lean-forward="false" selection-start-line="553" selection-start-column="24" selection-end-line="553" selection-end-column="24" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -2695,6 +2695,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="97" column="4" lean-forward="false" selection-start-line="97" selection-start-column="4" selection-end-line="97" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2819,8 +2820,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tensorflow_gpu/old_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="548" column="38" lean-forward="true" selection-start-line="548" selection-start-column="38" selection-end-line="548" selection-end-column="38" />
+        <state relative-caret-position="2375">
+          <caret line="553" column="24" lean-forward="false" selection-start-line="553" selection-start-column="24" selection-end-line="553" selection-end-column="24" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

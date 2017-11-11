@@ -11,7 +11,7 @@ from tensorflow.contrib.rnn import BasicLSTMCell, DropoutWrapper
 from tensorflow.python.training import moving_averages
 import warnings
 from timeit import default_timer as timer
-from matplotlib import pyplot
+from matplotlib import pyplot as plt
 from tensorflow.contrib.keras import layers
 
 
@@ -543,12 +543,15 @@ else:
                 loss, logg, label_error_rate, decode_logit = sess.run([avg_loss, decode, ler, logits], feed)
 
                 #draw logits
-                print(decode_logit.shape)
-                # fig, ax = plt.subplots()
+                print(decode_logit)
+                decode_logit = np.reshape(decode_logit,(-1,25))
+                print(decode_logit)
+                fig, ax = plt.subplots()
                 # t = np.arange(0, vector_feature.shape[0], 1)
                 # f = np.arange(0, vector_feature.shape[1], 1)
                 # ax.pcolormesh(t, f, vector_feature.T, cmap="jet", vmin=-80, vmax=80)
 
+                fig.save
                 current_ler.append(label_error_rate)
                 print("Encoded CTC :")
                 report_testing.write("Encoded CTC :" + '\n')
