@@ -11,6 +11,8 @@ from tensorflow.contrib.rnn import BasicLSTMCell, DropoutWrapper
 from tensorflow.python.training import moving_averages
 import warnings
 from timeit import default_timer as timer
+import matplotlib
+matplotlib.use('agg')
 from matplotlib import pyplot as plt
 from tensorflow.contrib.keras import layers
 
@@ -108,7 +110,7 @@ else:
     iteration = 300
     training_batch = 8
     testing_batch = 1
-    num_cep = 264
+    num_cep = 24 * (2 * (5) + 1)
     min_label_error_rate_diff = 0.005
 
     # property of Batch Normalization
@@ -543,15 +545,15 @@ else:
                 loss, logg, label_error_rate, decode_logit = sess.run([avg_loss, decode, ler, logits], feed)
 
                 #draw logits
-                print(decode_logit)
                 decode_logit = np.reshape(decode_logit,(-1,25))
-                print(decode_logit)
                 fig, ax = plt.subplots()
-                # t = np.arange(0, vector_feature.shape[0], 1)
-                # f = np.arange(0, vector_feature.shape[1], 1)
-                # ax.pcolormesh(t, f, vector_feature.T, cmap="jet", vmin=-80, vmax=80)
+                time = np.arange(0,decode_logit.shape[0],1)
+                pred = np.arange(0,decode_logit.shape[1],1)
+                ax.pcolormesh(time, pred, decode_logit.T, cmap="jet")
+                fig.savefig(os.path.join(target_checkpoint_dir, 'logits_'+str(i)+'.png'))
+                print('Logits mapping has been saved to ' + os.path.join(target_checkpoint_dir, 'logits_'+str(i)+'.png'))
+                plt.close(fig)
 
-                fig.save
                 current_ler.append(label_error_rate)
                 print("Encoded CTC :")
                 report_testing.write("Encoded CTC :" + '\n')
