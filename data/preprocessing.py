@@ -56,7 +56,9 @@ else:
                             np.save(os.path.join(feature_dir,'_' + name),indices_target)
                             filetarget.close()
                         filename = os.path.join(root, file)
-                        vector_feature = spectrogram.generate(filename, num_context)
-                        target_vector_dir = os.path.join(feature_dir, name)
-                        np.save(target_vector_dir, vector_feature)
-                        print(name + " has been saved to " + target_vector_dir)
+
+                        vector_feature = spectrogram.generate(filename,320, num_context)
+                        # target_vector_dir = os.path.join(feature_dir, name)
+                        print(vector_feature.shape)
+                        # np.save(target_vector_dir, vector_feature)
+                        # print(name + " has been saved to " + target_vector_dir)

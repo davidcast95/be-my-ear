@@ -9,7 +9,7 @@ from numpy import mean, sqrt, square, arange
 
 #===================================Char and Integer Representation===================================
 
-# charset = ['a','b','c','d','e','Ə','f','g','h','i','j','k','l','m','n','ƞ','ñ','o','p','r','s','S','t','u','w','x','y','z',' ',''] #30
+# charset = ['a','b','c','d','e','Ə','f','g','h','i','j','k','l','m','n','ƞ','ñ','o','0','p','r','s','S','t','u','w','x','y','z',' ',''] #30
 charset = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','r','s','t','u','w','y','z',' ',''] #25
 
 def text_to_indices(text):
@@ -24,6 +24,8 @@ def text_to_indices(text):
 def indices_to_text(indices):
     str = ''
     for index in indices:
+        if (charset[index] == '0'):
+            str += 'o'
         if (charset[index] == 'Ə'):
             str += 'e'
         elif charset[index] == 'ƞ':
@@ -41,6 +43,8 @@ def indices_to_text(indices):
 #===================================Sparse Representation===================================
 
 #This function get from https://github.com/tensorflow/tensorflow/tree/679f95e9d8d538c3c02c0da45606bab22a71420e/tensorflow/python/kernel_tests
+
+
 
 def SimpleSparseTensorFrom(x):
   """Create a very simple SparseTensor with dimensions (batch, time).
