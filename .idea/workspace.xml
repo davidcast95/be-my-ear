@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96965af8-b43c-4006-ad50-9a4676b2e9fd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/modules/model/language.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/playground/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/playground/edit_distance.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tensorflow_cpu/create_model_language.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tensorflow_cpu/old_model.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tensorflow_cpu/sentence_predict.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tensorflow_cpu/word_predict.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tensorflow_cpu/answer.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tensorflow_cpu/similar.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tensorflow_cpu/wer.py" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/data/normalized_csv.py" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/clean_dev/0104.txt" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/clean_dev/0104.wav" afterPath="" />
@@ -3406,6 +3402,620 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-3.png" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-3.txt" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/raw extended/Ona T1P6-3.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1001.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1001.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1002.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1002.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1003.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1003.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1006.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1006.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1007.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1007.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1008.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1008.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1009.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1009.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1010.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1010.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1012.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1012.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1013.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1013.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1014.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1014.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1016.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1016.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1017.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1017.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1019.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1019.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1020.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1020.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1021.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1021.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1022.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1022.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1023.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1023.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1024.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1024.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1025.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1025.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1026.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1026.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1027.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1027.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1028.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP1028.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP2001.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP2001.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP2002.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP2002.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP2003.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP2003.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP2004.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP2004.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP2005.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP2005.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP2007.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP2007.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP2009.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP2009.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP2010.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP2010.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP2011.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP2011.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP2014.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP2014.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP2015.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP2015.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP2016.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP2016.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP2017.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP2017.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP3001.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP3001.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP3002.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP3002.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP3003.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP3003.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP3005.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP3005.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP3006.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP3006.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP3007.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP3007.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP3008.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP3008.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP3009.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP3009.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP3010.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP3010.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP3011.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP3011.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP3012.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP3012.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP3013.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP3013.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP3014.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/ANDY TP3014.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP1001.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP1001.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP1002.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP1002.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP1003.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP1003.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP1004.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP1004.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP1005.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP1005.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP1006.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP1006.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP1007.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP1007.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP1008.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP1008.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP1009.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP1009.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP1010.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP1010.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP1011.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP1011.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP1012.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP1012.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP1014.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP1014.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP1015.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP1015.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2001.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2001.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2002.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2002.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2004.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2004.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2005.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2005.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2006.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2006.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2007.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2007.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2008.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2008.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2009.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2009.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2010.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2010.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2011.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2011.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2012.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2012.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2013.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2013.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2014.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2014.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2016.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2016.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2017.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2017.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2018.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2018.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2019.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2019.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2021.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP2021.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3001.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3001.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3002.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3002.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3003.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3003.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3004.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3004.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3006.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3006.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3007.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3007.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3009.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3009.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3010.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3010.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3011.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3011.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3012.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3012.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3013.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3013.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3014.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3014.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3015.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3015.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3016.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3016.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3017.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3017.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3018.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3018.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3019.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3019.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3020.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3020.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3022.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3022.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3023.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3023.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3024.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/AS TP3024.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1001.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1001.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1002.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1002.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1003.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1003.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1004.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1004.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1005.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1005.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1006.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1006.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1007.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1007.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1008.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1008.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1009.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1009.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1010.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1010.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1011.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1011.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1012.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1012.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1013.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1013.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1015.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1015.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1016.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1016.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1017.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1017.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1018.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1018.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1019.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP1019.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2001.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2001.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2003.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2003.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2004.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2004.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2005.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2005.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2006.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2006.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2007.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2007.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2008.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2008.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2009.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2009.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2010.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2010.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2011.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2011.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2012.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2012.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2013.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2013.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2016.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2016.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2017.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2017.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2018.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2018.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2019.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2019.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2020.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2020.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2021.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2021.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2022.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP2022.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP3001.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP3001.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP3002.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP3002.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP3003.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/EWE TP3003.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1002.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1002.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1003.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1003.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1004.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1004.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1005.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1005.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1006.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1006.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1007.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1007.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1008.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1008.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1011.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1011.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1013.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1013.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1014.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1014.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1015.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1015.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1016.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1016.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1017.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1017.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1018.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1018.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1019.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1019.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1020.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1020.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1021.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1021.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1024.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1024.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1025.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1025.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1026.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1026.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1027.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1027.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1028.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP1028.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2001.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2001.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2003.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2003.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2004.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2004.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2005.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2005.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2006.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2006.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2007.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2007.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2008.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2008.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2009.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2009.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2010.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2010.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2011.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2011.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2012.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2012.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2014.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2014.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2015.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2015.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2016.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2016.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2017.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2017.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2018.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2018.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2019.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2019.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2020.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/GITA TP2020.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1001.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1001.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1002.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1002.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1003.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1003.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1004.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1004.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1005.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1005.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1006.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1006.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1007.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1007.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1008.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1008.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1009.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1009.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1010.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1010.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1012.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1012.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1013.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1013.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1014.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1014.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1015.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1015.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1016.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1016.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1017.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1017.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1018.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1018.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1019.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1019.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1021.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1021.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1022.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1022.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1023.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1023.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1024.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1024.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1025.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1025.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1026.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1026.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1027.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1027.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1028.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1028.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1029.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1029.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1030.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1030.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1031.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1031.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1032.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1032.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1033.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1033.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1034.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1034.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1035.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1035.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1036.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1036.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1037.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1037.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1038.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1038.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1039.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1039.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1040.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1040.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1041.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1041.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1042.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1042.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1043.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1043.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1044.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1044.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1045.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1045.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1046.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1046.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1047.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1047.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1048.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1048.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1049.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1049.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1050.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1050.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1051.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1051.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1052.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1052.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1053.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1053.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1054.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1054.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1055.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1055.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1056.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1056.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1057.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1057.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1058.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1058.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1059.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1059.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1061.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1061.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1062.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1062.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1063.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1063.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1064.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1064.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1066.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1066.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1067.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1067.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1068.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1068.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1069.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1069.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1070.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1070.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1071.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1071.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1072.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1072.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1073.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1073.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1074.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1074.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1075.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1075.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1076.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1076.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1077.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1077.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1078.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1078.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1079.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1079.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1080.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1080.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1081.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1081.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1082.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1082.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1083.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1083.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1084.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1084.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1085.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1085.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1086.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1086.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1087.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1087.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1088.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1088.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1089.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1089.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1090.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1090.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1091.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1091.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1092.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1092.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1093.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1093.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1094.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1094.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1095.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1095.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1096.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1096.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1097.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/IVAN TP1097.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1001.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1001.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1003.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1003.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1004.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1004.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1007.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1007.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1008.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1008.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1009.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1009.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1013.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1013.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1014.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1014.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1015.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1015.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1017.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1017.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1018.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1018.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1019.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1019.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1020.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1020.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1022.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1022.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1024.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1024.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1025.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1025.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1026.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1026.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1027.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1027.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1028.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1028.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1029.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1029.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1030.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP1030.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP2001.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP2001.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP2003.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP2003.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP2004.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP2004.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP2005.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP2005.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP2006.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP2006.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP2007.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP2007.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP2008.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP2008.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP2010.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP2010.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP2012.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP2012.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP2014.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP2014.wav" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP2015.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/recording/cut/train/OCIN TP2015.wav" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/testing 6/eric-01.mp3" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/testing-features/mfcc-5 2/Odi T2P41.npy" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/datasets/testing-features/mfcc-5 2/Odi T2P42.npy" afterPath="" />
@@ -3506,58 +4116,42 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/server/www/preprocessed_data/2017-10-22-05-48-45.npy" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/server/www/preprocessed_data/2017-10-22-05-51-00.npy" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/buku/Bab 3.pages" afterPath="$PROJECT_DIR$/buku/Bab 3.pages" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/changelogs/fourth gen/result/Log-14-09-2017/summary.numbers" afterPath="$PROJECT_DIR$/changelogs/fourth gen/result/Log-14-09-2017/summary.numbers" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/preprocessing.py" afterPath="$PROJECT_DIR$/data/preprocessing.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/0104.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/0104.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/0105.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/0105.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/0106.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/0106.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/01112.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/01112.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/01113.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/01113.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/01114.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/01114.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/01117.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/01117.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/01118.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/01118.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/01119.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/01119.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/0180.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/0180.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/0181.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/0181.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/0182.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/0182.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/0213.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/0213.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/0214.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/0214.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/0215.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/0215.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/0229.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/0229.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/0230.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/0230.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/0231.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/0231.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/0243.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/0243.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/0244.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/0244.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/0245.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/0245.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/0562.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/0562.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/0563.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/0563.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/0564.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/0564.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/2017-10-29-08-32-55.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/2017-10-29-08-32-55.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/2017-10-29-12-51-46.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/2017-10-29-12-51-46.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/2017-10-29-12-54-19.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/2017-10-29-12-54-19.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/Deasy 05.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/Deasy 05.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/Deasy 11.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/Deasy 11.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/Deasy 17.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/Deasy 17.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/Eric 06.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/Eric 06.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/Eric 11.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/Eric 11.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/Eric 17.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/Eric 17.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/Eric 24.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/Eric 24.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/Eric 32.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/Eric 32.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/Eric 40.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/Eric 40.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/Eric 47.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/Eric 47.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/Eric 54.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/Eric 54.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/Mayuko 04.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/Mayuko 04.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/Simon 07.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/Simon 07.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/Simon 11.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/Simon 11.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/Tommy 03.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/Tommy 03.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/Tommy 10.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/Tommy 10.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/Tommy 17.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/Tommy 17.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/Wiwik 04.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/Wiwik 04.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/Wiwik 08.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/Wiwik 08.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/clean_synth/dev/Wiwik 17.txt" afterPath="$PROJECT_DIR$/datasets/clean_synth/dev/Wiwik 17.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/features/data_representation.py" afterPath="$PROJECT_DIR$/modules/features/data_representation.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/features/spectrogram.py" afterPath="$PROJECT_DIR$/modules/features/spectrogram.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/changelogs/first generation/result/Studio-02 - first gen.csv" afterPath="$PROJECT_DIR$/changelogs/first generation/result/Studio-02 - first gen.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/recording/cut/dev/ANDY TP1004.txt" afterPath="$PROJECT_DIR$/datasets/recording/cut/dev/ANDY TP1004.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/recording/cut/dev/ANDY TP1005.txt" afterPath="$PROJECT_DIR$/datasets/recording/cut/dev/ANDY TP1005.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/recording/cut/dev/ANDY TP1011.txt" afterPath="$PROJECT_DIR$/datasets/recording/cut/dev/ANDY TP1011.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/recording/cut/dev/ANDY TP1015.txt" afterPath="$PROJECT_DIR$/datasets/recording/cut/dev/ANDY TP1015.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/recording/cut/dev/ANDY TP1018.txt" afterPath="$PROJECT_DIR$/datasets/recording/cut/dev/ANDY TP1018.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/recording/cut/dev/ANDY TP2008.txt" afterPath="$PROJECT_DIR$/datasets/recording/cut/dev/ANDY TP2008.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/recording/cut/dev/ANDY TP2012.txt" afterPath="$PROJECT_DIR$/datasets/recording/cut/dev/ANDY TP2012.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/recording/cut/dev/ANDY TP2013.txt" afterPath="$PROJECT_DIR$/datasets/recording/cut/dev/ANDY TP2013.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/recording/cut/dev/ANDY TP3004.txt" afterPath="$PROJECT_DIR$/datasets/recording/cut/dev/ANDY TP3004.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/recording/cut/dev/ANDY TP3015.txt" afterPath="$PROJECT_DIR$/datasets/recording/cut/dev/ANDY TP3015.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/recording/cut/dev/AS TP1013.txt" afterPath="$PROJECT_DIR$/datasets/recording/cut/dev/AS TP1013.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/recording/cut/dev/AS TP2003.txt" afterPath="$PROJECT_DIR$/datasets/recording/cut/dev/AS TP2003.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/recording/cut/dev/AS TP2020.txt" afterPath="$PROJECT_DIR$/datasets/recording/cut/dev/AS TP2020.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/recording/cut/dev/AS TP3008.txt" afterPath="$PROJECT_DIR$/datasets/recording/cut/dev/AS TP3008.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/recording/cut/dev/AS TP3021.txt" afterPath="$PROJECT_DIR$/datasets/recording/cut/dev/AS TP3021.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/recording/cut/dev/EWE TP1014.txt" afterPath="$PROJECT_DIR$/datasets/recording/cut/dev/EWE TP1014.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/recording/cut/dev/EWE TP1020.txt" afterPath="$PROJECT_DIR$/datasets/recording/cut/dev/EWE TP1020.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/recording/cut/dev/EWE TP2015.txt" afterPath="$PROJECT_DIR$/datasets/recording/cut/dev/EWE TP2015.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/recording/cut/dev/GITA TP1010.txt" afterPath="$PROJECT_DIR$/datasets/recording/cut/dev/GITA TP1010.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/recording/cut/dev/GITA TP1023.txt" afterPath="$PROJECT_DIR$/datasets/recording/cut/dev/GITA TP1023.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/recording/cut/dev/GITA TP2013.txt" afterPath="$PROJECT_DIR$/datasets/recording/cut/dev/GITA TP2013.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/recording/cut/dev/IVAN TP1011.txt" afterPath="$PROJECT_DIR$/datasets/recording/cut/dev/IVAN TP1011.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/recording/cut/dev/IVAN TP1020.txt" afterPath="$PROJECT_DIR$/datasets/recording/cut/dev/IVAN TP1020.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/recording/cut/dev/IVAN TP1060.txt" afterPath="$PROJECT_DIR$/datasets/recording/cut/dev/IVAN TP1060.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/recording/cut/dev/IVAN TP1065.txt" afterPath="$PROJECT_DIR$/datasets/recording/cut/dev/IVAN TP1065.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/recording/cut/dev/OCIN TP1016.txt" afterPath="$PROJECT_DIR$/datasets/recording/cut/dev/OCIN TP1016.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/recording/cut/dev/OCIN TP1021.txt" afterPath="$PROJECT_DIR$/datasets/recording/cut/dev/OCIN TP1021.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/recording/cut/dev/OCIN TP2011.txt" afterPath="$PROJECT_DIR$/datasets/recording/cut/dev/OCIN TP2011.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasets/recording/cut/dev/OCIN TP2013.txt" afterPath="$PROJECT_DIR$/datasets/recording/cut/dev/OCIN TP2013.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/modules/model/language.py" afterPath="$PROJECT_DIR$/modules/model/language.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tensorflow_cpu/sentence_predict.py" afterPath="$PROJECT_DIR$/tensorflow_cpu/sentence_predict.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tensorflow_cpu/test_label_error_rate.py" afterPath="$PROJECT_DIR$/tensorflow_cpu/test_label_error_rate.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tensorflow_cpu/word_predict.py" afterPath="$PROJECT_DIR$/tensorflow_cpu/word_predict.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -3569,45 +4163,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="old_model.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tensorflow_cpu/old_model.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="15" lean-forward="false" selection-start-line="11" selection-start-column="15" selection-end-line="12" selection-end-column="41" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="preprocessing.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/preprocessing.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="data_representation.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/modules/features/data_representation.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="language.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/modules/model/language.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+            <state relative-caret-position="615">
+              <caret line="41" column="4" lean-forward="false" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -3616,18 +4176,28 @@
       <file leaf-file-name="create_model_language.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tensorflow_cpu/create_model_language.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="36" column="36" lean-forward="false" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+            <state relative-caret-position="330">
+              <caret line="22" column="62" lean-forward="false" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="word_predict.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="word_predict.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tensorflow_cpu/word_predict.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="367">
+              <caret line="37" column="4" lean-forward="false" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="63" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wer.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tensorflow_cpu/wer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="562">
+              <caret line="41" column="19" lean-forward="true" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -3636,8 +4206,30 @@
       <file leaf-file-name="sentence_predict.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tensorflow_cpu/sentence_predict.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+            <state relative-caret-position="315">
+              <caret line="21" column="46" lean-forward="false" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="similar.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tensorflow_cpu/similar.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="33" column="20" lean-forward="true" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="answer.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tensorflow_cpu/answer.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="322" lean-forward="false" selection-start-line="14" selection-start-column="322" selection-end-line="14" selection-end-column="322" />
               <folding />
             </state>
           </provider>
@@ -3657,21 +4249,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="codecs.py" pinned="false" current-in-tab="false">
-        <entry file="file:///Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/codecs.py">
+      <file leaf-file-name="test_label_error_rate.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tensorflow_cpu/test_label_error_rate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4620">
-              <caret line="308" column="0" lean-forward="false" selection-start-line="308" selection-start-column="0" selection-end-line="308" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="225">
+              <caret line="16" column="73" lean-forward="false" selection-start-line="16" selection-start-column="73" selection-end-line="16" selection-end-column="73" />
+              <folding>
+                <element signature="e#0#23#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_label_error_rate.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tensorflow_cpu/test_label_error_rate.py">
+      <file leaf-file-name="permute.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tensorflow_cpu/permute.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="27" column="12" lean-forward="false" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
+            <state relative-caret-position="75">
+              <caret line="5" column="32" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="5" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -3689,14 +4283,8 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>edit</find>
-      <find>print</find>
-      <find>digunaka</find>
-      <find>terkenal</find>
-      <find>kir</find>
       <find>kiranya</find>
       <find>peran</find>
-      <find>jemaat</find>
       <find>dapat</find>
       <find>te</find>
       <find>halaman</find>
@@ -3719,6 +4307,12 @@
       <find>hidung</find>
       <find>hilang</find>
       <find>menganggapku</find>
+      <find>member</find>
+      <find>jemaat</find>
+      <find>sela</find>
+      <find>sya</find>
+      <find>selalu</find>
+      <find>syalom</find>
     </findStrings>
     <replaceStrings>
       <replace>random_uniform</replace>
@@ -3732,10 +4326,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/tensorflow_using_gpu/model.py" />
-        <option value="$PROJECT_DIR$/tensorflow_cpu/visualize.py" />
-        <option value="$PROJECT_DIR$/tensorflow_cpu/compare.py" />
-        <option value="$PROJECT_DIR$/tensorflow_cpu/view_numpy.py" />
         <option value="$PROJECT_DIR$/data/log_spectrum.py" />
         <option value="$PROJECT_DIR$/data/concat.py" />
         <option value="$USER_HOME$/tensorflow_3.5/lib/python3.6/site-packages/python_speech_features/base.py" />
@@ -3776,18 +4366,23 @@
         <option value="$PROJECT_DIR$/tensorflow_cpu/old_model.py" />
         <option value="$PROJECT_DIR$/modules/model/word_similarity.py" />
         <option value="$PROJECT_DIR$/modules/features/data_representation.py" />
-        <option value="$PROJECT_DIR$/tensorflow_cpu/test_label_error_rate.py" />
         <option value="$PROJECT_DIR$/tensorflow_cpu/word_similarity.py" />
         <option value="$PROJECT_DIR$/tensorflow_cpu/sentence_similarity.py" />
-        <option value="$PROJECT_DIR$/tensorflow_cpu/sentence_predict.py" />
         <option value="$PROJECT_DIR$/tensorflow_cpu/create_model_language.py" />
+        <option value="$PROJECT_DIR$/tensorflow_cpu/sentence_predict.py" />
         <option value="$PROJECT_DIR$/modules/model/language.py" />
         <option value="$PROJECT_DIR$/tensorflow_cpu/word_predict.py" />
+        <option value="$PROJECT_DIR$/tensorflow_cpu/permute.py" />
+        <option value="$PROJECT_DIR$/tensorflow_cpu/test_label_error_rate.py" />
+        <option value="$PROJECT_DIR$/tensorflow_cpu/answer.txt" />
+        <option value="$PROJECT_DIR$/tensorflow_cpu/similar.py" />
+        <option value="$PROJECT_DIR$/tensorflow_cpu/wer.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+    <option name="x" value="-55" />
+    <option name="y" value="24" />
     <option name="width" value="1440" />
     <option name="height" value="823" />
   </component>
@@ -3806,7 +4401,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -3955,7 +4550,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -3991,7 +4586,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.word_similarity">
+  <component name="RunManager" selected="Python.wer">
     <configuration default="false" name="Unittests in test_label_error_rate.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -4005,42 +4600,6 @@
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;$PROJECT_DIR$/tensorflow_cpu/test_label_error_rate.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method />
-    </configuration>
-    <configuration default="false" name="edit_distance" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/playground" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="be-my-ear" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/playground/edit_distance.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="language" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/modules/model" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="be-my-ear" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/modules/model/language.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
     <configuration default="false" name="word_similarity" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -4061,7 +4620,7 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="sentence_predict" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="permute" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -4073,7 +4632,43 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="be-my-ear" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tensorflow_cpu/sentence_predict.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tensorflow_cpu/permute.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="wer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tensorflow_cpu" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="be-my-ear" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tensorflow_cpu/wer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="similar" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tensorflow_cpu" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="be-my-ear" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tensorflow_cpu/similar.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -4145,18 +4740,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in test_label_error_rate.py" />
-      <item index="1" class="java.lang.String" itemvalue="Python.edit_distance" />
-      <item index="2" class="java.lang.String" itemvalue="Python.language" />
-      <item index="3" class="java.lang.String" itemvalue="Python.word_similarity" />
-      <item index="4" class="java.lang.String" itemvalue="Python.sentence_predict" />
+      <item index="1" class="java.lang.String" itemvalue="Python.word_similarity" />
+      <item index="2" class="java.lang.String" itemvalue="Python.permute" />
+      <item index="3" class="java.lang.String" itemvalue="Python.wer" />
+      <item index="4" class="java.lang.String" itemvalue="Python.similar" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.word_similarity" />
-        <item index="1" class="java.lang.String" itemvalue="Python.sentence_predict" />
+        <item index="0" class="java.lang.String" itemvalue="Python.wer" />
+        <item index="1" class="java.lang.String" itemvalue="Python.similar" />
         <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in test_label_error_rate.py" />
-        <item index="3" class="java.lang.String" itemvalue="Python.language" />
-        <item index="4" class="java.lang.String" itemvalue="Python.edit_distance" />
+        <item index="3" class="java.lang.String" itemvalue="Python.permute" />
+        <item index="4" class="java.lang.String" itemvalue="Python.word_similarity" />
       </list>
     </recent_temporary>
   </component>
@@ -4174,45 +4769,44 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_test_label_error_rate_py - 2017.11.17 at 20h 56m 59s.xml">
+    <history-entry file="Unittests_in_test_label_error_rate_py - 2017.11.28 at 09h 03m 49s.xml">
       <configuration name="Unittests in test_label_error_rate.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_label_error_rate_py - 2017.11.17 at 20h 57m 16s.xml">
+    <history-entry file="Unittests_in_test_label_error_rate_py - 2017.11.28 at 09h 03m 59s.xml">
       <configuration name="Unittests in test_label_error_rate.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_label_error_rate_py - 2017.11.17 at 21h 16m 15s.xml">
+    <history-entry file="Unittests_in_test_label_error_rate_py - 2017.11.28 at 09h 04m 28s.xml">
       <configuration name="Unittests in test_label_error_rate.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_label_error_rate_py - 2017.11.17 at 21h 17m 48s.xml">
+    <history-entry file="Unittests_in_test_label_error_rate_py - 2017.11.28 at 09h 04m 45s.xml">
       <configuration name="Unittests in test_label_error_rate.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_label_error_rate_py - 2017.11.17 at 21h 24m 24s.xml">
+    <history-entry file="Unittests_in_test_label_error_rate_py - 2017.11.28 at 09h 05m 00s.xml">
       <configuration name="Unittests in test_label_error_rate.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_label_error_rate_py - 2017.11.17 at 21h 25m 13s.xml">
+    <history-entry file="Unittests_in_test_label_error_rate_py - 2017.11.28 at 09h 08m 14s.xml">
       <configuration name="Unittests in test_label_error_rate.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_label_error_rate_py - 2017.11.17 at 21h 37m 07s.xml">
+    <history-entry file="Unittests_in_test_label_error_rate_py - 2017.11.28 at 09h 08m 29s.xml">
       <configuration name="Unittests in test_label_error_rate.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_label_error_rate_py - 2017.11.17 at 21h 38m 18s.xml">
+    <history-entry file="Unittests_in_test_label_error_rate_py - 2017.11.28 at 09h 14m 18s.xml">
       <configuration name="Unittests in test_label_error_rate.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_label_error_rate_py - 2017.11.17 at 21h 38m 39s.xml">
+    <history-entry file="Unittests_in_test_label_error_rate_py - 2017.11.28 at 09h 14m 28s.xml">
       <configuration name="Unittests in test_label_error_rate.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_label_error_rate_py - 2017.11.18 at 08h 57m 37s.xml">
+    <history-entry file="Unittests_in_test_label_error_rate_py - 2017.11.28 at 09h 16m 24s.xml">
       <configuration name="Unittests in test_label_error_rate.py" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="823" extended-state="6" />
-    <editor active="true" />
+    <frame x="-55" y="24" width="1440" height="823" extended-state="0" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5064378" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5593705" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37756497" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37704918" sideWeight="0.50572246" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37619698" sideWeight="0.49427754" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -4242,7 +4836,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/modules/model/language.py</url>
-          <line>69</line>
+          <line>72</line>
           <option name="timeStamp" value="37" />
         </line-breakpoint>
       </breakpoints>
@@ -4261,17 +4855,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/tensorflow_3.5/lib/python3.6/site-packages/pydub/audio_segment.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1248">
-          <caret line="326" column="8" lean-forward="false" selection-start-line="326" selection-start-column="8" selection-end-line="326" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/training/preproccessed data/testing-features/words_spectrogram_320_5/130.npy" />
-    <entry file="file://$USER_HOME$/training/preproccessed data/features/words_spectrogram_320_5/117.npy" />
-    <entry file="file://$USER_HOME$/training/preproccessed data/features/words_spectrogram_320_5/122.npy" />
-    <entry file="file://$PROJECT_DIR$/data/visualize_dpf.py" />
     <entry file="file://$PROJECT_DIR$/server/www/templates/create_connection.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -4496,11 +5079,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/modules/features/data_representation.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
+        <state relative-caret-position="600">
           <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -4508,25 +5088,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tensorflow_cpu/old_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
+        <state relative-caret-position="135">
           <caret line="11" column="15" lean-forward="false" selection-start-line="11" selection-start-column="15" selection-end-line="12" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tensorflow_cpu/test_label_error_rate.py">
+    <entry file="file://$PROJECT_DIR$/datasets/clean_human_di/model_2_gram.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="27" column="12" lean-forward="false" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="12" />
-          <folding />
+        <state relative-caret-position="210">
+          <caret line="0" column="1199" lean-forward="false" selection-start-line="0" selection-start-column="1199" selection-end-line="0" selection-end-column="1199" />
         </state>
       </provider>
     </entry>
@@ -4550,34 +5125,78 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tensorflow_cpu/permute.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="32" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="5" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tensorflow_cpu/test_label_error_rate.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="16" column="73" lean-forward="false" selection-start-line="16" selection-start-column="73" selection-end-line="16" selection-end-column="73" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tensorflow_cpu/sentence_predict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="46" lean-forward="false" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/modules/model/language.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="22" lean-forward="false" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        <state relative-caret-position="615">
+          <caret line="41" column="4" lean-forward="false" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tensorflow_cpu/create_model_language.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="36" lean-forward="false" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+        <state relative-caret-position="330">
+          <caret line="22" column="62" lean-forward="false" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tensorflow_cpu/sentence_predict.py">
+    <entry file="file://$PROJECT_DIR$/tensorflow_cpu/answer.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="25" lean-forward="false" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
+        <state relative-caret-position="210">
+          <caret line="14" column="322" lean-forward="false" selection-start-line="14" selection-start-column="322" selection-end-line="14" selection-end-column="322" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tensorflow_cpu/similar.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="20" lean-forward="true" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#23#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tensorflow_cpu/word_predict.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="367">
+          <caret line="37" column="4" lean-forward="false" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tensorflow_cpu/wer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="562">
+          <caret line="41" column="19" lean-forward="true" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
           <folding />
         </state>
       </provider>
